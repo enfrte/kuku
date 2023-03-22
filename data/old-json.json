@@ -1,0 +1,1300 @@
+[
+  {
+    "inProduction": true,
+    "_id": "5de6647978e18605844b28e3",
+    "slug": "verb-chaining",
+    "title": "Verb chaining",
+    "tutorial": "<p>Verb chains or verb chaining is when there are two or more verbs in one sentence. When this occurs, only the first verb in the sentence is conjugated in the personal form. The other verbs are in the infinitive form.</p><p>The exception to this rule is with the verbs täytyy and pitää.</p>",
+    "lang": "Finnish",
+    "questions": [
+      {
+        "nativeLang": [
+          "Do you know how to code well?"
+        ],
+        "foreignLang": [
+          "Osaatko koodata hyvin?"
+        ],
+        "_id": "5e088efcb2c71417603a7b34"
+      },
+      {
+        "nativeLang": [
+          "Can you help me create a web site?",
+          "Are you able to help me create a web site?"
+        ],
+        "foreignLang": [
+          "Voitko auttaa minua luomaan verkkosivuston?"
+        ],
+        "_id": "5e088efcb2c71417603a7b33"
+      },
+      {
+        "nativeLang": [
+          "I would like to know how to speak Finnish better",
+          "I would like to know how to speak better Finnish"
+        ],
+        "foreignLang": [
+          "Haluaisin osata puhua suomea paremmin"
+        ],
+        "_id": "5e088efcb2c71417603a7b32"
+      },
+      {
+        "nativeLang": [
+          "I don't have time to do homework"
+        ],
+        "foreignLang": [
+          "En ehtinyt vielä tehdä läksyjä"
+        ],
+        "_id": "5e088efcb2c71417603a7b31"
+      },
+      {
+        "nativeLang": [
+          "Do you dare to go there alone?"
+        ],
+        "foreignLang": [
+          "Uskallatko mennä sinne yksin?"
+        ],
+        "_id": "5e088efcb2c71417603a7b30"
+      },
+      {
+        "nativeLang": [
+          "Remember to call him/her"
+        ],
+        "foreignLang": [
+          "Muista soittaa hänelle"
+        ],
+        "_id": "5e088efcb2c71417603a7b2f"
+      },
+      {
+        "nativeLang": [
+          "We plan to travel on holiday to Italy",
+          "We intend to travel on holiday to Italy",
+          "We plan to travel to Italy on holiday",
+          "We intend to travel to Italy on holiday"
+        ],
+        "foreignLang": [
+          "Aiomme matkustaa lomalla Italiaan"
+        ],
+        "_id": "5e088efcb2c71417603a7b2e"
+      },
+      {
+        "nativeLang": [
+          "I will try to find it from somewhere"
+        ],
+        "foreignLang": [
+          "Yritän loytää sen jostakin"
+        ],
+        "_id": "5e088efcb2c71417603a7b2d"
+      },
+      {
+        "nativeLang": [
+          "It is worth to try to ask that",
+          "It is worth trying to ask that"
+        ],
+        "foreignLang": [
+          "Kannattaa yrittää kysyä sitä"
+        ],
+        "_id": "5e088efcb2c71417603a7b2c"
+      },
+      {
+        "nativeLang": [
+          "You can take coffee or tea from there",
+          "You can take from there coffee or tea"
+        ],
+        "foreignLang": [
+          "Saat ottaa tuosta kahvia tai teetä"
+        ],
+        "_id": "5e088efcb2c71417603a7b2b"
+      },
+      {
+        "nativeLang": [
+          "Next week we start to study verb chaining",
+          "Next week we get to study verb chaining"
+        ],
+        "foreignLang": [
+          "Ensi viikolla alamme opiskella verbiketjuja"
+        ],
+        "_id": "5e088efcb2c71417603a7b2a"
+      },
+      {
+        "nativeLang": [
+          "I intend to change job"
+        ],
+        "foreignLang": [
+          "Tahdon vaihtaa työpaikkaa"
+        ],
+        "_id": "5e088efcb2c71417603a7b29"
+      },
+      {
+        "nativeLang": [
+          "Do you feel like walking/jogging in the evening?"
+        ],
+        "foreignLang": [
+          "Jaksatko lähteä lenkille illalla?"
+        ],
+        "_id": "5e088efcb2c71417603a7b28"
+      },
+      {
+        "nativeLang": [
+          "We decided to reschedule everything next week"
+        ],
+        "foreignLang": [
+          "Päätimme siirtää kokouksen ensi viikkoon"
+        ],
+        "_id": "5e088efcb2c71417603a7b27"
+      },
+      {
+        "nativeLang": [
+          "Could you come here for a minute?"
+        ],
+        "foreignLang": [
+          "Viitsitko tulla tänne hetkeksi?"
+        ],
+        "_id": "5e088efcb2c71417603a7b26"
+      },
+      {
+        "nativeLang": [
+          "Where do you want to go?"
+        ],
+        "foreignLang": [
+          "Mihin te haluatte mennä?"
+        ],
+        "_id": "5e088efcb2c71417603a7b25"
+      },
+      {
+        "nativeLang": [
+          "We want to go home"
+        ],
+        "foreignLang": [
+          "Me haluamme menna kotiin"
+        ],
+        "_id": "5e088efcb2c71417603a7b24"
+      },
+      {
+        "nativeLang": [
+          "When do you want to start?"
+        ],
+        "foreignLang": [
+          "Milloin te haluatte aloittaa?"
+        ],
+        "_id": "5e088efcb2c71417603a7b23"
+      },
+      {
+        "nativeLang": [
+          "We want to start straight away",
+          "We want to start at once"
+        ],
+        "foreignLang": [
+          "Me haluamme aloittaa heti"
+        ],
+        "_id": "5e088efcb2c71417603a7b22"
+      },
+      {
+        "nativeLang": [
+          "Whom are you trying to call?"
+        ],
+        "foreignLang": [
+          "Kenelle yritit soitaa?"
+        ],
+        "_id": "5e088efcb2c71417603a7b21"
+      },
+      {
+        "nativeLang": [
+          "I tried to call dad",
+          "I'm trying to call father"
+        ],
+        "foreignLang": [
+          "Minä yritin soitaa isälle"
+        ],
+        "_id": "5e088efcb2c71417603a7b20"
+      },
+      {
+        "nativeLang": [
+          "How did you manage to wake up so early?",
+          "How did you have the energy to wake up so early?"
+        ],
+        "foreignLang": [
+          "Mitan jaksoit herätä niin aikaisin?"
+        ],
+        "_id": "5e088efcb2c71417603a7b1f"
+      },
+      {
+        "nativeLang": [
+          "I managed to wake up just fine"
+        ],
+        "foreignLang": [
+          "Minä jaksoin herätä niin aikaisin ihan hyvin"
+        ],
+        "_id": "5e088efcb2c71417603a7b1e"
+      },
+      {
+        "nativeLang": [
+          "What do you have time to do at home?"
+        ],
+        "foreignLang": [
+          "Mitä ehditte tehdä kotona?"
+        ],
+        "_id": "5e088efcb2c71417603a7b1d"
+      },
+      {
+        "nativeLang": [
+          "We have time to make food"
+        ],
+        "foreignLang": [
+          "Me ehdimme laittaa ruokaa"
+        ],
+        "_id": "5e088efcb2c71417603a7b1c"
+      },
+      {
+        "nativeLang": [
+          "When can you come here?"
+        ],
+        "foreignLang": [
+          "Milloin voit tulla tänne?"
+        ],
+        "_id": "5e088efcb2c71417603a7b1b"
+      },
+      {
+        "nativeLang": [
+          "I can come in the evening"
+        ],
+        "foreignLang": [
+          "Minä voin tulla illalla"
+        ],
+        "_id": "5e088efcb2c71417603a7b1a"
+      },
+      {
+        "nativeLang": [
+          "Why can't you come on the course today?"
+        ],
+        "foreignLang": [
+          "Miksi et voi tulla tännään kurssille?"
+        ],
+        "_id": "5e088efcb2c71417603a7b19"
+      },
+      {
+        "nativeLang": [
+          "I can't come because I am sick"
+        ],
+        "foreignLang": [
+          "Minä en voi tulla koska olen sairas"
+        ],
+        "_id": "5e088efcb2c71417603a7b18"
+      },
+      {
+        "nativeLang": [
+          "Do you know how to play chess?"
+        ],
+        "foreignLang": [
+          "Osaatko pelata shakkia?"
+        ],
+        "_id": "5e088efcb2c71417603a7b17"
+      },
+      {
+        "nativeLang": [
+          "I don't know how to play chess"
+        ],
+        "foreignLang": [
+          "Minä en osaa pelata shakkia"
+        ],
+        "_id": "5e088efcb2c71417603a7b16"
+      },
+      {
+        "nativeLang": [
+          "What did you decide to buy her?"
+        ],
+        "foreignLang": [
+          "Mitä päätit ostaa hänelle?"
+        ],
+        "_id": "5e088efcb2c71417603a7b15"
+      },
+      {
+        "nativeLang": [
+          "I decided to buy her flowers"
+        ],
+        "foreignLang": [
+          "Minä päätin ostaa kukkia"
+        ],
+        "_id": "5e088efcb2c71417603a7b14"
+      },
+      {
+        "nativeLang": [
+          "Did you dare to ask her out?"
+        ],
+        "foreignLang": [
+          "Uskalsitko pyytää häntä ulos?"
+        ],
+        "_id": "5e088efcb2c71417603a7b13"
+      },
+      {
+        "nativeLang": [
+          "I did dare to ask her out"
+        ],
+        "foreignLang": [
+          "Minä uskalsin pyytää häntä ulos"
+        ],
+        "_id": "5e088efcb2c71417603a7b12"
+      },
+      {
+        "nativeLang": [
+          "Did you remember to put the letter in the postbox?"
+        ],
+        "foreignLang": [
+          "Muistiko viedä kirjeen postiin?"
+        ],
+        "_id": "5e088efcb2c71417603a7b11"
+      },
+      {
+        "nativeLang": [
+          "I remembered to put the letter in the post box"
+        ],
+        "foreignLang": [
+          "Minä muistin viedä kirjeen postiin"
+        ],
+        "_id": "5e088efcb2c71417603a7b10"
+      },
+      {
+        "nativeLang": [
+          "What did you forget to take?"
+        ],
+        "foreignLang": [
+          "Mitä unohdit ottaa mukaan?"
+        ],
+        "_id": "5e088efcb2c71417603a7b0f"
+      },
+      {
+        "nativeLang": [
+          "I forgot to take my busspass"
+        ],
+        "foreignLang": [
+          "Minä unohdin ottaa bussikortin mukaan"
+        ],
+        "_id": "5e088efcb2c71417603a7b0e"
+      },
+      {
+        "nativeLang": [
+          "When does the weather start to get warm?"
+        ],
+        "foreignLang": [
+          "Milloin ilma alkaa lämmetä?"
+        ],
+        "_id": "5e088efcb2c71417603a7b0d"
+      },
+      {
+        "nativeLang": [
+          "The weather starts to get warm in April"
+        ],
+        "foreignLang": [
+          "Ilma alkaa lämmetä toukokuussa"
+        ],
+        "_id": "5e088efcb2c71417603a7b0c"
+      },
+      {
+        "nativeLang": [
+          "What do you need to get from the postoffice?"
+        ],
+        "foreignLang": [
+          "Mitä sinun pitää hakea postista?"
+        ],
+        "_id": "5e088efcb2c71417603a7b0b"
+      },
+      {
+        "nativeLang": [
+          "I need to get a packet from the postoffice"
+        ],
+        "foreignLang": [
+          "Minun pitää hakea paketti postista"
+        ],
+        "_id": "5e088efcb2c71417603a7b0a"
+      },
+      {
+        "nativeLang": [
+          "What do you need to do in the evening?"
+        ],
+        "foreignLang": [
+          "Mitä teidän pitää tehdä illalla?"
+        ],
+        "_id": "5e088efcb2c71417603a7b09"
+      },
+      {
+        "nativeLang": [
+          "I need to do the homework in the evening",
+          "I need to do homework in the evening"
+        ],
+        "foreignLang": [
+          "Minun pitää tehda läksyt illalla"
+        ],
+        "_id": "5e088efcb2c71417603a7b08"
+      },
+      {
+        "nativeLang": [
+          "What do you need to buy?"
+        ],
+        "foreignLang": [
+          "Mitä sinä täytyy ostaa?"
+        ],
+        "_id": "5e088efcb2c71417603a7b07"
+      },
+      {
+        "nativeLang": [
+          "I need to buy milk"
+        ],
+        "foreignLang": [
+          "Minun täytyy ostaa maitoa"
+        ],
+        "_id": "5e088efcb2c71417603a7b06"
+      },
+      {
+        "nativeLang": [
+          "What don't you need to do?"
+        ],
+        "foreignLang": [
+          "Mitä sinun ei tarvitse tehdä?"
+        ],
+        "_id": "5e088efcb2c71417603a7b05"
+      },
+      {
+        "nativeLang": [
+          "I don't need to make food"
+        ],
+        "foreignLang": [
+          "Minun ei tarvitse tehdä ruokaa"
+        ],
+        "_id": "5e088efcb2c71417603a7b04"
+      }
+    ],
+    "__v": 5
+  },
+  {
+    "inProduction": true,
+    "_id": "5e0667cbaf139a13e3774182",
+    "slug": "liking-things",
+    "title": "Liking things",
+    "tutorial": "<p>Tykätä/Pitää both mean to like. Tykätä is used more in spoken Finnish. </p><h2>With nouns</h2><p>You can use Tykätä/Pitää to express you like something or someone. Just add -sta/-stä to the end of the noun. </p><h2>With verbs</h2><p>To express you like doing something, you use either tykätä or pitää. However, the verb ending will differ depending on the which verb you use. </p><p>Just like there are different ways to express liking to do something in English, there are different ways in Finnish. For example, I like to ski and I like skiing, both mean the same thing. In Finnish though, you only use the infinitive verb form with tykätä. So, I like to ski is tykkään hiihtää.  With pitää, you need to add -misesta/-misestä to the verb root. This then translates to verb-ing. So, pidän hiihtämisestä means, I like skiing. </p><p>But there's more! You can also add -sta/-stä, which changes the verb to a noun. For example, Tykkään hiihdosta and Pidään hiihdosta both mean, I like skiing. So in this context, I like skiing can mean you like to watch people doing it (perhaps at a sporting event, not necessarily as a participant), or as a participant. However, it's not as easy as adding -sta/-stä to the verb root. There is some kind of gnarly mutation between the verb root and -sta/-stä, which I can't currently explain.</p>",
+    "lang": "Finnish",
+    "questions": [
+      {
+        "nativeLang": [
+          "I like to eat"
+        ],
+        "foreignLang": [
+          "Tykkään syödä"
+        ],
+        "_id": "5e088cf6b2c71417603a7b03"
+      },
+      {
+        "nativeLang": [
+          "I like eating"
+        ],
+        "foreignLang": [
+          "Pidän syömisestä"
+        ],
+        "_id": "5e088cf6b2c71417603a7b02"
+      },
+      {
+        "nativeLang": [
+          "I like eating cake"
+        ],
+        "foreignLang": [
+          "Pidän kakun syömisestä"
+        ],
+        "_id": "5e088cf6b2c71417603a7b01"
+      },
+      {
+        "nativeLang": [
+          "I like to eat cake"
+        ],
+        "foreignLang": [
+          "Tykkään syödä kakkua"
+        ],
+        "_id": "5e088cf6b2c71417603a7b00"
+      },
+      {
+        "nativeLang": [
+          "I like to code"
+        ],
+        "foreignLang": [
+          "Tykkään koodata"
+        ],
+        "_id": "5e088cf6b2c71417603a7aff"
+      },
+      {
+        "nativeLang": [
+          "I like coding"
+        ],
+        "foreignLang": [
+          "Pidän koodaamisesta"
+        ],
+        "_id": "5e088cf6b2c71417603a7afe"
+      },
+      {
+        "nativeLang": [
+          "I like coding web applications"
+        ],
+        "foreignLang": [
+          "Pidän web-ohjelmien koodaamisesta"
+        ],
+        "_id": "5e088cf6b2c71417603a7afd"
+      },
+      {
+        "nativeLang": [
+          "I like to code web applications"
+        ],
+        "foreignLang": [
+          "Tykkään koodata web-ohjelmia"
+        ],
+        "_id": "5e088cf6b2c71417603a7afc"
+      },
+      {
+        "nativeLang": [
+          "I like to run"
+        ],
+        "foreignLang": [
+          "Tykkään juosta"
+        ],
+        "_id": "5e088cf6b2c71417603a7afb"
+      },
+      {
+        "nativeLang": [
+          "I like running"
+        ],
+        "foreignLang": [
+          "Pidän juoksemisesta"
+        ],
+        "_id": "5e088cf6b2c71417603a7afa"
+      },
+      {
+        "nativeLang": [
+          "I like running in the forest"
+        ],
+        "foreignLang": [
+          "Pidän juoksemisesta metsässä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af9"
+      },
+      {
+        "nativeLang": [
+          "I like to run in the forest"
+        ],
+        "foreignLang": [
+          "Tykkään juosta metsässä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af8"
+      },
+      {
+        "nativeLang": [
+          "I like to ride a bike"
+        ],
+        "foreignLang": [
+          "Tykkään pyöräillä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af7"
+      },
+      {
+        "nativeLang": [
+          "I like riding a bike"
+        ],
+        "foreignLang": [
+          "Pidän pyöräilemisestä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af6"
+      },
+      {
+        "nativeLang": [
+          "I like cycling"
+        ],
+        "foreignLang": [
+          "Tykkään pyöräilystä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af5"
+      },
+      {
+        "nativeLang": [
+          "I like cycling"
+        ],
+        "foreignLang": [
+          "Pidän pyöräilystä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af4"
+      },
+      {
+        "nativeLang": [
+          "I like dessert"
+        ],
+        "foreignLang": [
+          "Tykkään jälkiruoasta"
+        ],
+        "_id": "5e088cf6b2c71417603a7af3"
+      },
+      {
+        "nativeLang": [
+          "I like dogs"
+        ],
+        "foreignLang": [
+          "Pidän koirista"
+        ],
+        "_id": "5e088cf6b2c71417603a7af2"
+      },
+      {
+        "nativeLang": [
+          "I like Mikko"
+        ],
+        "foreignLang": [
+          "Tykkään Mikosta"
+        ],
+        "_id": "5e088cf6b2c71417603a7af1"
+      },
+      {
+        "nativeLang": [
+          "I like him/her"
+        ],
+        "foreignLang": [
+          "Pidän hänestä"
+        ],
+        "_id": "5e088cf6b2c71417603a7af0"
+      },
+      {
+        "nativeLang": [
+          "I like them"
+        ],
+        "foreignLang": [
+          "Tykkään heistä"
+        ],
+        "_id": "5e088cf6b2c71417603a7aef"
+      },
+      {
+        "nativeLang": [
+          "I like bicyles"
+        ],
+        "foreignLang": [
+          "Pidän pyöristä"
+        ],
+        "_id": "5e088cf6b2c71417603a7aee"
+      },
+      {
+        "nativeLang": [
+          "I don't like cats"
+        ],
+        "foreignLang": [
+          "En tykkää kissoista"
+        ],
+        "_id": "5e088cf6b2c71417603a7aed"
+      },
+      {
+        "nativeLang": [
+          "I don't like fish"
+        ],
+        "foreignLang": [
+          "En pidä kalasta"
+        ],
+        "_id": "5e088cf6b2c71417603a7aec"
+      },
+      {
+        "nativeLang": [
+          "I don't like fish"
+        ],
+        "foreignLang": [
+          "En tykkää kalasta"
+        ],
+        "_id": "5e088cf6b2c71417603a7aeb"
+      },
+      {
+        "nativeLang": [
+          "I don't like fishing"
+        ],
+        "foreignLang": [
+          "En pidä kalastamisesta"
+        ],
+        "_id": "5e088cf6b2c71417603a7aea"
+      },
+      {
+        "nativeLang": [
+          "I don't like to fish"
+        ],
+        "foreignLang": [
+          "En tykkää kalastaa"
+        ],
+        "_id": "5e088cf6b2c71417603a7ae9"
+      },
+      {
+        "nativeLang": [
+          "I don't like shopping"
+        ],
+        "foreignLang": [
+          "En pidä ostamisesta"
+        ],
+        "_id": "5e088cf6b2c71417603a7ae8"
+      },
+      {
+        "nativeLang": [
+          "I don't like to shop"
+        ],
+        "foreignLang": [
+          "En tykkää ostaa"
+        ],
+        "_id": "5e088cf6b2c71417603a7ae7"
+      }
+    ],
+    "__v": 1
+  },
+  {
+    "inProduction": true,
+    "_id": "5e0ceddd852a5e1aa82bab81",
+    "slug": "having-something",
+    "title": "Having something",
+    "tutorial": "<p>To express someone or something has something, the verb to have is used. To form the expression, you first state the possessor of the thing, and add the adessive case, lla/llä to the end. So, I minä, becomes my minun, becomes I minulla. Then the 3rd person of the verb olla, to be is used. So, minulla on, means I have. Kissoilla on yhdeksän elämää, cats have nine lives. </p><p>Just like in some other languages, to have is sometimes used instead of the verb to be. So you say, I have hunger, minulla on nälkä, instead of I am hungry. </p><h3>Negative</h3><p>To form the negative (not having something), just replace on with ei ole. So Minulla ei ole lapsia, means I don't have kids. Note, negative objects take the partitive case. </p><h3>Exceptions</h3><p>However not all things (specifically objects) follow this rule. If the possession is part of something, the inessive ssa/ssä is used on the possessor. So for example, Pöydässä on kolme jalkaa, the table has 3 legs, Kiimingissä on 15000 ihmistä, Kiiminki has 15000 inhabitants.</p><h3>Questions</h3><p>To form a question, switch the order of the two parts and add the question suffix to the verb to be. So you have, sinulla on, becomes onko sinulla, do you have. With negative questions, use eikö sinulla ole kissaa?, don't you have a cat?</p>",
+    "lang": "Finnish",
+    "questions": [
+      {
+        "nativeLang": [
+          "I have brothers"
+        ],
+        "foreignLang": [
+          "Minulla on veljiä"
+        ],
+        "_id": "5e0ceddd852a5e1aa82baba1"
+      },
+      {
+        "nativeLang": [
+          "The walls have ears"
+        ],
+        "foreignLang": [
+          "Seinillä on korvat"
+        ],
+        "_id": "5e0ceddd852a5e1aa82baba0"
+      },
+      {
+        "nativeLang": [
+          "Birds have wings"
+        ],
+        "foreignLang": [
+          "Linnuilla on siivet"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9f"
+      },
+      {
+        "nativeLang": [
+          "They have money"
+        ],
+        "foreignLang": [
+          "Heillä on rahaa"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9e"
+      },
+      {
+        "nativeLang": [
+          "We have visitors"
+        ],
+        "foreignLang": [
+          "Meillä on vieraita"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9d"
+      },
+      {
+        "nativeLang": [
+          "I have one"
+        ],
+        "foreignLang": [
+          "Minulla on yksi"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9c"
+      },
+      {
+        "nativeLang": [
+          "She has plans"
+        ],
+        "foreignLang": [
+          "Hänellä on suunnitelmia"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9b"
+      },
+      {
+        "nativeLang": [
+          "They have questions"
+        ],
+        "foreignLang": [
+          "Heillä on kysymyksiä"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab9a"
+      },
+      {
+        "nativeLang": [
+          "You have problems"
+        ],
+        "foreignLang": [
+          "Sinulla on ongelmia"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab99"
+      },
+      {
+        "nativeLang": [
+          "You have everything"
+        ],
+        "foreignLang": [
+          "Teillä on kaikkea"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab98"
+      },
+      {
+        "nativeLang": [
+          "He has bread"
+        ],
+        "foreignLang": [
+          "Hänellä on leipää"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab97"
+      },
+      {
+        "nativeLang": [
+          "I have a headache"
+        ],
+        "foreignLang": [
+          "Minulla on pää kipeä"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab96"
+      },
+      {
+        "nativeLang": [
+          "What do you have?"
+        ],
+        "foreignLang": [
+          "Mitä sinulla on?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab95"
+      },
+      {
+        "nativeLang": [
+          "Why do you have so many cats?"
+        ],
+        "foreignLang": [
+          "Miksi sinulla on niin paljon kissoja?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab94"
+      },
+      {
+        "nativeLang": [
+          "Do you have everything?"
+        ],
+        "foreignLang": [
+          "Onko sinulla kaikki?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab93"
+      },
+      {
+        "nativeLang": [
+          "Do they have children?"
+        ],
+        "foreignLang": [
+          "Onko heillä lapsia?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab92"
+      },
+      {
+        "nativeLang": [
+          "Do you have WhatsApp?"
+        ],
+        "foreignLang": [
+          "Onko sinulla WhatsAppia?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab91"
+      },
+      {
+        "nativeLang": [
+          "Does she have anything cheaper?"
+        ],
+        "foreignLang": [
+          "Onko hänellä mitään halvempaa?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab90"
+      },
+      {
+        "nativeLang": [
+          "Do I have it?"
+        ],
+        "foreignLang": [
+          "Onko minulla se?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8f"
+      },
+      {
+        "nativeLang": [
+          "Do you have any water?"
+        ],
+        "foreignLang": [
+          "Onko sinulla yhtään vettä?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8e"
+      },
+      {
+        "nativeLang": [
+          "What evidence do you have?"
+        ],
+        "foreignLang": [
+          "Mitä näyttöä sinulla on?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8d"
+      },
+      {
+        "nativeLang": [
+          "Does he have work experience?"
+        ],
+        "foreignLang": [
+          "Onko hänellä työkokemusta?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8c"
+      },
+      {
+        "nativeLang": [
+          "Does she have a boyfriend?"
+        ],
+        "foreignLang": [
+          "Onko hänellä poikaystävää?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8b"
+      },
+      {
+        "nativeLang": [
+          "I don't know if I have time"
+        ],
+        "foreignLang": [
+          "En tiedä onko minulla aikaa"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab8a"
+      },
+      {
+        "nativeLang": [
+          "We don't have a choice"
+        ],
+        "foreignLang": [
+          "Meillä ei ole muuta mahdollisuutta"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab89"
+      },
+      {
+        "nativeLang": [
+          "Don't you have school today?"
+        ],
+        "foreignLang": [
+          "Eikö teillä ole koulua tänään?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab88"
+      },
+      {
+        "nativeLang": [
+          "Don't they have more to say?"
+        ],
+        "foreignLang": [
+          "Eikö heillä ole enempää sanottavaa?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab87"
+      },
+      {
+        "nativeLang": [
+          "Don't you have something to do?"
+        ],
+        "foreignLang": [
+          "Eikö teillä ole mitään tekemistä?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab86"
+      },
+      {
+        "nativeLang": [
+          "Don't you have anything better to do?"
+        ],
+        "foreignLang": [
+          "Eikö teillä ole mitään parempaa tekemistä?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab85"
+      },
+      {
+        "nativeLang": [
+          "Why don't you have anything to say?"
+        ],
+        "foreignLang": [
+          "Miksi sinulla ei ole mitään sanottavaa?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab84"
+      },
+      {
+        "nativeLang": [
+          "Don't you have a driver's license?"
+        ],
+        "foreignLang": [
+          "Eikö sinulla ole ajokorttia?"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab83"
+      },
+      {
+        "nativeLang": [
+          "Don't I have insurance"
+        ],
+        "foreignLang": [
+          "Eikö minulla ole henkivakuutusta"
+        ],
+        "_id": "5e0ceddd852a5e1aa82bab82"
+      }
+    ],
+    "__v": 3
+  },
+  {
+    "inProduction": true,
+    "_id": "5e230dcb7730b207408149bb",
+    "slug": "tai-vs-vai",
+    "title": "Tai vs Vai",
+    "tutorial": "<p>Both <em>tai</em> and <em>vai</em> mean <em>or</em> in English, but they’re used in different contexts. </p><h3>tai is only used in statements</h3><p>If it's not a question, use <em>tai</em> :)</p><h3>tai and vai are both used in questions.</h3><p>A good analogy to learn this is to think of check-boxes and radio buttons.</p><p><strong>Checkboxes example</strong>. Use <em>tai</em>, if the expected answer might not be in the list of options provided, or may be multiple options in the list of options. </p><p><strong>Radio buttons example</strong>. Use <em>vai</em>, if the expected answer is expected to be in the list of options provided, and only be one answer. </p><p>In some questions, these uses can depend on context though. For example, Voisitko vapaa-ehtoinen kaksi tai kolme päivää viikossa? Could you volunteer 2 or 3 days a week? Means, the amount of days are suggested, and you could also do more or less (probably). In the example, Voisitko vapaa-ehtoinen kaksi vai kolme päivää viikossa? It means, you can volunteer either 2 or 3 days a week. Not 1, or more than 3. Perhaps there is some rule in the organisation. </p><h3>Exceptions (kind of)</h3><p>In the following example, </p><p>Miten voi tilata tai peruuttaa tilauksen? How can I subscribe or unsubscribe? </p><p>You use <em>tai</em> because even thought it's a question, these are not strictly options. Actually, we are asking how we do this and that. </p><p>In another, Miksi planeetat ovat pyöreitä? Miksi ne eivät ole kuution, pyramidin tai levyn muotoisia? Why are planets round? Why aren't they shaped like cubes, pyramids, or discs? </p><p>This again is a question not really offering you a list of options to select from. So <em>tai</em> is used. </p>",
+    "lang": "Finnish",
+    "questions": [
+      {
+        "nativeLang": [
+          "Yes or no?"
+        ],
+        "foreignLang": [
+          "Kyllä vai ei?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b9e"
+      },
+      {
+        "nativeLang": [
+          "True or false?"
+        ],
+        "foreignLang": [
+          "Totta vai tarua?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b9d"
+      },
+      {
+        "nativeLang": [
+          "You're thirty, right?"
+        ],
+        "foreignLang": [
+          "Olet kolmekymmentä, vai?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b9c"
+      },
+      {
+        "nativeLang": [
+          "Are you buying or are you selling?"
+        ],
+        "foreignLang": [
+          "Ostatko vai myytkö?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b9b"
+      },
+      {
+        "nativeLang": [
+          "Coke or Pepsi?"
+        ],
+        "foreignLang": [
+          "Kokista vai Pepsiä?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b9a"
+      },
+      {
+        "nativeLang": [
+          "Tom is a chiropractor, isn't he?"
+        ],
+        "foreignLang": [
+          "Tom on kiropraktikko, vai?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b99"
+      },
+      {
+        "nativeLang": [
+          "Are you crazy or what?"
+        ],
+        "foreignLang": [
+          "Oletko hullu vai mitä?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b98"
+      },
+      {
+        "nativeLang": [
+          "Are you joking, or are you serious?"
+        ],
+        "foreignLang": [
+          "Pilailetko vai oletko tosissasi?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b97"
+      },
+      {
+        "nativeLang": [
+          "Are you in favor of the plan or not?"
+        ],
+        "foreignLang": [
+          "Kannantatko suunnitelmaa vai et?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b96"
+      },
+      {
+        "nativeLang": [
+          "Are you an adult or a child?"
+        ],
+        "foreignLang": [
+          "Oletko aikuinen vai lapsi?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b95"
+      },
+      {
+        "nativeLang": [
+          "Are you paying together or separately?"
+        ],
+        "foreignLang": [
+          "Maksattekö yhdessä vai erikseen?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b94"
+      },
+      {
+        "nativeLang": [
+          "Which do you prefer, white wine or red wine?"
+        ],
+        "foreignLang": [
+          "Kummasta pidät, valkoviinistä vai punaviinistä?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b93"
+      },
+      {
+        "nativeLang": [
+          "Would you like some tea or some coffee?"
+        ],
+        "foreignLang": [
+          "Haluaisitteko teetä tai kahvia?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b92"
+      },
+      {
+        "nativeLang": [
+          "Do you want some coffee or something?"
+        ],
+        "foreignLang": [
+          "Haluatko kahvia tai jotain?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b91"
+      },
+      {
+        "nativeLang": [
+          "Do you take sugar or milk?"
+        ],
+        "foreignLang": [
+          "Käytätkö sokeria tai maitoa?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b90"
+      },
+      {
+        "nativeLang": [
+          "Do you have any brothers or sisters?"
+        ],
+        "foreignLang": [
+          "Onko sinulla veljiä tai siskoja?"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8f"
+      },
+      {
+        "nativeLang": [
+          "Use it or lose it"
+        ],
+        "foreignLang": [
+          "Käytä tai heitä"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8e"
+      },
+      {
+        "nativeLang": [
+          "It's now or never"
+        ],
+        "foreignLang": [
+          "Nyt tai ei koskaan"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8d"
+      },
+      {
+        "nativeLang": [
+          "Hurry up, or you will be late"
+        ],
+        "foreignLang": [
+          "Pidä kiirettä tai myöhästyt"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8c"
+      },
+      {
+        "nativeLang": [
+          "Hurry up, or you will miss the train"
+        ],
+        "foreignLang": [
+          "Kiirehdi, tai myöhästyt junasta"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8b"
+      },
+      {
+        "nativeLang": [
+          "Sooner or later the wicked are punished"
+        ],
+        "foreignLang": [
+          "Ennemmin tai myöhemmin pahoja rangaistaan"
+        ],
+        "_id": "5e237d9d04f4d40e10475b8a"
+      },
+      {
+        "nativeLang": [
+          "Pics or it didn't happen"
+        ],
+        "foreignLang": [
+          "Kuvia tai sitä ei tapahtunut"
+        ],
+        "_id": "5e237d9d04f4d40e10475b89"
+      },
+      {
+        "nativeLang": [
+          "Speak now, or forever be silent"
+        ],
+        "foreignLang": [
+          "Puhukoon nyt, tai vaietkoon iäksi"
+        ],
+        "_id": "5e237d9d04f4d40e10475b88"
+      },
+      {
+        "nativeLang": [
+          "Give me a day or two"
+        ],
+        "foreignLang": [
+          "Anna minulle päivä tai pari"
+        ],
+        "_id": "5e237d9d04f4d40e10475b87"
+      },
+      {
+        "nativeLang": [
+          "The event takes place rain or shine"
+        ],
+        "foreignLang": [
+          "Tapahtuma järjestetään, satoi tai paistoi"
+        ],
+        "_id": "5e237d9d04f4d40e10475b86"
+      },
+      {
+        "nativeLang": [
+          "Watch your step or you'll get into trouble"
+        ],
+        "foreignLang": [
+          "Ole varovainen tai joudut vaikeuksiin"
+        ],
+        "_id": "5e237d9d04f4d40e10475b85"
+      },
+      {
+        "nativeLang": [
+          "Don't curse or I'll wash your mouth out with soap"
+        ],
+        "foreignLang": [
+          "Älä kiroile, tai pesen suusi saippualla"
+        ],
+        "_id": "5e237d9d04f4d40e10475b84"
+      },
+      {
+        "nativeLang": [
+          "Whether you like it or not, you have to go"
+        ],
+        "foreignLang": [
+          "Halusit tai et, sinun on mentävä"
+        ],
+        "_id": "5e237d9d04f4d40e10475b83"
+      }
+    ],
+    "__v": 2
+  }
+]

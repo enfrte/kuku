@@ -1,0 +1,9 @@
+GET localhost/kuku
+
+### 
+
+GET localhost/kuku/foo
+
+### 
+
+GET localhost/kuku/home

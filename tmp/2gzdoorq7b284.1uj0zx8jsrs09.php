@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<h3>Warning this operation would overwrite a working app, if one exists.</h3>
+
+<p>Copy and paste this string into the input to continue: </p>
+
+<p><?= ($uniqid) ?></p>
+
+<form action="/kuku/install" method="post">
+	<input type="text" name="uniqid">
+	<input type="hidden" name="confirm_uniqid" value="<?= ($uniqid) ?>">
+	<button>Install</button>
+</form>
+
+</body>
+</html>
+
