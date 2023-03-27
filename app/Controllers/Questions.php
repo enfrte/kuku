@@ -118,6 +118,11 @@ class Questions extends BaseController
 		}
     }
 
+	public function update(Base $f3)
+	{
+		echo 'You are here';
+	}
+
     public function delete(Base $f3, $args)
     {
         // Implement delete method

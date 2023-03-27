@@ -18,18 +18,18 @@
 					<label class="form-label">
 						Alternative native phrases
 					</label>
-					<p>{{ @@question['alternative_native_phrase_text'] }}</p>
+					<p>{{ @@question['alternative_native_phrase_text'] | raw }}</p>
 				</div>
 				<div class="col-md-6 mb-3">
 					<label class="form-label">
 						Alternative foreign phrases
 					</label>
-					<p>{{ @@question['alternative_foreign_phrase_text'] }}</p>
+					<p>{{ @@question['alternative_foreign_phrase_text'] | raw }}</p>
 				</div>
 			</true>
 		</div>
 	</check>
-	<form id="questionForm{{ @question['id'] }}"
+	<form id="questionForm{{ @@question['id'] }}"
 		<check if="{{ !empty(@questions) }}">
 			<true>style="display:none;" id="question_container{{ @question['id'] }}"</true>
 		</check>
@@ -48,7 +48,7 @@
 					<true>name="native_phrase"</true>
 					<false>name="questions[{{@question['id']}}][native_phrase]"</false>
 				</check>
-				value="{{@@question['native_phrase']}}" 
+				value="{{ @@question['native_phrase'] }}" 
 				required>
 		</div>
 		<div class="col-md-12 mb-3">
@@ -101,7 +101,10 @@
 		<button 
 			type="button" 
 			class="btn btn-primary mb-3"
-			hx-post="{{ @BASE }}/saveQuestion"
+			<check if="{{ empty(@questions) }}">
+				<true>hx-post="{{ @BASE }}/saveQuestion"</true>
+				<false>hx-post="{{ @BASE }}/updateQuestion"</false>
+			</check>
 			hx-target="main"
 			hx-swap="outerHTML">
 			Save
