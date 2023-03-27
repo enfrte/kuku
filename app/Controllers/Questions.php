@@ -19,7 +19,7 @@ class Questions extends BaseController
 		$lesson->load('id', ['id' => $lesson_id]); 
 		$f3->set('lesson', ['title' => $lesson->title]);
 
-		$questions = $f3->DB->exec(
+		$questions_query = $f3->DB->exec(
 			'SELECT q.*
 			, anp.id AS alternative_native_phrase_id, anp.phrase AS alternative_native_phrase
 			, afp.id AS alternative_foreign_phrase_id, afp.phrase AS alternative_foreign_phrase
@@ -32,6 +32,29 @@ class Questions extends BaseController
 			ORDER BY q.id DESC', 
 			['lesson_id' => $lesson_id]
 		);
+
+		$questions = [];
+
+		foreach ($questions_query as $question) {
+			if ( empty($questions[$question['id']]) ) {
+				$questions[$question['id']] = [
+					'id' => $question['id'],
+					'native_phrase' => $question['native_phrase'],
+					'foreign_phrase' => $question['foreign_phrase'],
+				];
+			}
+
+			$questions[$question['id']]['alternative_native_phrase'][$question['alternative_native_phrase_id']] = $question['alternative_native_phrase'];
+
+			$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = $question['alternative_foreign_phrase'];
+		}
+
+		foreach ($questions as $question_id => $question) {
+			$questions[$question_id]['alternative_native_phrase_text'] = implode("<br>", $question['alternative_native_phrase']);
+			$questions[$question_id]['alternative_foreign_phrase_text'] = implode("<br>", $question['alternative_foreign_phrase']);
+			$questions[$question_id]['alternative_native_phrase_textarea'] = implode("\n", $question['alternative_native_phrase']);
+			$questions[$question_id]['alternative_foreign_phrase_textarea'] = implode("\n", $question['alternative_foreign_phrase']);
+		}
 
 		$f3->set('questions', $questions);
 		
@@ -52,7 +75,47 @@ class Questions extends BaseController
 
     public function save(Base $f3)
     {
-		$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
+		try {
+			$f3->DB->begin();
+
+			$questionsModel = new DB\SQL\Mapper($f3->DB,'questions');
+			$questionsModel->copyFrom('POST');
+			$questionsModel->save();
+
+			$sentences = explode(PHP_EOL, $_POST['alternative_native_phrase']);
+
+			foreach ($sentences as $sentence) {
+				$sentence = trim($sentence);
+				
+				if (empty($sentence)) continue;
+
+				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_native_phrase');
+				$mapper->question_id = $questionsModel->_id;
+				$mapper->phrase = $sentence;
+				$mapper->save();
+			}
+
+			$sentences = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
+
+			foreach ($sentences as $sentence) {
+				$sentence = trim($sentence);
+				
+				if (empty($sentence)) continue;
+
+				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_foreign_phrase');
+				$mapper->question_id = $questionsModel->_id;
+				$mapper->phrase = $sentence;
+				$mapper->save();
+			}
+
+			$f3->DB->commit();
+		} 
+		catch (\Throwable $th) {
+			echo '<pre>'.$th->getMessage().'</pre>';
+		}
+		finally {
+			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
+		}
     }
 
     public function delete(Base $f3, $args)

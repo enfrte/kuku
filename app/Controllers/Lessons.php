@@ -67,7 +67,6 @@ class Lessons
 	}
 	
 	public function update(Base $f3, $args) {
-
 		/* $slug = $formData['course_id'] . '-' . strtolower(str_replace(' ', '-', $formData['title']));
 		$result = $this->db->exec("UPDATE lessons SET title=?, slug=?, tutorial=?, course_id=?, level=? WHERE id=?", $formData['title'], $slug, $formData['tutorial'], $formData['course_id'], $formData['level'], $id);
 		echo json_encode($result); */

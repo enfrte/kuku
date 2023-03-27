@@ -18,6 +18,9 @@
 		.dropdown-item, .nav-item {
 			cursor: pointer;
 		}
+		.kuku-textarea-135 {
+			height: 135px;
+		}
 	</style>
 </head>
 <body data-bs-theme="dark">
