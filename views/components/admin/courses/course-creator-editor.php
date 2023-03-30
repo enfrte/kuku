@@ -1,5 +1,3 @@
-<main class="container" data-bs-theme="light">
-
 <check if="{{ !empty(@course) }}">
 	<true><h4 class="pt-3">Edit: {{ @@course.title }}</h4></true>
 	<false><h4 class="pt-3">Make a new course</h4></false>
@@ -55,11 +53,9 @@
 	<div class="mb-3">
 		<button type="submit" class="btn btn-primary" 
 			hx-post="{{ @BASE }}{{ empty(@course.id) ? '/saveCourse' : '/updateCourse' }}"
-			hx-target="main" 
-			hx-swap="outerHTML">
+			hx-target="main">
 			{{ !empty(@course.id) ? 'Update' : 'Create' }}
 		</button>
 	</div>
 </form>
 
-</main>

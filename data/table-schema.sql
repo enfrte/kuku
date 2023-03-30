@@ -9,9 +9,9 @@
 	TODO: See the update script to non-destructively modify the tables. 
 */
 
-PRAGMA STRICT = ON;
-PRAGMA foreign_keys = ON;
-PRAGMA ignore_check_constraints = FALSE;
+PRAGMA STRICT = OFF;
+PRAGMA foreign_keys = OFF;
+PRAGMA ignore_check_constraints = TRUE;
 
 
 DROP TABLE IF EXISTS courses;
@@ -64,6 +64,10 @@ CREATE TABLE alternative_foreign_phrase (
 	phrase TEXT NOT NULL CHECK(LENGTH(phrase) <= 600),
 	FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
+
+PRAGMA STRICT = ON;
+PRAGMA foreign_keys = ON;
+PRAGMA ignore_check_constraints = FALSE;
 
 /* 
 DROP TABLE IF EXISTS sentences;

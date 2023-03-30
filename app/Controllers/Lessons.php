@@ -30,7 +30,7 @@ class Lessons
 		));
 		
 		$f3->set('course_id', $course_id);
-		echo Template::instance()->render('views/components/admin/main/lessons/lesson-list.php');
+		echo Template::instance()->render('views/components/admin/lessons/lesson-list.php');
 	}
 	
 	public function show(Base $f3, $args) {
@@ -48,7 +48,7 @@ class Lessons
 		}
 
 		$f3->set('course_id', $args['course_id']);
-		echo \Template::instance()->render('views/components/admin/main/lessons/lesson-creator.php');
+		echo \Template::instance()->render('views/components/admin/lessons/lesson-creator-editor.php');
 	}
 
 	public function save(Base $f3) {
@@ -89,7 +89,7 @@ class Lessons
 			$this->index($f3, ['course_id' => $_GET['course_id']]);
 		} 
 		catch (\Throwable $th) {
-			echo '<main><pre>'.$th->getMessage().'</pre></main>';
+			echo '<pre>'.$th->getMessage().'</pre>';
 		}
 	}
 	  

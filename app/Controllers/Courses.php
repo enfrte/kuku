@@ -16,12 +16,12 @@ class Courses extends BaseController
 		$f3->set('courses',$f3->DB->exec(
 			'SELECT * FROM courses WHERE deleted = 0'
 		));
-		echo Template::instance()->render('views/components/admin/main/courses/course-list.php');
+		echo Template::instance()->render('views/components/admin/courses/course-list.php');
 	}
 
 	public function create()
 	{
-		echo Template::instance()->render('views/components/admin/main/courses/course-creator-editor.php');
+		echo Template::instance()->render('views/components/admin/courses/course-creator-editor.php');
 	}
 
 	public function edit(Base $f3, $args)
@@ -29,7 +29,7 @@ class Courses extends BaseController
 		$course = new CoursesData;
 		$course->load( $f3, $args['id'] );
 		$f3->set('course', $course->cast());
-		echo Template::instance()->render('views/components/admin/main/courses/course-creator-editor.php');
+		echo Template::instance()->render('views/components/admin/courses/course-creator-editor.php');
 	}
 
 	public function save(Base $f3)
@@ -46,7 +46,7 @@ class Courses extends BaseController
 			$course->save();
 		} 
 		catch (\Throwable $th) {
-			echo '<main><pre>'.$th->getMessage().'</pre></main>';
+			echo '<pre>'.$th->getMessage().'</pre>';
 		}
 		finally {
 			$this->index($f3);
@@ -102,7 +102,7 @@ class Courses extends BaseController
 			$this->index($f3);
 		} 
 		catch (\Throwable $th) {
-			echo '<main><pre>'.$th->getMessage().'</pre></main>';
+			echo '<pre>'.$th->getMessage().'</pre>';
 		}
     }
 }

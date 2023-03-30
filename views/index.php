@@ -23,7 +23,7 @@
 		}
 	</style>
 </head>
-<body data-bs-theme="dark">
+<body data-bs-theme="light">
 
 <nav class="container">
 <check if="{{ !empty(@admin) }}">
@@ -32,15 +32,13 @@
 			<li 
 				class="nav-item nav-link" 
 				hx-get="{{ @BASE }}/courses" 
-				hx-target="main" 
-				hx-swap="outerHTML">
+				hx-target="main">
 				Courses
 			</li>
 			<li 
 				class="nav-item nav-link" 
 				hx-get="{{ @BASE }}/createCourse" 
-				hx-target="main" 
-				hx-swap="outerHTML">
+				hx-target="main">
 				New Course
 			</li>
 		</ul>
@@ -55,8 +53,7 @@
 	class="container"
 	hx-get="{{ @BASE }}/welcome" 
 	hx-trigger="load" 
-	hx-target="this" 
-	hx-swap="outerHTML">
+	hx-target="this">
 </main>
 
 </body>

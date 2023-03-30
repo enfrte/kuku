@@ -2,27 +2,28 @@
 	<div class="card-body">
 
 		<check if="{{ !empty(@questions) }}">
-			<div id="questionContainer{{ @question['id'] }}">
+			<div id="questionContainer{{ @question['id'] }}" class="row">
 				<true>
-					<div class="col-md-6 mb-3">
+					<div class="col-6 mb-3">
 						<label class="form-label">
 							Native Phrase
 						</label>
 						<p>{{ @question['native_phrase'] }}</p>
 					</div>
-					<div class="col-md-6 mb-3">
+					<div class="col-6 mb-3">
 						<label class="form-label">
 							Foreign Phrase
 						</label>
 						<p>{{ @question['foreign_phrase'] }}</p>
 					</div>
-					<div class="col-md-6 mb-3">
+					<hr>
+					<div class="col-6 mb-3">
 						<label class="form-label">
 							Alternative native phrases
 						</label>
 						<p>{{ @@question['alternative_native_phrase_text'] | raw }}</p>
 					</div>
-					<div class="col-md-6 mb-3">
+					<div class="col-6 mb-3">
 						<label class="form-label">
 							Alternative foreign phrases
 						</label>
@@ -107,8 +108,7 @@
 					<true>hx-post="{{ @BASE }}/saveQuestion"</true>
 					<false>hx-post="{{ @BASE }}/updateQuestion"</false>
 				</check>
-				hx-target="main"
-				hx-swap="outerHTML">
+				hx-target="main">
 				Save
 			</button>
 
@@ -128,8 +128,7 @@
 				type="button" 
 				class="btn btn-danger me-2"
 				hx-delete="{{ @BASE }}/deleteQuestion/{{ @question['id'] }}/{{ @lesson_id }}"
-				hx-target="main"
-				hx-swap="outerHTML">
+				hx-target="main">
 				Delete
 			</button>
 		</check>

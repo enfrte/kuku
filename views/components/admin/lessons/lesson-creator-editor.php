@@ -1,5 +1,3 @@
-<main class="container">
-
 <form>
 	<input type="hidden" id="course_id" name="course_id" value="{{ @@course_id }}">
 
@@ -30,11 +28,8 @@
 			type="submit" 
 			class="btn btn-primary" 
 			hx-post="{{ @BASE }}/saveLesson" 
-			hx-target="main" 
-			hx-swap="outerHTML">
+			hx-target="main">
 			Save
 		</button>
 	</div>
 </form>
-
-</main>

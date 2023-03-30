@@ -1,5 +1,3 @@
-<main class="container">
-
 <h2>Questions for</h2>
 <h4 class="pt-5">{{ @lesson.title }}</h4>
 
@@ -17,10 +15,8 @@
 </div>
 
 <repeat group="{{ @questions }}" value="{{ @question }}">
-	<include href="views/components/admin/main/questions/question-creator-editor.php" />
+	<include href="views/components/admin/questions/question-creator-editor.php" />
 </repeat>
-
-</main>
 
 <script>
 

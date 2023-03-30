@@ -60,13 +60,13 @@ class Questions extends BaseController
 		$f3->set('questions', $questions);
 		
 		$f3->set('lesson_id', $lesson_id);
-		echo Template::instance()->render('views/components/admin/main/questions/question-list-editor.php');
+		echo Template::instance()->render('views/components/admin/questions/question-list-editor.php');
 	}
 
     public function create(Base $f3, $args)
     {
 		$f3->set('lesson_id', $args['lesson_id']);
-		echo Template::instance()->render('views/components/admin/main/questions/question-creator-editor.php');
+		echo Template::instance()->render('views/components/admin/questions/question-creator-editor.php');
     }
 
     public function read(Base $f3, $args)
@@ -83,29 +83,29 @@ class Questions extends BaseController
 			$questionsModel->copyFrom('POST');
 			$questionsModel->save();
 
-			$sentences = explode(PHP_EOL, $_POST['alternative_native_phrase']);
+			$altNativePhrases = explode(PHP_EOL, $_POST['alternative_native_phrase']);
 
-			foreach ($sentences as $sentence) {
-				$sentence = trim($sentence);
+			foreach ($altNativePhrases as $altNativePhrase) {
+				$altNativePhrase = trim($altNativePhrase);
 				
-				if (empty($sentence)) continue;
+				if (empty($altNativePhrase)) continue;
 
 				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_native_phrase');
 				$mapper->question_id = $questionsModel->_id;
-				$mapper->phrase = $sentence;
+				$mapper->phrase = $altNativePhrase;
 				$mapper->save();
 			}
 
-			$sentences = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
+			$altForeignPhrases = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
 
-			foreach ($sentences as $sentence) {
-				$sentence = trim($sentence);
+			foreach ($altForeignPhrases as $altForeignPhrase) {
+				$altForeignPhrase = trim($altForeignPhrase);
 				
-				if (empty($sentence)) continue;
+				if (empty($altForeignPhrase)) continue;
 
 				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_foreign_phrase');
 				$mapper->question_id = $questionsModel->_id;
-				$mapper->phrase = $sentence;
+				$mapper->phrase = $altForeignPhrase;
 				$mapper->save();
 			}
 
