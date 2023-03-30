@@ -46,7 +46,7 @@ $f3->route('GET /updateLesson/@id','Controllers\Lessons->update');
 $f3->route('GET /questions/@lesson_id','Controllers\Questions->index');
 $f3->route('GET /createQuestion/@lesson_id','Controllers\Questions->create'); 
 $f3->route('POST /saveQuestion','Controllers\Questions->save'); 
-$f3->route('GET /deleteQuestion/@question_id','Controllers\Questions->delete'); 
+$f3->route('DELETE /deleteQuestion/@question_id/@lesson_id','Controllers\Questions->delete'); 
 $f3->route('POST /updateQuestion','Controllers\Questions->update'); 
 
 // Home

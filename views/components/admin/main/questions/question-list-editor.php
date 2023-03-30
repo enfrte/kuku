@@ -25,7 +25,7 @@
 <script>
 
 	if (typeof editButtons != 'undefined') {
-		// To remove the event listener
+		// Remove the event listener
 		editButtons.forEach(button => {
 			button.removeEventListener('click', handleEditButtonClick);
 		});
@@ -33,6 +33,10 @@
 
 	var editButtons = document.querySelectorAll('.edit-button');
 
+	editButtons.forEach(button => {
+		button.addEventListener('click', handleEditButtonClick);
+	});
+	
 	function handleEditButtonClick() {
 		const question_id = this.dataset.editButton;
 		const form = document.getElementById('questionForm'+question_id);
@@ -42,9 +46,5 @@
 		question.style.display = 'none';
 		this.style.display = 'none';
 	}
-
-	editButtons.forEach(button => {
-		button.addEventListener('click', handleEditButtonClick);
-	});
 
 </script>

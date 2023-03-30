@@ -4,6 +4,7 @@ namespace Controllers;
 
 use DB;
 use Template;
+use Models\Questions\QuestionsData;
 use Exception;
 use Base;
 
@@ -12,7 +13,7 @@ class Questions extends BaseController
 	public function index(Base $f3, $args) {
 		$lesson_id = $args['lesson_id'] ?? '';
 		if (empty($lesson_id)) {
-			throw new Exception("Course id required");
+			throw new Exception("lesson id required");
 		}
 
 		$lesson = new DB\SQL\Mapper($f3->DB,'lessons');
@@ -125,6 +126,10 @@ class Questions extends BaseController
 
     public function delete(Base $f3, $args)
     {
-        // Implement delete method
+		$course = new QuestionsData;
+		$course->load( $f3, $args['question_id'] );
+		$course->erase();
+
+		$this->index($f3, $args);
     }
 }
