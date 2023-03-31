@@ -23,7 +23,7 @@
 		}
 	</style>
 </head>
-<body data-bs-theme="light">
+<body data-bs-theme="dark">
 
 <nav class="container">
 <check if="{{ !empty(@admin) }}">

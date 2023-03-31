@@ -63,13 +63,13 @@ class Courses extends BaseController
 		$in_production = !empty($args['in_production']) ? $args['in_production'] : 0;
 
 		$f3->DB->exec(
-			'UPDATE courses 
-			SET title = :title, 
+				'UPDATE courses 
+				SET title = :title, 
 				description = :description,
 				slug = :slug,
 				version = :version,
 				in_production = :in_production
-			WHERE id = :id', 
+				WHERE id = :id', 
 			[
 				':id' => $_POST['id'],
 				':title' => $_POST['title'], 

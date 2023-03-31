@@ -54,7 +54,7 @@
 					</li>	
 					<li 
 						class="dropdown-item" 
-						hx-get="{{ @BASE }}/updateLesson/{{ @lesson.id }}"
+						hx-get="{{ @BASE }}/editLesson/{{ @lesson.id }}"
 						hx-target="main">
 						Edit lesson details
 					</li>

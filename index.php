@@ -38,8 +38,9 @@ $f3->route('POST /updateCourse','Controllers\Courses->update');
 $f3->route('GET /lessons/@course_id','Controllers\Lessons->index');
 $f3->route('GET /createLesson/@course_id','Controllers\Lessons->create'); 
 $f3->route('POST /saveLesson','Controllers\Lessons->save'); 
+$f3->route('GET /editLesson/@id','Controllers\Lessons->edit'); 
 $f3->route('GET /deleteLesson/@lesson_id','Controllers\Lessons->delete'); 
-$f3->route('GET /updateLesson/@id','Controllers\Lessons->update'); 
+$f3->route('POST /updateLesson','Controllers\Lessons->update'); 
 
 // Questions
 

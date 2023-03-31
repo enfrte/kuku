@@ -1,23 +1,61 @@
+<check if="{{ !empty(@lesson) }}">
+	<true><h4 class="pt-3">Edit: {{ @lesson.title }}</h4></true>
+	<false><h4 class="pt-3">Make a new lesson</h4></false>
+</check>
+
 <form>
-	<input type="hidden" id="course_id" name="course_id" value="{{ @@course_id }}">
+	<check if="{{ !empty(@lesson) }}">
+		<true>
+			<input type="hidden" name="id" value="{{ @lesson.id }}">
+			<input type="hidden" name="course_id" value="{{ @lesson.course_id }}">
+		</true>
+		<false>
+			<input type="hidden" name="course_id" value="{{ @@course_id }}">
+		</false>
+	</check>
 
 	<div class="mb-3">
 		<label for="title" class="form-label">Title:</label>
-		<input type="text" id="title" name="title" class="form-control" required maxlength="255">
+		<input type="text" id="title" name="title" value="{{ @@lesson.title }}" class="form-control" maxlength="255" required>
 	</div>
 
 	<div class="mb-3">
 		<label for="tutorial" class="form-label">Tutorial:</label>
-		<textarea id="tutorial" name="tutorial" class="form-control" maxlength="99999"></textarea>
+		<textarea id="tutorial" name="tutorial" class="form-control" maxlength="99999">{{ @@lesson.tutorial }}</textarea>
 	</div>
 
 	<div class="mb-3">
 		<label for="level" class="form-label">Level:</label>
-		<input type="number" id="level" name="level" class="form-control" value="0" required>
+		<input 
+			type="number" 
+			id="level" 
+			name="level" 
+			class="form-control" 
+			<check if="{{ empty(@lesson) }}">
+				<true>
+					value="0" 
+				</true>
+				<false>
+					value="{{ @lesson.level }}"
+				</false>
+			</check> 
+			required>
 	</div>
 
 	<div class="form-check mb-3">
-		<input class="form-check-input" type="checkbox" name="in_production" value="0" id="in_production">
+		<input 
+			class="form-check-input" 
+			type="checkbox" 
+			name="in_production" 
+			<check if="{{ empty(@lesson) }}">
+				<true>
+					value="0" 
+				</true>
+				<false>
+					value="{{ @lesson.in_production }}"
+				</false>
+			</check> 
+			id="in_production">
 		<label class="form-check-label" for="in_production">
 			Publish lesson
 		</label>
@@ -27,9 +65,19 @@
 		<button 
 			type="submit" 
 			class="btn btn-primary" 
-			hx-post="{{ @BASE }}/saveLesson" 
+			<check if="{{ empty(@lesson) }}">
+				<true>
+					hx-post="{{ @BASE }}/saveLesson" 
+				</true>
+				<false>
+					hx-post="{{ @BASE }}/updateLesson" 
+				</false>
+			</check>
 			hx-target="main">
-			Save
+			<check if="{{ empty(@lesson) }}">
+				<true>Save</true>
+				<false>Update</false>
+			</check>
 		</button>
 	</div>
 </form>

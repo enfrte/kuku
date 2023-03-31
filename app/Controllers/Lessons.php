@@ -4,7 +4,7 @@ namespace Controllers;
 
 use DB;
 use Web;
-//use Models\Lessons\LessonData;
+use Models\Lessons\LessonsData;
 use Template;
 use Exception;
 use Base;
@@ -51,6 +51,14 @@ class Lessons
 		echo \Template::instance()->render('views/components/admin/lessons/lesson-creator-editor.php');
 	}
 
+	public function edit(Base $f3, $args)
+	{
+		$lesson = new LessonsData;
+		$lesson->load( $f3, $args['id'] );
+		$f3->set('lesson', $lesson->cast());
+		echo \Template::instance()->render('views/components/admin/lessons/lesson-creator-editor.php');
+	}
+
 	public function save(Base $f3) {
 		try {
 			$model = new DB\SQL\Mapper($f3->DB,'lessons');
@@ -67,6 +75,31 @@ class Lessons
 	}
 	
 	public function update(Base $f3, $args) {
+		$in_production = !empty($args['in_production']) ? $args['in_production'] : 0;
+
+		$f3->DB->exec(
+				'UPDATE lessons 
+				SET title = :title, 
+				slug = :slug,
+				tutorial = :tutorial,
+				course_id = :course_id,
+				level = :level,
+				in_production = :in_production
+				WHERE id = :id', 
+			[
+				':id' => $_POST['id'],
+				':title' => $_POST['title'], 
+				':slug' => Web::instance()->slug($_POST['title']),
+				':tutorial' => $_POST['tutorial'],
+				':course_id' => $_POST['course_id'],
+				':level' => $_POST['level'],
+				':in_production' => $in_production,
+			]
+		);
+
+		$args['course_id'] = $_POST['course_id'];
+		$this->index($f3, $args);
+
 		/* $slug = $formData['course_id'] . '-' . strtolower(str_replace(' ', '-', $formData['title']));
 		$result = $this->db->exec("UPDATE lessons SET title=?, slug=?, tutorial=?, course_id=?, level=? WHERE id=?", $formData['title'], $slug, $formData['tutorial'], $formData['course_id'], $formData['level'], $id);
 		echo json_encode($result); */

@@ -14,5 +14,4 @@ kuku means cuckoo in [pandunia](https://pandunia.info).
 
 ## Todo
 
-Finish the backend. 
-Do the front end. 
+Next: .
