@@ -1,4 +1,5 @@
-<h2 class="pt-5 pb-3">{{ @course.title }}</h2>
+<h2>Course</h2>
+<h3 class="pb-3">{{ @course.title }}</h3>
 
 <button 
 	type="button" 
@@ -9,6 +10,8 @@
 </button>
 
 <check if="{{ empty(@lessons) }}"><true><h4 class="pt-5">No Lessons</h4></true></check>
+
+<h3>Lessons</h3>
 
 <repeat group="{{ @lessons }}" value="{{ @lesson }}">
 	<div class="card mb-4">

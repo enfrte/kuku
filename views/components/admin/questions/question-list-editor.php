@@ -1,5 +1,12 @@
-<h2>Questions for</h2>
-<h4 class="pt-5">{{ @lesson.title }}</h4>
+<button 
+	hx-get="{{ @BASE }}/lessons/{{ @lesson_id }}" 
+	type="button" 
+	class="btn btn-link mb-3">
+	⟵ Back
+</button>
+
+<h2>Lesson</h2>
+<h4 class="pb-3">{{ @lesson.title }}</h4>
 
 <button 
 	type="button" 
@@ -9,6 +16,8 @@
 	hx-swap="innerHTML">
 	Create new question
 </button>
+
+<h2>Questions</h2>
 
 <div id="newQuestion">
 	<check if="{{ empty(@questions) }}"><true><h3 class="pt-5">No questions</h3></true></check>
