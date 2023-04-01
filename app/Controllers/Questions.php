@@ -74,35 +74,8 @@ class Questions extends BaseController
 		try {
 			$f3->DB->begin();
 
-			$questionsModel = new DB\SQL\Mapper($f3->DB,'questions');
-			$questionsModel->copyFrom('POST');
-			$questionsModel->save();
-
-			$altNativePhrases = explode(PHP_EOL, $_POST['alternative_native_phrase']);
-
-			foreach ($altNativePhrases as $altNativePhrase) {
-				$altNativePhrase = trim($altNativePhrase);
-				
-				if (empty($altNativePhrase)) continue;
-
-				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_native_phrase');
-				$mapper->question_id = $questionsModel->_id;
-				$mapper->phrase = $altNativePhrase;
-				$mapper->save();
-			}
-
-			$altForeignPhrases = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
-
-			foreach ($altForeignPhrases as $altForeignPhrase) {
-				$altForeignPhrase = trim($altForeignPhrase);
-				
-				if (empty($altForeignPhrase)) continue;
-
-				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_foreign_phrase');
-				$mapper->question_id = $questionsModel->_id;
-				$mapper->phrase = $altForeignPhrase;
-				$mapper->save();
-			}
+			$questionData = new QuestionsData();
+			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
 		} 
@@ -125,24 +98,33 @@ class Questions extends BaseController
 			$question->erase();
 
 			// Update = create a new entry with the current (old) form data.
-			$this->save($f3);
+			$questionData = new QuestionsData();
+			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
 		} 
 		catch (\Throwable $th) {
-			//throw $th;
+			echo '<pre>'.$th->getMessage().'</pre>';
+		}
+		finally {
+			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
 		}
 
 	}
 
     public function delete(Base $f3, $args)
     {
-		$question = new QuestionsData;
-		$question->load( $f3, $args['question_id'] );
-		$question->erase();
+		try {
+			$question = new QuestionsData;
+			$question->load( $f3, $args['question_id'] );
+			$question->erase();
 
-		// What about the alt stuff? Does the delete cascade work?
+			// What about the alt stuff? Does the delete cascade work?
 
-		$this->index($f3, $args);
+			$this->index($f3, $args);
+		} 
+		catch (\Throwable $th) {
+			//throw $th;
+		}
     }
 }
