@@ -8,6 +8,7 @@ $f3->set('AUTOLOAD','app/');
 $f3->set('INSTALL_FOLDER', 'kuku');
 $f3->set('APPNAME', 'kuku');
 $f3->set('DB', new DB\SQL('sqlite:'.__DIR__.'/data/'.$f3->APPNAME.'_db.sqlite'));
+$f3->DB->exec("PRAGMA foreign_keys = ON;");
 $f3->set('APP_PATH', $f3->ROOT . DIRECTORY_SEPARATOR . $f3->INSTALL_FOLDER );
 $f3->set('SCHEMA_FILE', $f3->APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
 
@@ -30,8 +31,8 @@ $f3->route('GET /courses','Controllers\Courses->index');
 $f3->route('GET /createCourse','Controllers\Courses->create'); 
 $f3->route('POST /saveCourse','Controllers\Courses->save'); 
 $f3->route('GET /editCourse/@id','Controllers\Courses->edit'); 
-$f3->route('GET /deleteCourse/@id','Controllers\Courses->delete'); 
 $f3->route('POST /updateCourse','Controllers\Courses->update'); 
+$f3->route('GET /deleteCourse/@id','Controllers\Courses->delete'); 
 
 // Lessons
 
@@ -39,16 +40,17 @@ $f3->route('GET /lessons/@course_id','Controllers\Lessons->index');
 $f3->route('GET /createLesson/@course_id','Controllers\Lessons->create'); 
 $f3->route('POST /saveLesson','Controllers\Lessons->save'); 
 $f3->route('GET /editLesson/@id','Controllers\Lessons->edit'); 
-$f3->route('GET /deleteLesson/@lesson_id','Controllers\Lessons->delete'); 
 $f3->route('POST /updateLesson','Controllers\Lessons->update'); 
+$f3->route('GET /deleteLesson/@lesson_id','Controllers\Lessons->delete'); 
 
 // Questions
 
 $f3->route('GET /questions/@lesson_id','Controllers\Questions->index');
 $f3->route('GET /createQuestion/@lesson_id','Controllers\Questions->create'); 
 $f3->route('POST /saveQuestion','Controllers\Questions->save'); 
-$f3->route('DELETE /deleteQuestion/@question_id/@lesson_id','Controllers\Questions->delete'); 
+$f3->route('GET /editQuestion/@id','Controllers\Questions->edit'); 
 $f3->route('POST /updateQuestion','Controllers\Questions->update'); 
+$f3->route('DELETE /deleteQuestion/@question_id/@lesson_id','Controllers\Questions->delete'); 
 
 // Home
 

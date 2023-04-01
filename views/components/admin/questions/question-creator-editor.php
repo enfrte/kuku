@@ -38,66 +38,55 @@
 			</check>
 			>
 			<input type="hidden" name="lesson_id" value="{{ @lesson_id }}">
+			<input type="hidden" name="question_id" value="{{ @@question['id'] }}">
 			<div class="col-md-12 mb-3">
 				<label 
-					for="native_phrase{{@@question['id']}}" 
+					for="native_phrase{{ @@question['id'] }}" 
 					class="form-label">
 					Native Phrase
 				</label>
 				<input 
 					class="form-control" 
-					id="native_phrase{{@@question['id']}}" 
-					<check if="{{ empty(@questions) }}">
-						<true>name="native_phrase"</true>
-						<false>name="questions[{{@question['id']}}][native_phrase]"</false>
-					</check>
+					id="native_phrase{{ @@question['id'] }}" 
+					name="native_phrase"
 					value="{{ @@question['native_phrase'] }}" 
 					required>
 			</div>
 			<div class="col-md-12 mb-3">
 				<label 
-					for="foreign_phrase{{@@question['id']}}" 
+					for="foreign_phrase{{ @@question['id'] }}" 
 					class="form-label">
 					Foreign Phrase
 				</label>
 				<input type="text" 
 					class="form-control" 
-					id="foreign_phrase{{@@question['id']}}" 
-					<check if="{{ empty(@questions) }}">
-						<true>name="foreign_phrase"</true>
-						<false>name="questions[{{@@question['id']}}][foreign_phrase]"</false>
-					</check>
+					id="foreign_phrase{{ @@question['id'] }}" 
+					name="foreign_phrase"
 					value="{{@@question['foreign_phrase']}}" 
 					required>
 			</div>
 
 			<div class="col-md-12 mb-3">
 				<label 
-					for="alternative_native_phrase{{@@question['id']}}" 
+					for="alternative_native_phrase{{ @@question['id'] }}" 
 					class="form-label">
 					Alternative native phrases
 				</label>
 				<textarea 
 					class="form-control kuku-textarea-135" 
-					<check if="{{ empty(@questions) }}">
-						<true>name="alternative_native_phrase"</true>
-						<false>name="questions[{{@@question['id']}}][alternative_native_phrase]"</false>
-					</check>
+					name="alternative_native_phrase"
 					id="alternative_native_phrase{{@@question['id']}}">{{@@question['alternative_native_phrase_textarea']}}</textarea>
 			</div>
 		
 			<div class="col-md-12 mb-3">
 				<label 
-					for="alternative_foreign_phrase{{@@question['id']}}" 
+					for="alternative_foreign_phrase{{ @@question['id'] }}" 
 					class="form-label">
 					Alternative foreign phrases
 				</label>
 				<textarea 
 					class="form-control kuku-textarea-135" 
-					<check if="{{ empty(@questions) }}">
-						<true>name="alternative_foreign_phrase"</true>
-						<false>name="questions[{{@@question['id']}}][alternative_foreign_phrase]"</false>
-					</check>
+					name="alternative_foreign_phrase"
 					id="alternative_foreign_phrase{{@@question['id']}}">{{@@question['alternative_foreign_phrase_textarea']}}</textarea>
 			</div>
 

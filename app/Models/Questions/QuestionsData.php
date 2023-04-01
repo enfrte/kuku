@@ -16,12 +16,8 @@ class QuestionsData
 	 */
 	private $question;
 
-    public function __construct(/* $db */)
+    public function __construct()
     {
-        /* $table = 'questions';
-        $columns = ['id', 'title', 'description', 'language', 'instruction_language', 'slug', 'version', 'in_production'];
-        $primaryKeys = ['id'];
-        parent::__construct($db, $table, $columns, $primaryKeys); */
     }
 
 	/**
@@ -31,16 +27,6 @@ class QuestionsData
 	 */
 	public function validateForm()
 	{
-		/* $formValidation = new FormValidation();
-		$formValidation->setFilterNotMatching(['id', 'title', 'description', 'language', 'instruction_language', 'slug', 'version', 'in_production']);
-		$formValidation->setRequired(['title', 'language', 'instruction_language', 'in_production']);
-		$formValidation->setTextLengthLessThan([
-			'title' => 255, 
-			'description' => 255, 
-			'language' => 4, 
-			'instruction_language' => 4,
-		]);
-		$formValidation->validate(); */
 	}
 
 
@@ -92,7 +78,6 @@ class QuestionsData
 		$this->question = $question;
 		return $this;
 	}
-
 
 
 }

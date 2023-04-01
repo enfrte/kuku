@@ -69,11 +69,6 @@ class Questions extends BaseController
 		echo Template::instance()->render('views/components/admin/questions/question-creator-editor.php');
     }
 
-    public function read(Base $f3, $args)
-    {
-        // Implement read method
-    }
-
     public function save(Base $f3)
     {
 		try {
@@ -119,16 +114,34 @@ class Questions extends BaseController
 		}
     }
 
-	public function update(Base $f3)
+	public function update(Base $f3, $args)
 	{
-		echo 'You are here';
+		try {
+			$f3->DB->begin();
+			
+			// It's quite a complicated process to update questions and its linking tables, so lets just delete the old values.
+			$question = new QuestionsData;
+			$question->load( $f3, $_POST['question_id'] );
+			$question->erase();
+
+			// Update = create a new entry with the current (old) form data.
+			$this->save($f3);
+
+			$f3->DB->commit();
+		} 
+		catch (\Throwable $th) {
+			//throw $th;
+		}
+
 	}
 
     public function delete(Base $f3, $args)
     {
-		$course = new QuestionsData;
-		$course->load( $f3, $args['question_id'] );
-		$course->erase();
+		$question = new QuestionsData;
+		$question->load( $f3, $args['question_id'] );
+		$question->erase();
+
+		// What about the alt stuff? Does the delete cascade work?
 
 		$this->index($f3, $args);
     }

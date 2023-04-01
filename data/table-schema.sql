@@ -9,14 +9,25 @@
 	TODO: See the update script to non-destructively modify the tables. 
 */
 
+PRAGMA auto_vacuum = FULL; /* Prevents the reuse of primary key values after deleting a row */
+
+/* Temporarily disable the following for resetting database - See bottom of the file for re-enabling*/
 PRAGMA STRICT = OFF;
 PRAGMA foreign_keys = OFF;
 PRAGMA ignore_check_constraints = TRUE;
 
-
 DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS lessons;
+DROP TABLE IF EXISTS questions;
+DROP TABLE IF EXISTS alternative_native_phrase;
+DROP TABLE IF EXISTS alternative_foreign_phrase;
+
+PRAGMA STRICT = ON;
+PRAGMA foreign_keys = ON;
+PRAGMA ignore_check_constraints = FALSE;
+
 CREATE TABLE courses (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	title TEXT NOT NULL CHECK(LENGTH(title) <= 255),
 	description TEXT CHECK(LENGTH(description) <= 999),
 	language TEXT NOT NULL CHECK(LENGTH(language) <= 3),
@@ -25,11 +36,10 @@ CREATE TABLE courses (
 	version INTEGER NOT NULL,
 	in_production INTEGER DEFAULT 0 NOT NULL CHECK(in_production <= 1),
 	deleted INTEGER DEFAULT 0 NOT NULL CHECK(deleted <= 1)
-) ;
+);
 
-DROP TABLE IF EXISTS lessons;
 CREATE TABLE lessons (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	title TEXT NOT NULL CHECK(LENGTH(title) <= 255),
 	slug TEXT NOT NULL CHECK(LENGTH(slug) <= 255),
 	tutorial TEXT CHECK(LENGTH(tutorial) <= 99999),
@@ -40,56 +50,25 @@ CREATE TABLE lessons (
 	FOREIGN KEY (course_id) REFERENCES courses(id) 
 );
 
-DROP TABLE IF EXISTS questions;
 CREATE TABLE questions (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	lesson_id INTEGER NOT NULL,
 	native_phrase TEXT NOT NULL CHECK(LENGTH(native_phrase) <= 600),
 	foreign_phrase TEXT NOT NULL CHECK(LENGTH(foreign_phrase) <= 600),
 	FOREIGN KEY (lesson_id) REFERENCES lessons(id) 
 );
 
-DROP TABLE IF EXISTS alternative_native_phrase;
 CREATE TABLE alternative_native_phrase (
-	id INTEGER PRIMARY KEY,
-	question_id INTEGER NOT NULL,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	phrase TEXT NOT NULL CHECK(LENGTH(phrase) <= 600),
+	question_id INTEGER NOT NULL,
 	FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS alternative_foreign_phrase;
 CREATE TABLE alternative_foreign_phrase (
-	id INTEGER PRIMARY KEY,
-	question_id INTEGER NOT NULL,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	phrase TEXT NOT NULL CHECK(LENGTH(phrase) <= 600),
+	question_id INTEGER NOT NULL,
 	FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
 
-PRAGMA STRICT = ON;
-PRAGMA foreign_keys = ON;
-PRAGMA ignore_check_constraints = FALSE;
-
-/* 
-DROP TABLE IF EXISTS sentences;
-CREATE TABLE sentences (
-	id INTEGER PRIMARY KEY,
-	lesson_id INTEGER NOT NULL,
-	native_sentence_id INTEGER NOT NULL,
-	foreign_sentence_id INTEGER NOT NULL,
-	FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE,
-	FOREIGN KEY (native_sentence_id) REFERENCES native_sentences(id) ON DELETE CASCADE,
-	FOREIGN KEY (foreign_sentence_id) REFERENCES foreign_sentences(id) ON DELETE CASCADE
-);
-
-DROP TABLE IF EXISTS native_sentences;
-CREATE TABLE native_sentences (
-	id INTEGER PRIMARY KEY,
-	sentence TEXT NOT NULL CHECK(LENGTH(sentence) <= 1000)
-);
-
-DROP TABLE IF EXISTS foreign_sentences;
-CREATE TABLE foreign_sentences (
-	id INTEGER PRIMARY KEY,
-	sentence TEXT NOT NULL CHECK(LENGTH(sentence) <= 1000)
-); 
-*/
