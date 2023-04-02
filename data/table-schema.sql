@@ -9,7 +9,7 @@
 	TODO: See the update script to non-destructively modify the tables. 
 */
 
-PRAGMA auto_vacuum = FULL; /* Prevents the reuse of primary key values after deleting a row */
+/* PRAGMA auto_vacuum = FULL; --Prevents the reuse of primary key values after deleting a row */
 
 /* Temporarily disable the following for resetting database - See bottom of the file for re-enabling*/
 PRAGMA STRICT = OFF;
@@ -22,9 +22,11 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS alternative_native_phrase;
 DROP TABLE IF EXISTS alternative_foreign_phrase;
 
+/* 
 PRAGMA STRICT = ON;
 PRAGMA foreign_keys = ON;
 PRAGMA ignore_check_constraints = FALSE;
+*/
 
 CREATE TABLE courses (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,

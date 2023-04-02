@@ -8,7 +8,13 @@ $f3->set('AUTOLOAD','app/');
 $f3->set('INSTALL_FOLDER', 'kuku');
 $f3->set('APPNAME', 'kuku');
 $f3->set('DB', new DB\SQL('sqlite:'.__DIR__.'/data/'.$f3->APPNAME.'_db.sqlite'));
-$f3->DB->exec("PRAGMA foreign_keys = ON;");
+$f3->DB->exec([
+	// SQLite config needs to be run on each connection
+	"PRAGMA STRICT = ON;",
+	"PRAGMA foreign_keys = ON;",
+	"PRAGMA auto_vacuum = FULL;",
+	"PRAGMA ignore_check_constraints = FALSE;",
+]);
 $f3->set('APP_PATH', $f3->ROOT . DIRECTORY_SEPARATOR . $f3->INSTALL_FOLDER );
 $f3->set('SCHEMA_FILE', $f3->APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
 

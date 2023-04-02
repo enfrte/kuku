@@ -18,8 +18,10 @@ class Lessons
 		}
 
 		$course = new DB\SQL\Mapper($f3->DB,'courses');
-		$course->load('id', ['id' => $course_id]); 
+		$course->load(['id = ?', $course_id]); 
+		$foo = $f3->DB->log();
 		$f3->set('course', ['title' => $course->title]);
+
 
 		$f3->set('lessons',$f3->DB->exec(
 			'SELECT *
