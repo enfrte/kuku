@@ -18,7 +18,7 @@ class Questions extends BaseController
 
 		$lesson = new DB\SQL\Mapper($f3->DB,'lessons');
 		$lesson->load(['id=?', $lesson_id]); 
-		$f3->set('lesson', ['title' => $lesson->title]);
+		$f3->set('lesson', ['title' => $lesson->title, 'course_id' => $lesson->course_id]);
 
 		$questions_query = $f3->DB->exec(
 			'SELECT q.*
