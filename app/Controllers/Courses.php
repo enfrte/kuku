@@ -9,14 +9,26 @@ use Template;
 use Exception;
 use Base;
 
-class Courses extends BaseController
+class Courses  
 {
 	public function index(Base $f3)
 	{
+		$student_condition = '';
+		$is_admin = $f3->get('SESSION.user.admin');
+
+		if ( !$is_admin ) {
+			$student_condition = ' AND in_production = 1 ';
+		}
+		
 		$f3->set('courses',$f3->DB->exec(
-			'SELECT * FROM courses WHERE deleted = 0'
+			' SELECT * FROM courses WHERE deleted = 0 ' . $student_condition
 		));
-		echo Template::instance()->render('views/components/admin/courses/course-list.php');
+		
+		if ( $is_admin ) {
+			echo Template::instance()->render('views/components/admin/courses/course-list.php');			
+		}
+		
+		echo Template::instance()->render('views/components/student/courses/course-list.php');
 	}
 
 	public function create()

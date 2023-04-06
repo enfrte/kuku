@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class Sentences extends BaseController
+class Sentences 
 {
     public function create($data)
     {

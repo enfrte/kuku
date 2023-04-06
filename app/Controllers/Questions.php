@@ -8,7 +8,7 @@ use Models\Questions\QuestionsData;
 use Exception;
 use Base;
 
-class Questions extends BaseController
+class Questions 
 {
 	public function index(Base $f3, $args) {
 		$lesson_id = $args['lesson_id'] ?? '';
@@ -31,7 +31,7 @@ class Questions extends BaseController
 			ON q.id = afp.question_id 
 			WHERE q.lesson_id = :lesson_id
 			ORDER BY q.id DESC', 
-			['lesson_id' => $lesson_id]
+			[':lesson_id' => $lesson_id]
 		);
 
 		$questions = [];

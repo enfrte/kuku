@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class NativeSentences extends BaseController
+class NativeSentences 
 {
     public function create($data)
     {

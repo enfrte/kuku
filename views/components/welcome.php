@@ -1,4 +1,4 @@
-<check if="{{ !empty(@admin) }}">
+<check if="{{ !empty($_SESSION['user']['admin']) }}">
 	<true>
 		<h2 class="pt-5">Welcome admin</h2>
 		<p>This is the welcome screen.</p>

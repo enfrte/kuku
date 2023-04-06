@@ -19,7 +19,7 @@ class Lessons
 
 		$course = new DB\SQL\Mapper($f3->DB,'courses');
 		$course->load(['id = ?', $course_id]); 
-		$foo = $f3->DB->log();
+
 		$f3->set('course', ['title' => $course->title]);
 
 
@@ -28,9 +28,9 @@ class Lessons
 			FROM lessons 
 			WHERE course_id = :course_id
 			AND deleted = 0', 
-			['course_id' => $course_id]
+			[':course_id' => $course_id]
 		));
-		
+
 		$f3->set('course_id', $course_id);
 		echo Template::instance()->render('views/components/admin/lessons/lesson-list.php');
 	}

@@ -14,4 +14,8 @@ kuku means cuckoo in [pandunia](https://pandunia.info).
 
 ## Todo
 
-Next: Questions edit/update.
+Next: Student view
+	Courses menu
+		Lessons menu 
+			Questions 
+		

@@ -26,7 +26,7 @@
 <body data-bs-theme="dark">
 
 <nav class="container">
-<check if="{{ !empty(@admin) }}">
+<check if="{{ !empty($_SESSION['user']['admin']) }}">
 	<true>
 		<ul class="nav justify-content-end pt-3">
 			<li 
@@ -41,20 +41,44 @@
 				hx-target="main">
 				New Course
 			</li>
+			<li 
+				class="nav-item nav-link">
+				<a href="{{ @BASE }}/">Logout</a>
+			</li>
 		</ul>
 	</true>
 	<false>
-		<h2>Welcome user</h2>
+		<ul class="nav justify-content-end pt-3">
+			<li 
+				class="nav-item nav-link" 
+				hx-get="{{ @BASE }}/courses" 
+				hx-target="main">
+				Courses
+			</li>
+		</ul>
 	</false>
 </check>
 </nav>
 
-<main 
-	class="container"
-	hx-get="{{ @BASE }}/welcome" 
-	hx-trigger="load" 
-	hx-target="this">
-</main>
+<check if="{{ !empty($_SESSION['user']['admin']) }}">
+	<true>
+		<main 
+			class="container"
+			hx-get="{{ @BASE }}/welcome" 
+			hx-trigger="load" 
+			hx-target="this">
+		</main>
+	</true>
+	<false>
+		<main 
+			class="container"
+			hx-get="{{ @BASE }}/courses" 
+			hx-trigger="load" 
+			hx-target="this">
+		</main>
+	</false>
+</check>
+
 
 </body>
 </html>
