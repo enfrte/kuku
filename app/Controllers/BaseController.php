@@ -4,14 +4,20 @@ namespace Controllers;
 
 class BaseController
 {
+	private $isAdmin; 
+
 	public function __construct(\Base $f3) {
-		if (true) { // TODO: Accounts + Check user rights
-			//$_SESSION['user']['admin'];
-		}
-		else {
-			//$f3->set('admin', false);
-		}
+		$this->isAdmin = $f3->get('SESSION.user.admin');
 	}
 
-    // Common methods can be defined here
+	public function errorHandler(\Throwable $error)
+	{
+		if ( $this->isAdmin || $error instanceof \Exception ) {
+			return $error->getMessage();
+		} 
+		else {
+			return 'There was an error';
+		}
+	}
+	
 }

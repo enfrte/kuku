@@ -9,30 +9,49 @@ use Template;
 use Exception;
 use Base;
 
-class Lessons 
+class Lessons extends BaseController
 {
+	private $is_admin;
+
+	public function __construct(Base $f3) {
+		$this->is_admin = $f3->get('SESSION.user.admin');
+	}
+
 	public function index(Base $f3, $args) {
-		$course_id = $args['course_id'] ?? '';
-		if (empty($course_id)) {
-			throw new Exception("Course id required");
+		try {
+			$course_id = $args['course_id'] ?? '';
+			if (empty($course_id)) throw new Exception("Course id required");
+			$f3->set('course_id', $course_id);
+
+			$course = new DB\SQL\Mapper($f3->DB,'courses');
+			$course->load(['id = ?', $course_id]); 
+			$f3->set('course', ['title' => $course->title]);
+
+			$student_condition = '';
+
+			if ( !$this->is_admin ) {
+				$student_condition = ' AND in_production = 1 ';
+			}
+
+			$f3->set('lessons',$f3->DB->exec(
+				"SELECT *
+				FROM lessons 
+				WHERE course_id = :course_id
+				AND deleted = 0 
+				$student_condition", 
+				[':course_id' => $course_id]
+			));
+
+			if ( $this->is_admin ) {
+				echo Template::instance()->render('views/components/admin/lessons/lesson-list.php');
+			}
+			else {
+				echo Template::instance()->render('views/components/student/lessons/lesson-list.php');
+			}
+		} 
+		catch (\Throwable $th) {
+			echo $this->errorHandler($th);
 		}
-
-		$course = new DB\SQL\Mapper($f3->DB,'courses');
-		$course->load(['id = ?', $course_id]); 
-
-		$f3->set('course', ['title' => $course->title]);
-
-
-		$f3->set('lessons',$f3->DB->exec(
-			'SELECT *
-			FROM lessons 
-			WHERE course_id = :course_id
-			AND deleted = 0', 
-			[':course_id' => $course_id]
-		));
-
-		$f3->set('course_id', $course_id);
-		echo Template::instance()->render('views/components/admin/lessons/lesson-list.php');
 	}
 	
 	public function show(Base $f3, $args) {
@@ -77,7 +96,7 @@ class Lessons
 	}
 	
 	public function update(Base $f3, $args) {
-		$in_production = !empty($args['in_production']) ? $args['in_production'] : 0;
+		$in_production = !empty($_POST['in_production']) ? 1 : 0;
 
 		$f3->DB->exec(
 				'UPDATE lessons 
@@ -126,6 +145,26 @@ class Lessons
 		catch (\Throwable $th) {
 			echo '<pre>'.$th->getMessage().'</pre>';
 		}
+	}
+
+	/**
+	 * Quiz the student
+	 *
+	 * @param Base $f3
+	 * @param [type] $args
+	 * @return void
+	 */
+	public function quiz(Base $f3, $args)
+	{
+/* 		$lesson = new DB\SQL\Mapper($f3->DB,'lessons');
+		$lessonData = $lesson->load(['id = ?', $args['lesson_id']]); 
+		$f3->set('lesson', ['lesson' => $lessonData]);
+ */
+		$lesson = new LessonsData;
+		$lesson->load( $f3, $args['id'] );
+		$f3->set('lesson', $lesson->cast());
+
+		echo Template::instance()->render('views/components/student/lessons/quiz.php');
 	}
 	  
 }

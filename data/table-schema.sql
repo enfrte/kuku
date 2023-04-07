@@ -43,6 +43,7 @@ CREATE TABLE courses (
 CREATE TABLE lessons (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	title TEXT NOT NULL CHECK(LENGTH(title) <= 255),
+	description TEXT CHECK(LENGTH(description) <= 300),
 	slug TEXT NOT NULL CHECK(LENGTH(slug) <= 255),
 	tutorial TEXT CHECK(LENGTH(tutorial) <= 99999),
 	course_id INTEGER NOT NULL,

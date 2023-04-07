@@ -1,6 +1,6 @@
-<h1 class="pt-3 pb-3">Courses</h1>
+<h1 class="pt-3 pb-3">Courses (Admin)</h1>
 
-<check if="{{empty(@courses)}}"><true><h4 class="pt-5">No Courses</h4></true></check>
+<check if="{{empty(@courses)}}"><h4 class="pt-5">No Courses</h4></check>
 
 <repeat group="{{ @courses }}" value="{{ @course }}">
 	<div class="card mb-4">

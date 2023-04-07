@@ -20,6 +20,11 @@
 	</div>
 
 	<div class="mb-3">
+		<label for="tutorial" class="form-label">Description:</label>
+		<textarea id="description" name="description" class="form-control" maxlength="300">{{ @@lesson.description }}</textarea>
+	</div>
+
+	<div class="mb-3">
 		<label for="tutorial" class="form-label">Tutorial:</label>
 		<textarea id="tutorial" name="tutorial" class="form-control" maxlength="99999">{{ @@lesson.tutorial }}</textarea>
 	</div>
@@ -47,15 +52,9 @@
 			class="form-check-input" 
 			type="checkbox" 
 			name="in_production" 
-			<check if="{{ empty(@lesson) }}">
-				<true>
-					value="0" 
-				</true>
-				<false>
-					value="{{ @lesson.in_production }}"
-				</false>
-			</check> 
-			id="in_production">
+			id="in_production"
+			value="1"
+			{{ !empty(@lesson.in_production) ? 'checked' : '' }}>
 		<label class="form-check-label" for="in_production">
 			Publish lesson
 		</label>

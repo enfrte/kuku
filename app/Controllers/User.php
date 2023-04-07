@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class Admin
+class User
 {
 	public function __construct(\Base $f3) {
 
@@ -10,9 +10,10 @@ class Admin
 
 	public function logout(\Base $f3)
 	{
-		if (!empty($f3->get('SESSION.user.admin'))) {
-			unset($_SESSION['user']['admin']);
-			$f3->SESSION->clear(); // Or this?
+		if ( !empty($f3->get('SESSION.user.admin')) ) {
+			$f3->clear('SESSION');
 		}
+
+		$f3->reroute('/');
 	}
 }

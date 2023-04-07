@@ -21,6 +21,10 @@
 		.kuku-textarea-135 {
 			height: 135px;
 		}
+
+		.pointer {
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body data-bs-theme="dark">
@@ -43,7 +47,7 @@
 			</li>
 			<li 
 				class="nav-item nav-link">
-				<a href="{{ @BASE }}/">Logout</a>
+				<a href="{{ @BASE }}/logout">Logout</a>
 			</li>
 		</ul>
 	</true>

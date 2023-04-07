@@ -19,13 +19,15 @@ class Courses
 		if ( !$is_admin ) {
 			$student_condition = ' AND in_production = 1 ';
 		}
-		
 		$f3->set('courses',$f3->DB->exec(
 			' SELECT * FROM courses WHERE deleted = 0 ' . $student_condition
 		));
+
+		$foo = $f3->get('courses');
 		
 		if ( $is_admin ) {
-			echo Template::instance()->render('views/components/admin/courses/course-list.php');			
+			echo Template::instance()->render('views/components/admin/courses/course-list.php');
+			return;
 		}
 		
 		echo Template::instance()->render('views/components/student/courses/course-list.php');
@@ -72,8 +74,6 @@ class Courses
 
     public function update(Base $f3)
     {
-		$in_production = !empty($args['in_production']) ? $args['in_production'] : 0;
-
 		$f3->DB->exec(
 				'UPDATE courses 
 				SET title = :title, 
@@ -88,7 +88,7 @@ class Courses
 				':description' => $_POST['description'],
 				':slug' => Web::instance()->slug($_POST['title']),
 				':version' => $_POST['version'],
-				':in_production' => $in_production,
+				':in_production' => !empty($_POST['in_production']) ? $_POST['in_production'] : 0,
 			]
 		);
 

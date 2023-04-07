@@ -25,6 +25,10 @@ $f3->DB->exec([
 $f3->route('GET /lang','Classes\Language\Language->index');
 $f3->route('GET /welcome','Controllers\Admin->welcome'); 
 
+// User 
+
+$f3->route('GET /logout','Controllers\User->logout'); 
+
 // Admin
 
 $f3->route('GET /admin','Controllers\Admin->index'); 
@@ -50,6 +54,7 @@ $f3->route('POST /saveLesson','Controllers\Lessons->save');
 $f3->route('GET /editLesson/@id','Controllers\Lessons->edit'); 
 $f3->route('POST /updateLesson','Controllers\Lessons->update'); 
 $f3->route('GET /deleteLesson/@lesson_id','Controllers\Lessons->delete'); 
+$f3->route('GET /quiz/@id','Controllers\Lessons->quiz');
 
 // Questions
 
