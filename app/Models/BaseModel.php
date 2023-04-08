@@ -1,8 +1,8 @@
 <?php 
 
-namespace Controllers;
+namespace Models;
 
-class BaseController
+class BaseModel
 {
 	protected $isAdmin; 
 

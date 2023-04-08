@@ -4,10 +4,11 @@ namespace Models\Questions;
 
 //use Classes\FormValidation;
 use Base;
+use Models\BaseModel;
 use DB;
 use Exception;
 
-class QuestionsData 
+class QuestionsData extends BaseModel
 {
 	/**
 	 * F3 Mapper object
@@ -15,6 +16,8 @@ class QuestionsData
 	 * @var Mapper
 	 */
 	private $question;
+
+	private $questions;
 
     public function __construct()
     {
@@ -91,6 +94,52 @@ class QuestionsData
 			$mapper->phrase = $altForeignPhrase;
 			$mapper->save();
 		}
+	}
+
+
+	public function getQuestions(Base $f3, int $lesson_id)
+	{
+		
+		$questions_query = $f3->DB->exec(
+			'SELECT q.*
+			, anp.id AS alternative_native_phrase_id, anp.phrase AS alternative_native_phrase
+			, afp.id AS alternative_foreign_phrase_id, afp.phrase AS alternative_foreign_phrase
+			FROM questions q 
+			LEFT JOIN alternative_native_phrase anp 
+			ON q.id = anp.question_id 
+			LEFT JOIN alternative_foreign_phrase afp 
+			ON q.id = afp.question_id 
+			WHERE q.lesson_id = :lesson_id
+			ORDER BY q.id DESC', 
+			[':lesson_id' => $lesson_id]
+		);
+
+		$questions = [];
+
+		foreach ($questions_query as $question) {
+			if ( empty($questions[$question['id']]) ) {
+				$questions[$question['id']] = [
+					'id' => $question['id'],
+					'native_phrase' => $question['native_phrase'],
+					'foreign_phrase' => $question['foreign_phrase'],
+				];
+			}
+
+			$questions[$question['id']]['alternative_native_phrase'][$question['alternative_native_phrase_id']] = $question['alternative_native_phrase'];
+
+			$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = $question['alternative_foreign_phrase'];
+		}
+
+		if ( $this->isAdmin ) {
+			foreach ($questions as $question_id => $question) {
+				$questions[$question_id]['alternative_native_phrase_text'] = implode("<br>", $question['alternative_native_phrase']);
+				$questions[$question_id]['alternative_foreign_phrase_text'] = implode("<br>", $question['alternative_foreign_phrase']);
+				$questions[$question_id]['alternative_native_phrase_textarea'] = implode("\n", $question['alternative_native_phrase']);
+				$questions[$question_id]['alternative_foreign_phrase_textarea'] = implode("\n", $question['alternative_foreign_phrase']);
+			}
+		}
+
+		return $questions;
 	}
 
 	/**
