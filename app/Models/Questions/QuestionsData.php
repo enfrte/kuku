@@ -114,8 +114,20 @@ class QuestionsData extends BaseModel
 			[':lesson_id' => $lesson_id]
 		);
 
-		$questions = [];
+		if ( $this->isAdmin ) {
+			$questions = $this->processQuestionDataForAdmin($questions_query);
+		}
+		else {
+			$questions = $this->processQuestionDataForStudentQuiz($questions_query);
+		}
 
+		return $questions;
+	}
+
+	private function processQuestionDataForAdmin($questions_query)
+	{
+		$questions = [];
+		
 		foreach ($questions_query as $question) {
 			if ( empty($questions[$question['id']]) ) {
 				$questions[$question['id']] = [
@@ -130,17 +142,43 @@ class QuestionsData extends BaseModel
 			$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = $question['alternative_foreign_phrase'];
 		}
 
-		if ( $this->isAdmin ) {
-			foreach ($questions as $question_id => $question) {
-				$questions[$question_id]['alternative_native_phrase_text'] = implode("<br>", $question['alternative_native_phrase']);
-				$questions[$question_id]['alternative_foreign_phrase_text'] = implode("<br>", $question['alternative_foreign_phrase']);
-				$questions[$question_id]['alternative_native_phrase_textarea'] = implode("\n", $question['alternative_native_phrase']);
-				$questions[$question_id]['alternative_foreign_phrase_textarea'] = implode("\n", $question['alternative_foreign_phrase']);
-			}
+		foreach ($questions as $question_id => $question) {
+			$questions[$question_id]['alternative_native_phrase_text'] = implode("<br>", $question['alternative_native_phrase']);
+			$questions[$question_id]['alternative_foreign_phrase_text'] = implode("<br>", $question['alternative_foreign_phrase']);
+			$questions[$question_id]['alternative_native_phrase_textarea'] = implode("\n", $question['alternative_native_phrase']);
+			$questions[$question_id]['alternative_foreign_phrase_textarea'] = implode("\n", $question['alternative_foreign_phrase']);
 		}
 
 		return $questions;
 	}
+
+	private function processQuestionDataForStudentQuiz($questions_query)
+	{
+		$questions = [];
+		
+		foreach ($questions_query as $question) {
+			if ( empty($questions[$question['id']]) ) {
+				$questions[$question['id']] = [
+					'id' => $question['id'],
+					'native_phrase_array' => explode(' ', $question['native_phrase']),
+					'foreign_phrase_array' => explode(' ', $question['foreign_phrase']),
+					'native_phrase' => $question['native_phrase'],
+					'foreign_phrase' => $question['foreign_phrase'],
+				];
+			}
+
+			if (!empty($question['alternative_native_phrase'])) {
+				$questions[$question['id']]['alternative_native_phrase'][$question['alternative_native_phrase_id']] = $question['alternative_native_phrase'];
+			}
+
+			if (!empty($question['alternative_foreign_phrase'])) {
+				$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = $question['alternative_foreign_phrase'];
+			}
+		}
+
+		return array_values($questions);
+	}
+
 
 	/**
 	 * Get the value of question

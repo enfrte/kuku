@@ -1,0 +1,308 @@
+html, body, #root, .app {
+	height: 100%;
+  }
+  
+  body {
+	position: relative;
+	margin: 0;
+	font-family: 'Varela Round', sans-serif;
+  }
+  
+  .app {
+	position: relative;
+  }
+  
+  .main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-height: 100%;
+  }
+  
+  .module-finished-container {
+	display: flex;
+	flex: 1 1 0; /* Replaces  */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+  }
+  
+  .module-practice-tutorial-screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	width: 100%;
+  }
+  
+  .module-practice-tutorial {
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: left;
+	padding: 10px;
+  }
+  
+  .module-practice-tutorial-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .display-block {
+	display: flex;
+  }
+  
+  .hidden {
+	display: none;
+  }
+  
+  img {
+	max-width: 100%;
+  }
+  
+  button {
+	font-family : inherit; /* Needed for buttons to use the specified font family */
+	font-size: 1em;
+  }
+  
+  .module-practice-answer-result {
+	padding: 10px;
+  }
+  
+  .module-practice-screen {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  }
+  
+  .module-practice-container {
+	position: relative;
+	width: 600px;
+	padding: 0 10px;
+	text-align: left;
+  }
+  
+  .module-practice-link-container {
+	padding: 20px 10px;
+  }
+  
+  .module-practice-link-container button {
+	font-weight: bold;
+	padding: 5px 10px;
+	border: 2px solid lightgray;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: none;
+	background: white;
+	color: #333;
+	letter-spacing: 1px;
+  }
+  
+  
+  h3, h4 { 
+	color:#333333; 
+	font-weight: bold;
+  }
+  
+  .module-finished-container h3 {
+	padding: 10px 10px;
+	margin: 0;
+  }
+  
+  .module-finished-container .answer-button-continue {
+	margin: 0 10px;
+  }
+  
+  blockquote {
+	background: #eee;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+  }
+  
+  blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+  }
+  
+  blockquote p {
+	display: inline;
+  }
+  
+  .progressbar-container {
+	font-size: small;
+	font-weight: bold;
+	padding: 0;
+	margin-top: 10px;
+	height: 15px;
+	width:100%;
+	background-color:#f1f1f1;
+	clear:right;
+  }
+  
+  .module-practice-progress {
+	padding-top: 20px;
+  }
+  
+  .question-progressbar {
+	background-color:rgb(99, 217, 104);
+	height: 20px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+  }
+  
+  #instance {
+	text-align: center;
+  }
+  
+  .text-area {
+	padding:5px;
+	min-height:65px;
+	background-color:snow;
+	margin: 10px 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	display: flex;
+	align-items: center;
+  }
+  
+  .text-area p {
+	margin: 0;
+  }
+  
+  .options-area p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  
+  .options-area {
+	justify-content: center;
+	background-color:lightgray;
+  }
+  
+  button:focus { outline:0; }
+  
+  .word-button {
+	color: #1C1C1C !important;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin: 8px 4px;
+	border: 2px solid lightgray;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: none;
+	background: white;
+  }
+  
+  .answer-button {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 0;
+	border: 0px solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: none;
+  }
+  
+  .answer-button-default {
+	color:#1C1C1C;
+	background: lightgray;
+	letter-spacing: 1px;
+  
+  }
+  
+  .answer-button-continue {
+	color: white;
+	background: #4CAF50;
+	letter-spacing: 1px;
+  }
+  
+  .tutorial-button {
+	color: white;
+	background: #333;
+	letter-spacing: 1px;
+  }
+  
+  /* [X] Button */
+  .quit-practice {
+	position: absolute;
+	display: flex;
+	top: 0;
+	right: 10px;
+	height: 30px;
+	width: 30px;
+	color: white;
+	background: rgb(200, 0, 0);
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 0;
+	border: none;
+  }
+  
+  footer {
+	position:absolute;
+	padding: 1rem;
+	bottom:0;
+	width:100%;
+	height:60px;
+	text-align: center;
+  }
+  
+  /* Test Question Result */
+  
+  .module-practice-answer-result {
+	padding: 10px;
+  }
+  
+  .module-practice-answer-check-area .answer-button-default {
+	width: 100%;
+  }
+  
+  .module-practice-answer-result button {
+	width: 100%;
+  }
+  
+  .language-switcher-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 30px 10px 0 10px;
+	margin-bottom: 20px;
+  }
+  
+  .language-switcher-container button {
+	align-self: center;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 0;
+	border: 0px solid;
+	box-shadow: none;
+  }
+  
+  .language-switcher-container button:first-of-type  {
+	margin-left: 5px;
+  }
+  
+  .language-switcher-buttons-container {
+	display: flex;
+  }

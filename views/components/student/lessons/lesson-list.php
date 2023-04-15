@@ -14,12 +14,11 @@
 				<p>Description: {{ @lesson.description }}</p>
 			</check>
 			<p>This could recycle questions/lesson.id and return a json object for Mithril to use.</p>
-			<button 
+			<a 
 				class="btn btn-success" 
-				hx-get="{{ @BASE }}/questions/{{ @lesson.id }}"
-				hx-target="main">
+				href="{{ @BASE }}/questions/{{ @lesson.id }}">
 				Start lesson
-			</button>	
+			</a>
 		</div>
 	</div>
 </repeat>

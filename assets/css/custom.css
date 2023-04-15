@@ -1,0 +1,35 @@
+body {
+	font-family: 'Varela Round', sans-serif;
+}
+
+button {
+	font-family : inherit; /* Needed for buttons to use the specified font family */
+	font-size: 1em;
+}
+
+.bg-lightgreen {
+	background-color: rgb(88, 204, 2);
+}
+
+.bg-grey {
+	background-color: rgb(52,58,64);
+}
+
+.container {
+	max-width: 666px;
+}
+.dropdown-item, .nav-item {
+	cursor: pointer;
+}
+.kuku-textarea-135 {
+	height: 135px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.answer-container, .choice-container {
+	min-height: 50px;
+}
+

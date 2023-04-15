@@ -32,7 +32,8 @@ class Questions extends BaseController
 				echo Template::instance()->render('views/components/admin/questions/question-list-editor.php');
 			}
 			else {
-				$f3->set('questions', json_encode($questions)); 
+				// Include json_encode flags to escape characters alpine js has problems with
+				$f3->set('questions', json_encode($questions, JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT));
 				echo Template::instance()->render('views/components/student/questions/question-list.php');
 			}
 		} 
