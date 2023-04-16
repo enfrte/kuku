@@ -1,9 +1,9 @@
 function lessonInstance() {
 	return {
-		questions: [
+		/* questions: [
 			{ native_phrase: 'Hello, world!', foreign_phrase: 'Hei, maailma!', native_phrase_array: ['Hello,', 'world!'], foreign_phrase_array: ['Hei,', 'maailma!'] },
 			{ native_phrase: 'Goodbye, world!', foreign_phrase: 'Heipä, maailma!', native_phrase_array: ['Goodbye,', 'world!'], foreign_phrase_array: ['Heipä,', 'maailma!'] }
-		] || [],
+		] || [], */
 		//questions: {{ @@questions | raw }} || [];
 		questionNumber: 0,
 		progressPercent: 0,
