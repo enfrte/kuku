@@ -52,11 +52,11 @@
 	<div class="d-grid">
 		<button 
 			:disabled="answerArray.length < 1" 
-			class="btn btn-lg bt-100 btn-secondary bg-lightgreen rounded-4 text-black mt-3" 
+			class="btn btn-lg bt-100 btn-light bg-lightgreen rounded-4 text-black mt-3" 
 			x-on:click="checkAnswer()">
 			CHECK
 		</button>
-	</div>
+	</div>	
 
 	<div 
 		x-show="nextQuestionModal" 
@@ -69,7 +69,7 @@
 		<div class="container h-100">
 			<div class="row h-100 align-items-end justify-content-center">
 				<h3 x-text="result"></h3>
-				<p x-text="resultMessage"></p>
+				<p x-text="resultMessage" class="text-white"></p>
 				<button 
 					class="btn btn-light btn-lg btn-block mt-auto mb-4"
 					x-on:click="nextQuestion">CONTINUE</button>

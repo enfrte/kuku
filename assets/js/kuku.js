@@ -4,6 +4,7 @@ function lessonInstance() {
 			{ native_phrase: 'Hello, world!', foreign_phrase: 'Hei, maailma!', native_phrase_array: ['Hello,', 'world!'], foreign_phrase_array: ['Hei,', 'maailma!'] },
 			{ native_phrase: 'Goodbye, world!', foreign_phrase: 'Heipä, maailma!', native_phrase_array: ['Goodbye,', 'world!'], foreign_phrase_array: ['Heipä,', 'maailma!'] }
 		] || [],
+		//questions: {{ @@questions | raw }} || [];
 		questionNumber: 0,
 		progressPercent: 0,
 		question: '',
@@ -20,18 +21,22 @@ function lessonInstance() {
 		
 		checkAnswer: function() {
 			this.result = 'Correct';
-			const q = this.questions[this.questionNumber]['foreign_phrase_array'];
-			const a = this.answerArray;
+			const qst = this.questions[this.questionNumber]['foreign_phrase_array'];
+			const ans = this.answerArray;
 
-			if (q.length !== a.length) {
+			if (qst.length !== ans.length) {
 				this.result = 'Incorrect';
 			}
 			else {
-				for (let i = 0; i < q.length; i++) {
-					if (q[i] !== a[i]) {
+				for (let i = 0; i < qst.length; i++) {
+					if (qst[i] !== ans[i]) {
 						this.result = 'Incorrect';
 					}
 				}
+			}
+
+			if (this.result === 'Incorrect') {
+				this.checkAlternativeAnswers();
 			}
 			/* console.log('q:',q);
 			console.log('a:',a);
@@ -39,6 +44,30 @@ function lessonInstance() {
 			 */
 			this.resultMessage = this.questions[this.questionNumber]['foreign_phrase'];
 			this.nextQuestionModal = true;
+		},
+
+		checkAlternativeAnswers() {
+			const ans = this.answerArray;
+			const alt_arr = this.questions[this.questionNumber]['alternative_foreign_phrase'] || [];
+
+			alt_arr.forEach(alt_arr_item => {
+				this.result = 'Correct';
+
+				if (alt_arr_item.length !== ans.length) {
+					this.result = 'Incorrect';
+				}
+				else {
+					for (let i = 0; i < alt_arr_item.length; i++) {
+						if (alt_arr_item[i] !== ans[i]) {
+							this.result = 'Incorrect';
+						}
+					}
+				}
+
+				if (this.result === 'Correct') {
+					return; // Break
+				}
+			});
 		},
 
 		moveToAnswer: function(choice, index) {

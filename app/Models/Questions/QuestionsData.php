@@ -168,11 +168,11 @@ class QuestionsData extends BaseModel
 			}
 
 			if (!empty($question['alternative_native_phrase'])) {
-				$questions[$question['id']]['alternative_native_phrase'][$question['alternative_native_phrase_id']] = $question['alternative_native_phrase'];
+				$questions[$question['id']]['alternative_native_phrase'][$question['alternative_native_phrase_id']] = explode(' ', $question['alternative_native_phrase']);
 			}
 
 			if (!empty($question['alternative_foreign_phrase'])) {
-				$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = $question['alternative_foreign_phrase'];
+				$questions[$question['id']]['alternative_foreign_phrase'][$question['alternative_foreign_phrase_id']] = explode(' ', $question['alternative_foreign_phrase']);
 			}
 		}
 
