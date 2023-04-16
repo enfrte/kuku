@@ -4,7 +4,6 @@ function lessonInstance() {
 			{ native_phrase: 'Hello, world!', foreign_phrase: 'Hei, maailma!', native_phrase_array: ['Hello,', 'world!'], foreign_phrase_array: ['Hei,', 'maailma!'] },
 			{ native_phrase: 'Goodbye, world!', foreign_phrase: 'Heipä, maailma!', native_phrase_array: ['Goodbye,', 'world!'], foreign_phrase_array: ['Heipä,', 'maailma!'] }
 		] || [], */
-		//questions: {{ @@questions | raw }} || [];
 		questionNumber: 0,
 		progressPercent: 0,
 		question: '',
@@ -80,13 +79,13 @@ function lessonInstance() {
 			this.answerArray.splice(index, 1);
 		}, 
 
-		resetChoiceAnswerArea: function() {
+		populateChoiceAnswerArea: function() {
 			this.choiceArray = [...this.questions[this.questionNumber]['foreign_phrase_array']];
+			this.shuffleChoices(this.injectRandomWord());
 			this.answerArray = [];
 		},
 
 		nextQuestion: function () {
-			//this.answerArray.length > 0 ? this.nextQuestionModal = true : this.nextQuestionModal = false;
 			this.nextQuestionModal = false;
 
 			if ((this.questionNumber + 1) == this.questions.length) {
@@ -98,11 +97,39 @@ function lessonInstance() {
 			
 			this.questionNumber++;
 			this.updateProgressBar();
-			this.resetChoiceAnswerArea();
+			this.populateChoiceAnswerArea();
+		},
+
+		shuffleChoices: function(randomWord = false) {
+			let array = this.choiceArray;
+
+			if (randomWord) {
+				array.push(randomWord);
+			}
+			
+			for (let i = array.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[array[i], array[j]] = [array[j], array[i]];
+			}
+		},
+
+		injectRandomWord: function () {
+			let questions = this.questions;
+			let uniqueWords = [];
+
+			questions.forEach(question => {
+				question['foreign_phrase_array'].forEach( word => {
+					if(uniqueWords.indexOf(word) === -1) {
+						uniqueWords.push(word);
+					}
+				} );
+			});
+
+			return uniqueWords[Math.floor(Math.random() * uniqueWords.length)];
 		},
 
 		init: function () {
-			this.choiceArray = [...this.questions[this.questionNumber]['foreign_phrase_array']];
+			this.populateChoiceAnswerArea();
 		}
 	}
 }
