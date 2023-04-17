@@ -32,6 +32,7 @@ $f3->route('GET /logout','Controllers\User->logout');
 // Admin
 
 $f3->route('GET /admin','Controllers\Admin->index'); 
+$f3->route('POST /login','Controllers\Admin->login'); 
 
 // Student
 
@@ -88,5 +89,7 @@ $f3->route('GET /view',
 // Install 
 
 $f3->route(['GET /install', 'POST /install'], 'Controllers\Install->index');
+
+// Finally
 
 $f3->run();

@@ -37,10 +37,7 @@ function lessonInstance() {
 			if (this.result === 'Incorrect') {
 				this.checkAlternativeAnswers();
 			}
-			/* console.log('q:',q);
-			console.log('a:',a);
-			console.log(result);
-			 */
+
 			this.resultMessage = this.questions[this.questionNumber]['foreign_phrase'];
 			this.nextQuestionModal = true;
 		},
@@ -64,7 +61,7 @@ function lessonInstance() {
 				}
 
 				if (this.result === 'Correct') {
-					return; // Break
+					return; // break out of forEach()
 				}
 			});
 		},
