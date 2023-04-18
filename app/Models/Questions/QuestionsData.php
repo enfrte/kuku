@@ -63,8 +63,19 @@ class QuestionsData extends BaseModel
 	}
 
 
+	protected function sanitiseSpaces($line)
+	{
+		$line = preg_replace('/\s+/', ' ', $line);
+		$line = trim($line);
+		return $line;
+	}
+
+
 	public function saveNewQuestionAndAltPhrases(Base $f3)
 	{
+		$_POST['native_phrase'] = $this->sanitiseSpaces($_POST['native_phrase']);
+		$_POST['foreign_phrase'] = $this->sanitiseSpaces($_POST['foreign_phrase']);
+		
 		$questionsModel = new DB\SQL\Mapper($f3->DB,'questions');
 		$questionsModel->copyFrom('POST');
 		$questionsModel->save();
@@ -72,7 +83,7 @@ class QuestionsData extends BaseModel
 		$altNativePhrases = explode(PHP_EOL, $_POST['alternative_native_phrase']);
 
 		foreach ($altNativePhrases as $altNativePhrase) {
-			$altNativePhrase = trim($altNativePhrase);
+			$altNativePhrase = $this->sanitiseSpaces($altNativePhrase);
 			
 			if (empty($altNativePhrase)) continue;
 
@@ -85,7 +96,7 @@ class QuestionsData extends BaseModel
 		$altForeignPhrases = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
 
 		foreach ($altForeignPhrases as $altForeignPhrase) {
-			$altForeignPhrase = trim($altForeignPhrase);
+			$altForeignPhrase = $this->sanitiseSpaces($altForeignPhrase);
 			
 			if (empty($altForeignPhrase)) continue;
 
