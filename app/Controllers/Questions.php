@@ -11,20 +11,28 @@ use Base;
 
 class Questions extends BaseController
 {
+	protected $isAdmin;
+
+	public function __construct(Base $f3) {
+		$this->isAdmin = $f3->get('SESSION.user.admin');
+	}
+
 	public function index(Base $f3, $args) 
 	{
 		try {
 			$lesson_id = $args['lesson_id'] ?? '';
+			
 			if (empty($lesson_id)) {
 				throw new Exception("lesson id required");
 			}
+
 			$f3->set('lesson_id', $lesson_id);
 
 			$lesson = new LessonsData;
 			$lesson->load( $f3, $lesson_id );
 			$f3->set('lesson', $lesson->cast());
 
-			$questionData = new QuestionsData();
+			$questionData = new QuestionsData($f3);
 			$questions = $questionData->getQuestions($f3, $lesson_id);
 			
 			if ( $this->isAdmin ) {
@@ -53,7 +61,7 @@ class Questions extends BaseController
 		try {
 			$f3->DB->begin();
 
-			$questionData = new QuestionsData();
+			$questionData = new QuestionsData($f3);
 			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
@@ -72,12 +80,12 @@ class Questions extends BaseController
 			$f3->DB->begin();
 			
 			// It's quite a complicated process to update questions and its linking tables, so lets just delete the old values.
-			$question = new QuestionsData;
+			$question = new QuestionsData($f3);
 			$question->load( $f3, $_POST['question_id'] );
 			$question->erase();
 
 			// Update = create a new entry with the current (old) form data.
-			$questionData = new QuestionsData();
+			$questionData = new QuestionsData($f3);
 			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
@@ -94,7 +102,7 @@ class Questions extends BaseController
     public function delete(Base $f3, $args)
     {
 		try {
-			$question = new QuestionsData;
+			$question = new QuestionsData($f3);
 			$question->load( $f3, $args['question_id'] );
 			$question->erase();
 

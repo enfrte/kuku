@@ -11,10 +11,10 @@ use Base;
 
 class Lessons extends BaseController
 {
-	private $is_admin;
+	protected $isAdmin;
 
 	public function __construct(Base $f3) {
-		$this->is_admin = $f3->get('SESSION.user.admin');
+		$this->isAdmin = $f3->get('SESSION.user.admin');
 	}
 
 	public function index(Base $f3, $args) {
@@ -29,7 +29,7 @@ class Lessons extends BaseController
 
 			$student_condition = '';
 
-			if ( !$this->is_admin ) {
+			if ( !$this->isAdmin ) {
 				$student_condition = ' AND in_production = 1 ';
 			}
 
@@ -42,7 +42,7 @@ class Lessons extends BaseController
 				[':course_id' => $course_id]
 			));
 
-			if ( $this->is_admin ) {
+			if ( $this->isAdmin ) {
 				echo Template::instance()->render('views/components/admin/lessons/lesson-list.php');
 			}
 			else {

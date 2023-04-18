@@ -19,9 +19,11 @@ class QuestionsData extends BaseModel
 
 	private $questions;
 
-    public function __construct()
-    {
-    }
+	protected $isAdmin;
+
+	public function __construct(Base $f3) {
+		$this->isAdmin = $f3->get('SESSION.user.admin');
+	}
 
 	/**
 	 * Validates a form based on custom attribute configuration.
