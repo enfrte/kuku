@@ -113,11 +113,12 @@ function lessonInstance() {
 		injectRandomWord: function () {
 			let questions = this.questions;
 			let uniqueWords = [];
+			let currentQuestion = questions[this.questionNumber]['foreign_phrase_array'];
 
 			questions.forEach(question => {
 				question['foreign_phrase_array'].forEach( word => {
-					if(uniqueWords.indexOf(word) === -1) {
-						uniqueWords.push(word);
+					if(uniqueWords.indexOf(word) === -1 && currentQuestion.indexOf(word) === -1) {
+						uniqueWords.push(word); // Push if not already in array and also not in current question
 					}
 				} );
 			});

@@ -13,7 +13,6 @@
 			<check if="!empty({{ @lesson.description }})">
 				<p>Description: {{ @lesson.description }}</p>
 			</check>
-			<p>This could recycle questions/lesson.id and return a json object for Mithril to use.</p>
 			<a 
 				class="btn btn-success" 
 				hx-target="main" hx-get="{{ @BASE }}/questions/{{ @lesson.id }}">

@@ -49,7 +49,7 @@ class Admin
 			}
 
 			if (empty($username) || empty($password)) {
-				echo \Template::instance()->render('views/components/admin/login-form.php');
+				echo \Template::instance()->render('views/components/admin/login.php');
 				return;
 			}
 
@@ -61,7 +61,7 @@ class Admin
 				}
 			}
 
-			echo \Template::instance()->render('views/components/admin/login-form.php');
+			echo \Template::instance()->render('views/components/admin/login.php');
 		}
 	}
 }

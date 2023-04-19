@@ -7,7 +7,7 @@
           Admin login
         </div>
         <div class="card-body">
-          <form>
+          <form method="POST" action="{{ @BASE }}/login">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
               <input type="username" class="form-control" name="username" required>
@@ -17,8 +17,6 @@
               <input type="password" class="form-control" name="password" required>
             </div>
             <button 
-				hx-post="{{ @BASE }}/login"
-				hx-target="main"
 				type="submit" 
 				class="btn btn-primary">
 				Login
