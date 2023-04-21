@@ -1,3 +1,5 @@
+<include href="/views/components/student/student-nav.php" />
+
 <h2>Course</h2>
 <h3 class="pb-3">{{ @course.title }}</h3>
 

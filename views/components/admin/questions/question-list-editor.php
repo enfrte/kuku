@@ -1,3 +1,4 @@
+
 <button 
 	hx-get="{{ @BASE }}/lessons/{{ @lesson.course_id }}" 
 	type="button" 

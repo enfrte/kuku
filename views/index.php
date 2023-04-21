@@ -17,45 +17,32 @@
 	<link rel="stylesheet" href="{{ @BASE }}/assets/css/custom.css">
 	<script src="{{ @BASE }}/assets/js/kuku.js"></script>
 </head>
-<body data-bs-theme="dark">
-
-<nav class="container">
-<check if="{{ !empty($_SESSION['user']['admin']) }}">
-	<true>
-		<ul class="nav justify-content-end pt-3">
-			<li 
-				class="nav-item nav-link" 
-				hx-get="{{ @BASE }}/courses" 
-				hx-target="main">
-				Courses
-			</li>
-			<li 
-				class="nav-item nav-link" 
-				hx-get="{{ @BASE }}/createCourse" 
-				hx-target="main">
-				New Course
-			</li>
-			<li 
-				class="nav-item nav-link">
-				<a href="{{ @BASE }}/logout">Logout</a>
-			</li>
-		</ul>
-	</true>
-	<false>
-		<ul class="nav justify-content-end pt-3">
-			<li 
-				class="nav-item nav-link" 
-				hx-get="{{ @BASE }}/courses" 
-				hx-target="main">
-				Courses
-			</li>
-		</ul>
-	</false>
-</check>
-</nav>
+<body>
 
 <check if="{{ !empty($_SESSION['user']['admin']) }}">
 	<true>
+		<nav id="mainMenu" class="container">
+			<true>
+				<ul class="nav justify-content-end pt-3">
+					<li 
+						class="nav-item nav-link" 
+						hx-get="{{ @BASE }}/courses" 
+						hx-target="main">
+						Courses
+					</li>
+					<li 
+						class="nav-item nav-link" 
+						hx-get="{{ @BASE }}/createCourse" 
+						hx-target="main">
+						New Course
+					</li>
+					<li 
+						class="nav-item nav-link">
+						<a href="{{ @BASE }}/logout">Logout</a>
+					</li>
+				</ul>
+			</true>
+		</nav>
 		<main 
 			class="container"
 			hx-get="{{ @BASE }}/welcome" 
@@ -72,7 +59,6 @@
 		</main>
 	</false>
 </check>
-
 
 </body>
 </html>

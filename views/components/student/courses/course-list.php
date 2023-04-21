@@ -1,3 +1,5 @@
+<include href="/views/components/student/student-nav.php" />
+
 <div class="course_list">
 	
 	<h1 class="pt-3 pb-3">Courses (Student)</h1>
