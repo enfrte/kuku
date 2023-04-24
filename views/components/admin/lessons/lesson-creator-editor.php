@@ -1,3 +1,4 @@
+
 <check if="{{ !empty(@lesson) }}">
 	<true><h4 class="pt-3">Edit: {{ @lesson.title }}</h4></true>
 	<false><h4 class="pt-3">Make a new lesson</h4></false>

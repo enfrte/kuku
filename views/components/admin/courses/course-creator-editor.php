@@ -1,3 +1,4 @@
+
 <check if="{{ !empty(@course) }}">
 	<true><h4 class="pt-3">Edit: {{ @@course.title }}</h4></true>
 	<false><h4 class="pt-3">Make a new course</h4></false>

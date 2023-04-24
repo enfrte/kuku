@@ -2,11 +2,11 @@
 
 namespace Models\Questions;
 
-//use Classes\FormValidation;
-use Base;
-use Models\BaseModel;
 use DB;
+use Base;
 use Exception;
+use Models\BaseModel;
+use Classes\FormValidation;
 
 class QuestionsData extends BaseModel
 {
@@ -23,15 +23,6 @@ class QuestionsData extends BaseModel
 
 	public function __construct(Base $f3) {
 		$this->isAdmin = $f3->get('SESSION.user.admin');
-	}
-
-	/**
-	 * Validates a form based on custom attribute configuration.
-	 *
-	 * @return bool
-	 */
-	public function validateForm()
-	{
 	}
 
 
@@ -190,6 +181,28 @@ class QuestionsData extends BaseModel
 		}
 
 		return array_values($questions);
+	}
+
+
+	/**
+	 * Validates a form based on custom attribute configuration.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['lesson_id', 'native_phrase', 'foreign_phrase']); 
+			$validate->setRequired(['lesson_id', 'native_phrase', 'foreign_phrase']);
+			$validate->setIsText(['native_phrase', 'foreign_phrase']);
+			$validate->setIsNumeric(['lesson_id']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed: ' . $e->getMessage());
+		}	
 	}
 
 

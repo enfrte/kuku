@@ -2,15 +2,17 @@
 
 namespace Controllers;
 
-use DB;
-use Web;
 use Models\Courses\CoursesData;
-use Template;
+use Classes\ToastException;
 use Exception;
+use Template;
 use Base;
+use Web;
+use DB;
 
 class Courses  
 {
+	
 	public function index(Base $f3)
 	{
 		$student_condition = '';
@@ -51,20 +53,18 @@ class Courses
 		try {
 			$title = $_POST['title'] ?? '';
 			
-			//$coursesData = new CoursesData();
-			//$coursesData->validateForm();
+			$coursesData = new CoursesData();
+			$coursesData->validateForm();
 
 			$course = new DB\SQL\Mapper($f3->DB,'courses');
 			$course->copyFrom('POST');
 			$course->slug = Web::instance()->slug($title);
 			$course->save();
-		} 
-		catch (\Throwable $th) {
-			echo '<pre>'.$th->getMessage().'</pre>';
-		}
-		finally {
 			$this->index($f3);
-		}		
+		} 
+		catch (Exception $e) {
+			new ToastException($e);
+		}
     }
 
     public function read()

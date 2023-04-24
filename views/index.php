@@ -60,5 +60,7 @@
 	</false>
 </check>
 
+<include href="/views/components/error-toast.php" />
+
 </body>
 </html>

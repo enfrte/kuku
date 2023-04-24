@@ -2,13 +2,9 @@
 
 namespace Models\Sentences;
 
-class SentencesModel extends BaseModel
+class SentencesModel 
 {
     public function __construct($db)
     {
-        $table = 'sentences';
-        $columns = array('id' , ...);
-        $primaryKeys = array('id');
-        parent::__construct($db, $table, $columns, $primaryKeys);
     }
 }

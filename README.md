@@ -1,7 +1,7 @@
 # kuku 
 
-kuku is a language learning and practice app. 
-The app allows an admin to create courses and learners to practice course content.
+kuku is a language learning and practice app that empowers individuals to creaate content in any for they choose.
+
 kuku means cuckoo in [pandunia](https://pandunia.info). 
 
 ## Technology stack 
@@ -12,10 +12,6 @@ kuku means cuckoo in [pandunia](https://pandunia.info).
 
 **JS:** HTMX, AlpineJS
 
-## Todo
+## Future features
 
-Next: Student view
-	Courses menu
-		Lessons menu 
-			Questions 
-		
+None as of yet. Please make suggestions in the issues section. 

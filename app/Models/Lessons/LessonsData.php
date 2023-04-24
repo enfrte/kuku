@@ -2,10 +2,10 @@
 
 namespace Models\Lessons;
 
-//use Classes\FormValidation;
-use Base;
 use DB;
+use Base;
 use Exception;
+use Classes\FormValidation;
 
 class LessonsData 
 {
@@ -23,25 +23,6 @@ class LessonsData
         $primaryKeys = ['id'];
         parent::__construct($db, $table, $columns, $primaryKeys); */
     }
-
-	/**
-	 * Validates a form based on custom attribute configuration.
-	 *
-	 * @return bool
-	 */
-	public function validateForm()
-	{
-		/* $formValidation = new FormValidation();
-		$formValidation->setFilterNotMatching(['id', 'title', 'description', 'language', 'instruction_language', 'slug', 'version', 'in_production']);
-		$formValidation->setRequired(['title', 'language', 'instruction_language', 'in_production']);
-		$formValidation->setTextLengthLessThan([
-			'title' => 255, 
-			'description' => 255, 
-			'language' => 4, 
-			'instruction_language' => 4,
-		]);
-		$formValidation->validate(); */
-	}
 
 
 	public function load(Base $f3, int $id)
@@ -73,6 +54,29 @@ class LessonsData
 		return $this->getLesson()->cast();
 	}
 
+
+	/**
+	 * Validates a form based on custom attribute configuration.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['title', 'description', 'tutorial', 'course_id', 'level', 'in_production']); 
+			$validate->setRequired(['title', 'course_id']);
+			$validate->setIsText(['title', 'description', 'tutorial']);
+			$validate->setIsNumeric(['version', 'in_production', 'course_id', 'level', 'in_production']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed: ' . $e->getMessage());
+		}	
+	}
+
+
 	/**
 	 * Get the value of lesson
 	 */ 
@@ -92,7 +96,6 @@ class LessonsData
 		$this->lesson = $lesson;
 		return $this;
 	}
-
 
 
 }
