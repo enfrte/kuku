@@ -61,7 +61,7 @@ class LessonsData
 	 * @return void
 	 * @throws Exception
 	 */
-	public function validateForm()
+	public function validateNewForm()
 	{
 		try {
 			$validate = new FormValidation();
@@ -76,6 +76,27 @@ class LessonsData
 		}	
 	}
 
+
+	/**
+	 * Validates a form based on custom attribute configuration.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateUpdateForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['id', 'title', 'description', 'tutorial', 'course_id', 'level', 'in_production']); 
+			$validate->setRequired(['title', 'course_id']);
+			$validate->setIsText(['title', 'description', 'tutorial']);
+			$validate->setIsNumeric(['version', 'in_production', 'course_id', 'level', 'in_production']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed: ' . $e->getMessage());
+		}	
+	}
 
 	/**
 	 * Get the value of lesson

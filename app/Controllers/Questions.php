@@ -3,11 +3,12 @@
 namespace Controllers;
 
 use DB;
-use Template;
-use Models\Questions\QuestionsData;
-use Models\Lessons\LessonsData;
-use Exception;
 use Base;
+use Template;
+use Exception;
+use Classes\ToastException;
+use Models\Lessons\LessonsData;
+use Models\Questions\QuestionsData;
 
 class Questions extends BaseController
 {
@@ -60,17 +61,16 @@ class Questions extends BaseController
     {
 		try {
 			$f3->DB->begin();
-
-			$questionData = new QuestionsData($f3);
-			$questionData->saveNewQuestionAndAltPhrases($f3);
+			
+			$question = new QuestionsData($f3);
+			$question->validateNewForm();
+			$question->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
-		} 
-		catch (\Throwable $th) {
-			echo '<pre>'.$th->getMessage().'</pre>';
-		}
-		finally {
 			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
+		} 
+		catch (Exception $e) {
+			new ToastException($e);
 		}
     }
 
@@ -86,17 +86,15 @@ class Questions extends BaseController
 
 			// Update = create a new entry with the current (old) form data.
 			$questionData = new QuestionsData($f3);
+			$questionData->validateUpdateForm();
 			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
-		} 
-		catch (\Throwable $th) {
-			echo '<pre>'.$th->getMessage().'</pre>';
-		}
-		finally {
 			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
+		} 
+		catch (\Exception $e) {
+			new ToastException($e);
 		}
-
 	}
 
     public function delete(Base $f3, $args)

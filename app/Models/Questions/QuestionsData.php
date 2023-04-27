@@ -6,7 +6,9 @@ use DB;
 use Base;
 use Exception;
 use Models\BaseModel;
+use Classes\ToastException;
 use Classes\FormValidation;
+use Models\AltPhrases\AltPhraseData;
 
 class QuestionsData extends BaseModel
 {
@@ -66,44 +68,58 @@ class QuestionsData extends BaseModel
 
 	public function saveNewQuestionAndAltPhrases(Base $f3)
 	{
-		$_POST['native_phrase'] = $this->sanitiseSpaces($_POST['native_phrase']);
-		$_POST['foreign_phrase'] = $this->sanitiseSpaces($_POST['foreign_phrase']);
-		
-		$questionsModel = new DB\SQL\Mapper($f3->DB,'questions');
-		$questionsModel->copyFrom('POST');
-		$questionsModel->save();
+		try {
+			//$this->validateNewForm();
 
-		$altNativePhrases = explode(PHP_EOL, $_POST['alternative_native_phrase']);
-
-		foreach ($altNativePhrases as $altNativePhrase) {
-			$altNativePhrase = $this->sanitiseSpaces($altNativePhrase);
+			$_POST['native_phrase'] = $this->sanitiseSpaces($_POST['native_phrase']);
+			$_POST['foreign_phrase'] = $this->sanitiseSpaces($_POST['foreign_phrase']);
 			
-			if (empty($altNativePhrase)) continue;
+			$questionsModel = new DB\SQL\Mapper($f3->DB,'questions');
+			$questionsModel->copyFrom('POST');
+			$questionsModel->save();
 
-			$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_native_phrase');
-			$mapper->question_id = $questionsModel->_id;
-			$mapper->phrase = $altNativePhrase;
-			$mapper->save();
-		}
+			$altNativePhrases = explode(PHP_EOL, $_POST['alternative_native_phrase']);
 
-		$altForeignPhrases = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
+			foreach ($altNativePhrases as $altNativePhrase) {
+				$altNativePhrase = $this->sanitiseSpaces($altNativePhrase);
+				
+				if (empty($altNativePhrase)) continue;
 
-		foreach ($altForeignPhrases as $altForeignPhrase) {
-			$altForeignPhrase = $this->sanitiseSpaces($altForeignPhrase);
-			
-			if (empty($altForeignPhrase)) continue;
+				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_native_phrase');
+				$mapper->question_id = $questionsModel->_id;
+				$mapper->phrase = $altNativePhrase;
 
-			$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_foreign_phrase');
-			$mapper->question_id = $questionsModel->_id;
-			$mapper->phrase = $altForeignPhrase;
-			$mapper->save();
+				//$altPhrase = new AltPhraseData($f3);
+				//$altPhrase->validateNewForm();
+
+				$mapper->save();
+			}
+
+			$altForeignPhrases = explode(PHP_EOL, $_POST['alternative_foreign_phrase']);
+
+			foreach ($altForeignPhrases as $altForeignPhrase) {
+				$altForeignPhrase = $this->sanitiseSpaces($altForeignPhrase);
+				
+				if (empty($altForeignPhrase)) continue;
+
+				$mapper = new DB\SQL\Mapper($f3->DB, 'alternative_foreign_phrase');
+				$mapper->question_id = $questionsModel->_id;
+				$mapper->phrase = $altForeignPhrase;
+
+				//$altPhrase = new AltPhraseData($f3);
+				//$altPhrase->validateNewForm();
+
+				$mapper->save();
+			}
+		} 
+		catch (\Exception $e) {
+			new ToastException($e);
 		}
 	}
 
 
 	public function getQuestions(Base $f3, int $lesson_id)
 	{
-		
 		$questions_query = $f3->DB->exec(
 			'SELECT q.*
 			, anp.id AS alternative_native_phrase_id, anp.phrase AS alternative_native_phrase
@@ -190,14 +206,35 @@ class QuestionsData extends BaseModel
 	 * @return void
 	 * @throws Exception
 	 */
-	public function validateForm()
+	public function validateNewForm()
 	{
 		try {
 			$validate = new FormValidation();
-			$validate->setFieldsToProcess(['lesson_id', 'native_phrase', 'foreign_phrase']); 
+			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']); 
 			$validate->setRequired(['lesson_id', 'native_phrase', 'foreign_phrase']);
-			$validate->setIsText(['native_phrase', 'foreign_phrase']);
+			$validate->setIsText(['native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']);
 			$validate->setIsNumeric(['lesson_id']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed: ' . $e->getMessage());
+		}	
+	}
+
+	/**
+	 * Validates a form based on custom attribute configuration.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateUpdateForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']); 
+			$validate->setRequired(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase']);
+			$validate->setIsText(['native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']);
+			$validate->setIsNumeric(['lesson_id', 'question_id']);
 			$validate->doValidate();
 		} 
 		catch (Exception $e) {

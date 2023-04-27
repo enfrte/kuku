@@ -25,7 +25,7 @@ class Courses
 			' SELECT * FROM courses WHERE deleted = 0 ' . $student_condition
 		));
 
-		$foo = $f3->get('courses');
+		//$foo = $f3->get('courses');
 		
 		if ( $is_admin ) {
 			echo Template::instance()->render('views/components/admin/courses/course-list.php');
@@ -54,7 +54,7 @@ class Courses
 			$title = $_POST['title'] ?? '';
 			
 			$coursesData = new CoursesData();
-			$coursesData->validateForm();
+			$coursesData->validateNewForm();
 
 			$course = new DB\SQL\Mapper($f3->DB,'courses');
 			$course->copyFrom('POST');
@@ -74,7 +74,11 @@ class Courses
 
     public function update(Base $f3)
     {
-		$f3->DB->exec(
+		try {
+			$course = new CoursesData();
+			$course->validateUpdateForm();
+
+			$f3->DB->exec(
 				'UPDATE courses 
 				SET title = :title, 
 				description = :description,
@@ -82,17 +86,21 @@ class Courses
 				version = :version,
 				in_production = :in_production
 				WHERE id = :id', 
-			[
-				':id' => $_POST['id'],
-				':title' => $_POST['title'], 
-				':description' => $_POST['description'],
-				':slug' => Web::instance()->slug($_POST['title']),
-				':version' => $_POST['version'],
-				':in_production' => !empty($_POST['in_production']) ? $_POST['in_production'] : 0,
-			]
-		);
+				[
+					':id' => $_POST['id'],
+					':title' => $_POST['title'], 
+					':description' => $_POST['description'],
+					':slug' => Web::instance()->slug($_POST['title']),
+					':version' => $_POST['version'],
+					':in_production' => !empty($_POST['in_production']) ? $_POST['in_production'] : 0,
+				]
+			);
 
-		$this->index($f3);
+			$this->index($f3);
+		} 
+		catch (Exception $e) {
+			new ToastException($e);
+		}
 	}
 
     public function delete(Base $f3, $args)

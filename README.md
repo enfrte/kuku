@@ -1,6 +1,6 @@
 # kuku 
 
-kuku is a language learning and practice app that empowers individuals to creaate content in any for they choose.
+kuku is a language learning and practice app that empowers individuals to create custom content.
 
 kuku means cuckoo in [pandunia](https://pandunia.info). 
 

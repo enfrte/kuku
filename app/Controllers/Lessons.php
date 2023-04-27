@@ -4,10 +4,11 @@ namespace Controllers;
 
 use DB;
 use Web;
-use Models\Lessons\LessonsData;
+use Base;
 use Template;
 use Exception;
-use Base;
+use Classes\ToastException;
+use Models\Lessons\LessonsData;
 
 class Lessons extends BaseController
 {
@@ -82,48 +83,52 @@ class Lessons extends BaseController
 
 	public function save(Base $f3) {
 		try {
+			$lesson = new LessonsData();
+			$lesson->validateNewForm();
+
 			$model = new DB\SQL\Mapper($f3->DB,'lessons');
 			$model->copyFrom('POST');
 			$model->slug = Web::instance()->slug($model->title);
 			$model->save();
-		} 
-		catch (\Throwable $th) {
-			echo '<pre>'.$th->getMessage().'</pre>';
-		}
-		finally {
 			$this->index($f3, ['course_id' => $_POST['course_id']]);
-		}	
+		} 
+		catch (Exception $e) {
+			new ToastException($e);
+		}
 	}
 	
-	public function update(Base $f3, $args) {
-		$in_production = !empty($_POST['in_production']) ? 1 : 0;
+	public function update(Base $f3, $args) 
+	{
+		try {	
+			$lesson = new LessonsData;
+			$lesson->validateUpdateForm();
 
-		$f3->DB->exec(
-				'UPDATE lessons 
-				SET title = :title, 
-				slug = :slug,
-				tutorial = :tutorial,
-				course_id = :course_id,
-				level = :level,
-				in_production = :in_production
-				WHERE id = :id', 
-			[
-				':id' => $_POST['id'],
-				':title' => $_POST['title'], 
-				':slug' => Web::instance()->slug($_POST['title']),
-				':tutorial' => $_POST['tutorial'],
-				':course_id' => $_POST['course_id'],
-				':level' => $_POST['level'],
-				':in_production' => $in_production,
-			]
-		);
+			$in_production = !empty($_POST['in_production']) ? 1 : 0;
 
-		$args['course_id'] = $_POST['course_id'];
-		$this->index($f3, $args);
+			$f3->DB->exec(
+					'UPDATE lessons 
+					SET title = :title, 
+					slug = :slug,
+					tutorial = :tutorial,
+					level = :level,
+					in_production = :in_production
+					WHERE id = :id', 
+				[
+					':id' => $_POST['id'],
+					':title' => $_POST['title'], 
+					':slug' => Web::instance()->slug($_POST['title']),
+					':tutorial' => $_POST['tutorial'],
+					':level' => $_POST['level'],
+					':in_production' => $in_production,
+				]
+			);
 
-		/* $slug = $formData['course_id'] . '-' . strtolower(str_replace(' ', '-', $formData['title']));
-		$result = $this->db->exec("UPDATE lessons SET title=?, slug=?, tutorial=?, course_id=?, level=? WHERE id=?", $formData['title'], $slug, $formData['tutorial'], $formData['course_id'], $formData['level'], $id);
-		echo json_encode($result); */
+			$args['course_id'] = $_POST['course_id'];
+			$this->index($f3, $args);
+		} 
+		catch (\Exception $e) {
+			new ToastException($e);
+		}
 	}
 	
 	public function delete(Base $f3, $args) {

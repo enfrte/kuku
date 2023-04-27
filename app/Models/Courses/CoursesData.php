@@ -73,7 +73,7 @@ class CoursesData
 	 * @return void
 	 * @throws Exception
 	 */
-	public function validateForm()
+	public function validateNewForm()
 	{
 		try {
 			$validate = new FormValidation();
@@ -84,8 +84,30 @@ class CoursesData
 			$validate->doValidate();
 		} 
 		catch (Exception $e) {
-			throw new Exception('Form validation failed: ' . $e->getMessage());
+			throw new Exception('Form validation failed. ' . $e->getMessage());
 		}	
 	}
+
+	/**
+	 * Validates a form based on custom attribute configuration.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateUpdateForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['id', 'title', 'description', 'in_production', 'version']); 
+			$validate->setRequired(['title', 'version']);
+			$validate->setIsText(['title', 'description']);
+			$validate->setIsNumeric(['version', 'in_production']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed. ' . $e->getMessage());
+		}	
+	}
+
 
 }
