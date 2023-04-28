@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\Courses\CoursesData;
 use Classes\ToastException;
+use Classes\Languages;
 use Exception;
 use Template;
 use Base;
@@ -21,11 +22,15 @@ class Courses
 		if ( !$is_admin ) {
 			$student_condition = ' AND in_production = 1 ';
 		}
-		$f3->set('courses',$f3->DB->exec(
-			' SELECT * FROM courses WHERE deleted = 0 ' . $student_condition
-		));
 
-		//$foo = $f3->get('courses');
+		$courses = $f3->DB->exec(' SELECT * FROM courses WHERE deleted = 0 ' . $student_condition);
+
+		foreach ($courses as $key => $course) {
+			$courses[$key]['languageLongForm'] = Languages::getLanguageByIsoKey($course['language']); 
+			$courses[$key]['instructionalLanguageLongForm'] = Languages::getLanguageByIsoKey($course['instruction_language']); 
+		}
+
+		$f3->set('courses', $courses);
 		
 		if ( $is_admin ) {
 			echo Template::instance()->render('views/components/admin/courses/course-list.php');
@@ -35,7 +40,7 @@ class Courses
 		echo Template::instance()->render('views/components/student/courses/course-list.php');
 	}
 
-	public function create()
+	public function create(Base $f3)
 	{
 		echo Template::instance()->render('views/components/admin/courses/course-creator-editor.php');
 	}

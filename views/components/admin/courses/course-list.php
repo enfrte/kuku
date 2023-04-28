@@ -19,8 +19,8 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>{{ @course.language }}</td>
-							<td>{{ @course.instruction_language }}</td>
+							<td>{{ @course.languageLongForm }}</td>
+							<td>{{ @course.instructionalLanguageLongForm }}</td>
 							<td>{{ @course.version }}</td>
 							<td>
 								<check if="{{ !empty(@course.in_production) }}">

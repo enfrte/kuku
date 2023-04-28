@@ -21,15 +21,57 @@
 	
 	<check if="{{ empty(@course) }}">
 		<true>
+			<!-- <div class="mb-3">
+				<label for="learningLanguage" class="form-label">Language (you are teaching)</label>
+				<input type="text" name="language" class="form-control" id="learningLanguage" required>
+			</div> -->
+
+			<!-- <div class="mb-3">
+				<label for="instructionLanguage" class="form-label">Instruction language</label>
+				<input type="text" name="instruction_language" class="form-control" id="instructionLanguage" required>
+			</div> -->
+		
+
 			<div class="mb-3">
-				<label for="language" class="form-label">Language (you are teaching)</label>
-				<input type="text" name="language" class="form-control" id="language" required>
+				<div class="row g-2">
+					<div class="col-md-6">
+						<label for="learningLanguage" class="form-label">Language (you are teaching)</label>
+						<input 
+							id="learningLanguage"
+							type="search" 
+							name="language"
+							hx-post="{{ @BASE }}/languageSearch/language" 
+							hx-target="#languageSelectContainer"
+							hx-swap="innerHTML"
+							hx-trigger="keyup changed delay:500ms, search" 
+							class="form-control"
+							placeholder="Filter language selection"
+							required>
+					</div>
+					<div id="languageSelectContainer" class="col-md-6"></div>
+				</div>
 			</div>
 
 			<div class="mb-3">
-				<label for="instruction_language" class="form-label">Instruction language</label>
-				<input type="text" name="instruction_language" class="form-control" id="instruction_language" required>
+				<div class="row g-2">
+					<div class="col-md-6">
+						<label for="instructionLanguage" class="form-label">Instruction language</label>
+						<input 
+							id="instructionLanguage"
+							type="search" 
+							name="instruction_language"
+							hx-post="{{ @BASE }}/languageSearch/instruction_language" 
+							hx-target="#instructionLanguageSelectContainer"
+							hx-swap="innerHTML"
+							hx-trigger="keyup changed delay:500ms, search" 
+							class="form-control"
+							placeholder="Filter language selection"
+							required>
+					</div>
+					<div id="instructionLanguageSelectContainer" class="col-md-6"></div>
+				</div>
 			</div>
+
 		</true>
 	</check>
 

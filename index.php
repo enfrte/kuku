@@ -36,7 +36,11 @@ $f3->route('POST /login','Controllers\Admin->login');
 
 // Student
 
-//$f3->route('GET /','Controllers\Student->index');
+$f3->route('GET /','Controllers\Student->index');
+
+// Components 
+
+$f3->route('POST /languageSearch/@type','Controllers\Components\LanguageSelect->languageSearch'); 
 
 // Courses
 
@@ -65,10 +69,6 @@ $f3->route('POST /saveQuestion','Controllers\Questions->save');
 $f3->route('GET /editQuestion/@id','Controllers\Questions->edit'); 
 $f3->route('POST /updateQuestion','Controllers\Questions->update'); 
 $f3->route('DELETE /deleteQuestion/@question_id/@lesson_id','Controllers\Questions->delete'); 
-
-// Home
-
-$f3->route('GET /','Controllers\Student->index');
 
 // Dev
 

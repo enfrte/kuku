@@ -2,6 +2,9 @@
 
 namespace Controllers;
 
+use Classes\ToastException;
+
+
 class BaseController
 {
 	protected $isAdmin; 
@@ -12,7 +15,7 @@ class BaseController
 
 	public function errorHandler(\Throwable $error)
 	{
-		if ( $this->isAdmin || $error instanceof \Exception ) {
+		if ( $this->isAdmin || $error instanceof ToastException ) {
 			return $error->getMessage();
 		} 
 		else {
