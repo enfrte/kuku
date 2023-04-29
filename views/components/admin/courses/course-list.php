@@ -1,4 +1,5 @@
-<h1 class="pt-3 pb-3">Courses (Admin)</h1>
+<!-- ADMIN -->
+<h1 class="pt-3 pb-3">Courses</h1>
 
 <check if="{{empty(@courses)}}"><h4 class="pt-5">No Courses</h4></check>
 

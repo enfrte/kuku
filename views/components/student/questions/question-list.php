@@ -1,6 +1,6 @@
 <include href="/views/components/student/student-nav.php" />
 
-<div x-data='{ questions: {{ @@questions | raw }} }'>
+<div x-data='{ questions: {{ @@questions }} }'>
 	<div x-data="lessonInstance()" class="pt-2">
 
 		<div class="progress-container pt-3 d-flex align-items-center justify-content-between">

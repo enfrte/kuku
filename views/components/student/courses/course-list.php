@@ -2,7 +2,7 @@
 
 <div class="course_list">
 	
-	<h1 class="pt-3 pb-3">Courses (Student)</h1>
+	<h1 class="pt-3 pb-3">Courses<!-- Student --></h1>
 
 	<repeat group="{{ @courses }}" value="{{ @course }}">
 		
