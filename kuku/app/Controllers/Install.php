@@ -7,8 +7,7 @@ class Install
 	public function index()
 	{
 		$f3 = \Base::instance();
-		$f3->set('APP_PATH', $f3->ROOT . DIRECTORY_SEPARATOR . $f3->INSTALL_FOLDER);
-		$f3->set('SCHEMA_FILE', $f3->APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
+		$f3->set('SCHEMA_FILE', $f3->ABSOLUTE_PRIVATE_APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
 
 		$result = "Success!";
 
@@ -26,7 +25,7 @@ class Install
 			}
 
 			// Run multiple commands from the schema script
-			$db = new \PDO('sqlite:'.__DIR__.'/data/'.$f3->APPNAME.'_db.sqlite');			
+			$db = new \PDO('sqlite:'.$f3->ABSOLUTE_PRIVATE_APP_PATH.'data/'.$f3->APPNAME.'_db.sqlite');			
 		 	$db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, 0);
 			$db->exec($schema); 
 		}

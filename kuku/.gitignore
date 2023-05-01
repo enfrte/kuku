@@ -1,0 +1,9 @@
+vendor
+.vscode
+tmp
+interlingue.txt
+.env
+ReST.rest
+data/old-json.json
+data/design.sql
+data/kuku_db.sqlite

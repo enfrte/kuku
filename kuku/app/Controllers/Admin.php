@@ -9,8 +9,8 @@ class Admin
 
 	public function __construct(\Base $f3) 
 	{
-		$installPath = $f3->ROOT . DIRECTORY_SEPARATOR . $f3->INSTALL_FOLDER . DIRECTORY_SEPARATOR;
-		$envFileContents = file_get_contents($installPath.'/.env', true);
+		$installPath = $f3->ABSOLUTE_PRIVATE_APP_PATH;
+		$envFileContents = file_get_contents($installPath.'.env', true);
 		$this->adminStore = json_decode($envFileContents);
 	}
 
