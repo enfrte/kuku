@@ -26,7 +26,7 @@ Navigate to `kuku` and put the `kuku` folder one directory back from the web roo
 
 Navigate to the `kuku/public` folder and put kuku folder in the web root. 
 
-Get the OS path to the `kuku/kuku` folder and add as the values to 'ABSOLUTE_PRIVATE_APP_PATH' and 'UI' in index.php 
+Get the OS path to the `kuku` folder one directory back from the web root, and add as the values to 'ABSOLUTE_PRIVATE_APP_PATH' and 'UI' in index.php 
 
 Run the install script to create the sqlite db. 
 
