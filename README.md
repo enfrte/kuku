@@ -32,9 +32,9 @@ Run the install script to create the sqlite db.
 
 ## Local dev
 
-Navigate to `kuku/public` and run `php -S localhost:8000`
-
 Get the OS path to the `kuku/kuku` folder and add as the values to 'ABSOLUTE_PRIVATE_APP_PATH' and 'UI' in index.php 
+
+Navigate to `kuku/public` and run `php -S localhost:8000`
 
 Try http://localhost:8000/kuku/
 
