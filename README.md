@@ -4,6 +4,8 @@ kuku is a language learning and practice app that empowers individuals to create
 
 kuku means cuckoo in [pandunia](https://pandunia.info). 
 
+Demo of the student area: https://codinginthecold.alwaysdata.net/kuku/
+
 ## Technology stack 
 
 **Framework:** Fat Free Framework (F3). 
