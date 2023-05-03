@@ -22,12 +22,14 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
+							<th>Description</th>
 							<th>Level</th>
 							<th>In production</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
+							<td>{{ @lesson.description }}</td>
 							<td>{{ @lesson.level }}</td>
 							<td>
 								<check if="{{ !empty(@lesson.in_production) }}">
