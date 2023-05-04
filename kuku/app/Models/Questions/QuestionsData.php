@@ -196,7 +196,9 @@ class QuestionsData extends BaseModel
 			}
 		}
 
-		return array_values($questions);
+		shuffle($questions);
+		
+		return $questions;
 	}
 
 
