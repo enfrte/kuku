@@ -56,7 +56,13 @@
 						hx-get="{{ @BASE }}/questions/{{ @lesson.id }}"
 						hx-target="main">
 						Add sentences
-					</li>	
+					</li>
+					<li 
+						class="dropdown-item" 
+						hx-get="{{ @BASE }}/batchQuestions/{{ @lesson.id }}"
+						hx-target="main">
+						Add batch sentences
+					</li>
 					<li 
 						class="dropdown-item" 
 						hx-get="{{ @BASE }}/editLesson/{{ @lesson.id }}"

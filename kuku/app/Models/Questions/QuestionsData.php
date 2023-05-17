@@ -117,6 +117,27 @@ class QuestionsData extends BaseModel
 		}
 	}
 
+	public function saveBatchQuestion(Base $f3)
+	{
+		try {
+			$batchQuestions = explode("\n", $_POST['batchQuestions']);
+
+			
+			foreach ($batchQuestions as $key => $batchQuestion) {
+				$batchQuestionSanitised = $this->sanitiseSpaces($batchQuestion);
+				$batchQuestionGetCsv = str_getcsv($batchQuestionSanitised, ",", "\"");
+				
+				$mapper = new DB\SQL\Mapper($f3->DB,'questions');
+				$mapper->lesson_id = $_POST['lesson_id'];
+				$mapper->foreign_phrase = $batchQuestionGetCsv[0];
+				$mapper->native_phrase = $batchQuestionGetCsv[1];
+				$mapper->save();
+			}
+		} 
+		catch (\Exception $e) {
+			new ToastException($e);
+		}
+	}
 
 	public function getQuestions(Base $f3, int $lesson_id)
 	{
@@ -237,6 +258,28 @@ class QuestionsData extends BaseModel
 			$validate->setRequired(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase']);
 			$validate->setIsText(['native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']);
 			$validate->setIsNumeric(['lesson_id', 'question_id']);
+			$validate->doValidate();
+		} 
+		catch (Exception $e) {
+			throw new Exception('Form validation failed: ' . $e->getMessage());
+		}	
+	}
+
+
+	/**
+	 * ...
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public function validateBatchForm()
+	{
+		try {
+			$validate = new FormValidation();
+			$validate->setFieldsToProcess(['lesson_id', 'batchQuestions']); 
+			$validate->setRequired(['lesson_id', 'batchQuestions']);
+			$validate->setIsText(['batchQuestions']);
+			$validate->setIsNumeric(['lesson_id']);
 			$validate->doValidate();
 		} 
 		catch (Exception $e) {

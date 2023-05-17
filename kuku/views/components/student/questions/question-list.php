@@ -44,7 +44,7 @@
 
 		<hr class="mb-4">
 
-		<div class="choice-container d-flex justify-content-center mb-1">
+		<div class="choice-container d-flex flex-wrap justify-content-center mb-1">
 			<template x-for="(choice, index) in choiceArray" :key="index">
 				<button 
 					class="btn btn-sm btn-outline-secondary rounded-4 border-2 text-dark m-1 pt-2 pb-2" 

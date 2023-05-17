@@ -2,11 +2,18 @@
 
 namespace Controllers;
 
-class Install
+use Base;
+
+class Install extends BaseController
 {
 	public function index()
 	{
-		$f3 = \Base::instance();
+		$f3 = Base::instance();
+
+		if ( empty($f3->get('SESSION.user.admin')) ) { 
+			die('Requires admin');
+		}
+
 		$f3->set('SCHEMA_FILE', $f3->ABSOLUTE_PRIVATE_APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
 
 		$result = "Success!";

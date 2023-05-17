@@ -75,8 +75,10 @@ $f3->route('GET /quiz/@id','Controllers\Lessons->quiz');
 // Questions
 
 $f3->route('GET /questions/@lesson_id','Controllers\Questions->index');
+$f3->route('GET /batchQuestions/@lesson_id','Controllers\Questions->batchQuestions');
 $f3->route('GET /createQuestion/@lesson_id','Controllers\Questions->create'); 
 $f3->route('POST /saveQuestion','Controllers\Questions->save'); 
+$f3->route('POST /saveBatchQuestions','Controllers\Questions->saveBatchQuestions'); 
 $f3->route('GET /editQuestion/@id','Controllers\Questions->edit'); 
 $f3->route('POST /updateQuestion','Controllers\Questions->update'); 
 $f3->route('DELETE /deleteQuestion/@question_id/@lesson_id','Controllers\Questions->delete'); 

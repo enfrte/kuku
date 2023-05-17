@@ -51,14 +51,59 @@ class Questions extends BaseController
 		}
 	}
 
+	public function batchQuestions(Base $f3, $args) 
+	{
+		try {
+			$lesson_id = $args['lesson_id'] ?? '';
+			
+			if (empty($lesson_id)) {
+				throw new Exception("lesson id required");
+			}
+
+			$f3->set('lesson_id', $lesson_id);
+
+			$lesson = new LessonsData;
+			$lesson->load( $f3, $lesson_id );
+			$f3->set('lesson', $lesson->cast());
+
+			$questionData = new QuestionsData($f3);
+			$questions = $questionData->getQuestions($f3, $lesson_id);
+			
+			if ( $this->isAdmin ) {
+				$f3->set('questions', $questions);
+				echo Template::instance()->render('views/components/admin/questions/batch-question-creator.php');
+			}
+		} 
+		catch (\Throwable $th) {
+			$this->errorHandler($th);
+		}
+	}
+
+    public function saveBatchQuestions(Base $f3)
+    {
+		try {
+			$f3->DB->begin();
+
+			$questionData = new QuestionsData($f3);
+			$questionData->validateBatchForm();
+			$questionData->saveBatchQuestion($f3);
+
+			$f3->DB->commit();
+			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
+		} 
+		catch (Exception $e) {
+			new ToastException($e);
+		}
+    }
+
     public function create(Base $f3, $args)
     {
 		$f3->set('lesson_id', $args['lesson_id']);
 		echo Template::instance()->render('views/components/admin/questions/question-creator-editor.php');
     }
 
-    public function save(Base $f3)
-    {
+	public function save(Base $f3)
+	{
 		try {
 			$f3->DB->begin();
 			

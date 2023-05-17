@@ -40,3 +40,7 @@ Navigate to `kuku/public` and run `php -S localhost:8000`
 
 Try http://localhost:8000/kuku/
 
+Or
+
+If using XAMPP http://localhost/kuku/public/kuku/
+

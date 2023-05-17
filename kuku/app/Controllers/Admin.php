@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Base; 
 
 class Admin
 {
@@ -14,7 +15,7 @@ class Admin
 		$this->adminStore = json_decode($envFileContents);
 	}
 
-	public function index(\Base $f3)
+	public function index(Base $f3)
 	{
 		if ( empty($f3->get('SESSION.user.admin')) ) { 
 			$this->login($f3);
@@ -26,7 +27,7 @@ class Admin
 		}
 	}
 
-	public function welcome(\Base $f3)
+	public function welcome(Base $f3)
 	{
 		if ( empty($f3->get('SESSION.user.admin')) ) {
 			$this->login($f3);
@@ -36,7 +37,7 @@ class Admin
 		}
 	}
 
-	public function login(\Base $f3)
+	public function login(Base $f3)
 	{
 		if ( empty($f3->get('SESSION.user.admin')) ) {
 			$username = $_POST['username'] ?? ''; 
@@ -64,4 +65,32 @@ class Admin
 			echo \Template::instance()->render('views/components/admin/login.php');
 		}
 	}
+
+	public function backup(Base $f3)
+	{
+		if ( empty($f3->get('SESSION.user.admin')) ) { 
+			$this->login($f3);
+		}
+
+		if (empty($_POST['backup'])) {
+			echo \Template::instance()->render('views/components/admin/backup.php');
+			return;
+		}
+
+		$date = date('Y-m-d-H:i');
+		
+		$path = $f3->ABSOLUTE_PRIVATE_APP_PATH.'data/';
+		$extension = '.sqlite';
+		$original_file = $path . $f3->APPNAME.'_db'.$extension;
+		$copy_file = $path . $original_file . $date . $extension;
+
+		// make a copy of the original file
+		if (!copy($original_file, $copy_file)) {
+			echo "Failed to copy $original_file...\n";
+			exit;
+		}
+		
+		echo 'Copied: '.$copy_file;
+	}
+
 }
