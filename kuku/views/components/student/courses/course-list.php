@@ -10,7 +10,7 @@
 			<div class="d-flex flex-column justify-content-center align-items-center card-body">
 
 				<svg style="width: 78px; height: 62px; min-width: 78px; margin-top: 10px;">
-					<image width="78" height="62" href="{{ @BASE }}/assets/img/flag_ie.svg"></image>
+					<image width="78" height="62" href="{{ @BASE }}/assets/img/flag_{{ @@course.language }}.svg"></image>
 				</svg>
 
 				<h3 class="pt-3">{{ @course.title }}</h3>

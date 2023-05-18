@@ -13,7 +13,6 @@ use DB;
 
 class Courses  
 {
-	
 	public function index(Base $f3)
 	{
 		$student_condition = '';
