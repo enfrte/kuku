@@ -198,14 +198,27 @@ class QuestionsData extends BaseModel
 		$questions = [];
 		
 		foreach ($questions_query as $question) {
+			$wordId = 0;
 			if ( empty($questions[$question['id']]) ) {
-				$questions[$question['id']] = [
+				$tmp = [];
+
+				$tmp = [
 					'id' => $question['id'],
 					'native_phrase_array' => explode(' ', $question['native_phrase']),
 					'foreign_phrase_array' => explode(' ', $question['foreign_phrase']),
 					'native_phrase' => $question['native_phrase'],
 					'foreign_phrase' => $question['foreign_phrase'],
 				];
+				foreach ($tmp['foreign_phrase_array'] as $key => $word) {
+					$tmp['foreign_phrase_object'][$wordId]['id'] = $key;
+					$tmp['foreign_phrase_object'][$wordId]['word'] = $word;
+					$tmp['foreign_phrase_object'][$wordId]['hidden'] = false;
+					$tmp['foreign_phrase_object'][$wordId]['width'] = 0;
+					$tmp['foreign_phrase_object'][$wordId]['height'] = 0;
+					$wordId++;
+				}
+
+				$questions[$question['id']] = $tmp;
 			}
 
 			if (!empty($question['alternative_native_phrase'])) {

@@ -36,3 +36,31 @@ button {
 .choice-container .btn-outline-secondary, .answer-container .btn-outline-secondary { 
 	--bs-btn-hover-bg: transparent; /* Fix for this showing after button click in quiz */
 }
+
+/* The area that holds the shape of the button when it is removed */
+.btn-placeholder {
+	display: inline-block;
+	margin:4px;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: default;
+	border-radius: 1rem;
+	transition: all 0.3s ease;
+	color: grey;
+	background-color: grey;
+	border-color: grey;
+	box-sizing: border-box;
+}
+
+.btn-placeholder:hover {
+	background-color: grey;
+	border-color: grey;
+}
+
+.btn-placeholder:focus {
+	box-shadow: none;
+}

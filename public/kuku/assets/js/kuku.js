@@ -42,7 +42,7 @@ function lessonInstance() {
 			this.nextQuestionModal = true;
 		},
 
-		checkAlternativeAnswers() {
+		checkAlternativeAnswers: function() {
 			const ans = this.answerArray;
 			const alt_arr = this.questions[this.questionNumber]['alternative_foreign_phrase'] || [];
 
@@ -53,8 +53,8 @@ function lessonInstance() {
 					this.result = 'Incorrect';
 				}
 				else {
+					if (alt_arr_item[i] !== ans[i]) {
 					for (let i = 0; i < alt_arr_item.length; i++) {
-						if (alt_arr_item[i] !== ans[i]) {
 							this.result = 'Incorrect';
 						}
 					}
@@ -66,19 +66,30 @@ function lessonInstance() {
 			});
 		},
 
-		moveToAnswer: function(choice, index) {
+		addToAnswer: function(choice, id) {
+			//debugger;
 			this.answerArray.push(choice);
-			this.choiceArray.splice(index, 1);
+			this.choiceArray.forEach((choice) => {
+				if (choice.id === id) {
+					choice.hidden = true;
+				}
+			});
 		},
 
-		moveToChoice: function(answer, index) {
-			this.choiceArray.push(answer);
+		removeFromAnswer: function(index, id) {
+			//debugger;
 			this.answerArray.splice(index, 1);
+			this.choiceArray.forEach((choice) => {
+				if (choice.id === id) {
+					choice.hidden = false;
+				}
+			});
 		}, 
 
 		populateChoiceAnswerArea: function() {
-			this.choiceArray = [...this.questions[this.questionNumber]['foreign_phrase_array']];
-			this.shuffleChoices(this.injectRandomWord());
+			//debugger;
+			this.choiceArray = [...this.questions[this.questionNumber]['foreign_phrase_object']];
+			this.shuffleChoices(this.generateRandomWord());
 			this.answerArray = [];
 		},
 
@@ -98,10 +109,12 @@ function lessonInstance() {
 		},
 
 		shuffleChoices: function(randomWord = false) {
+			//debugger;
 			let array = this.choiceArray;
 
 			if (randomWord) {
-				array.push(randomWord);
+				const newChoiceObj = { id: (array.length), word: randomWord, hidden: false, width: 0, height: 0 }
+				array.push(newChoiceObj);
 			}
 			
 			for (let i = array.length - 1; i > 0; i--) {
@@ -110,7 +123,9 @@ function lessonInstance() {
 			}
 		},
 
-		injectRandomWord: function () {
+		// Generates a random word from a collection of unique words not found in the answer.
+		generateRandomWord: function () {
+			//debugger;
 			let questions = this.questions;
 			let uniqueWords = [];
 			let currentQuestion = questions[this.questionNumber]['foreign_phrase_array'];
@@ -126,8 +141,24 @@ function lessonInstance() {
 			return uniqueWords[Math.floor(Math.random() * uniqueWords.length)];
 		},
 
+		updateOffsets() {
+			//debugger;
+			const choiceButton = this.$refs.choiceButton;
+			if (choiceButton) {
+				this.widthOffset = choiceButton.offsetWidth;
+				this.heightOffset = choiceButton.offsetHeight;
+			}
+		},
+
+		foo: function (event, index, id) {
+			//console.log(event.target.offsetWidth);
+			console.log('foo:', event, index, id);
+		},
+
 		init: function () {
 			this.populateChoiceAnswerArea();
+			console.log(this.questions);
+			//console.log(this.choiceArray);
 		}
 	}
 }
