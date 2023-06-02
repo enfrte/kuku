@@ -48,14 +48,11 @@
 			<template x-for="(choice, index) in choiceArray" :key="choice.id">
 				<div 
 					class="btn-placeholder" 
-					x-data="{ widthOffset: 0, heightOffset: 0 }" 
-					x-init="updateOffsets()" 
-					x-bind:style="{ width: `${ widthOffset }px`, height: `${ heightOffset }px` }">
+					style="max-width:max-content;">
 					<button 
 						class="btn btn-sm btn-outline-secondary rounded-4 border-2 text-dark bg-light pt-2 pb-2" 
 						x-text="choice.word" 
-						x-bind:hidden="choice.hidden"
-						x-ref="choiceButton"
+						x-bind:class="{'hidden': choice.hidden}"
 						x-on:click="addToAnswer(choice, choice.id);foo(event, index, choice.id)">
 					</button>
 				</div>

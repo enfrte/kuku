@@ -144,10 +144,8 @@ function lessonInstance() {
 		updateOffsets() {
 			//debugger;
 			const choiceButton = this.$refs.choiceButton;
-			if (choiceButton) {
-				this.widthOffset = choiceButton.offsetWidth;
-				this.heightOffset = choiceButton.offsetHeight;
-			}
+			this.widthOffset = choiceButton.offsetWidth;
+			this.heightOffset = choiceButton.offsetHeight;
 		},
 
 		foo: function (event, index, id) {
@@ -157,6 +155,7 @@ function lessonInstance() {
 
 		init: function () {
 			this.populateChoiceAnswerArea();
+			//this.updateOffsets();
 			console.log(this.questions);
 			//console.log(this.choiceArray);
 		}
