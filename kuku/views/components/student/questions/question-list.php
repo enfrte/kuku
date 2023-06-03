@@ -50,6 +50,7 @@
 					class="btn-placeholder" 
 					style="max-width:max-content;">
 					<button 
+						type="button"
 						class="btn btn-sm btn-outline-secondary rounded-4 border-2 text-dark bg-light pt-2 pb-2" 
 						x-text="choice.word" 
 						x-bind:class="{'hidden': choice.hidden}"

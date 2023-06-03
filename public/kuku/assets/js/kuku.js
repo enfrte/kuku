@@ -19,6 +19,7 @@ function lessonInstance() {
 		},
 		
 		checkAnswer: function() {
+			//debugger;
 			this.result = 'Correct';
 			const qst = this.questions[this.questionNumber]['foreign_phrase_array'];
 			const ans = this.answerArray;
@@ -28,7 +29,7 @@ function lessonInstance() {
 			}
 			else {
 				for (let i = 0; i < qst.length; i++) {
-					if (qst[i] !== ans[i]) {
+					if (qst[i] !== ans[i].word) {
 						this.result = 'Incorrect';
 					}
 				}
@@ -43,6 +44,7 @@ function lessonInstance() {
 		},
 
 		checkAlternativeAnswers: function() {
+			//debugger;
 			const ans = this.answerArray;
 			const alt_arr = this.questions[this.questionNumber]['alternative_foreign_phrase'] || [];
 
@@ -53,8 +55,8 @@ function lessonInstance() {
 					this.result = 'Incorrect';
 				}
 				else {
-					if (alt_arr_item[i] !== ans[i]) {
 					for (let i = 0; i < alt_arr_item.length; i++) {
+						if (alt_arr_item[i] !== ans[i].word) {
 							this.result = 'Incorrect';
 						}
 					}
