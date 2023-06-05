@@ -3,6 +3,7 @@
 <div class="course_list">
 	
 	<h1 class="pt-3 pb-3">Courses<!-- Student --></h1>
+	<p>This is a demo site of kuku. You can download the source <a href="https://github.com/enfrte/kuku">here</a> and host your own courses. The version is currently {{ @VERSION }}</p>
 
 	<repeat group="{{ @courses }}" value="{{ @course }}">
 		

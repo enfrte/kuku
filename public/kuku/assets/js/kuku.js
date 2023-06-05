@@ -152,13 +152,13 @@ function lessonInstance() {
 
 		foo: function (event, index, id) {
 			//console.log(event.target.offsetWidth);
-			console.log('foo:', event, index, id);
+			//console.log('foo:', event, index, id);
 		},
 
 		init: function () {
 			this.populateChoiceAnswerArea();
 			//this.updateOffsets();
-			console.log(this.questions);
+			//console.log(this.questions);
 			//console.log(this.choiceArray);
 		}
 	}
