@@ -13,7 +13,8 @@ $f3->mset([
 	//'UI' => '/home/codinginthecold/kuku/',
 	'ABSOLUTE_PRIVATE_APP_PATH' => '/opt/lampp/htdocs/kuku/kuku/', //XAMPP path
 	'UI' => '/opt/lampp/htdocs/kuku/kuku/',
-	'VERSION' => '0.3.1', // (major version . feature update . bugfix)
+	'VERSION' => '0.3.2', // (major version . feature update . bugfix)
+	'UPDATE_COMMIT_MSG' => 'Fixed lesson tutorial rendering literal html tags, and db install redirect.',
 ]);
 
 $f3->set('DB', new DB\SQL('sqlite:'.$f3->ABSOLUTE_PRIVATE_APP_PATH.'data/'.$f3->APPNAME.'_db.sqlite'));

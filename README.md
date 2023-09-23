@@ -24,13 +24,17 @@ Please make further suggestions in the issues section.
 
 ## Install
 
+Install the dependencies managed by composer. 
+
+Change .env_copy to .env and set the values to your own.
+
 Navigate to `kuku` and put the `kuku` folder one directory back from the web root. 
 
 Navigate to the `kuku/public` folder and put kuku folder in the web root. 
 
 Get the OS path to the `kuku` folder one directory back from the web root, and add as the values to 'ABSOLUTE_PRIVATE_APP_PATH' and 'UI' in index.php 
 
-Run the install script to create the sqlite db. 
+Log in to /admin, run the /install script to create the sqlite db. 
 
 ## Local dev
 

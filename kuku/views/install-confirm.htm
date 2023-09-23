@@ -14,7 +14,7 @@
 
 <p>{{ @uniqid }}</p>
 
-<form action="/kuku/install" method="post">
+<form action="{{ @BASE }}/install" method="post">
 	<input type="text" name="uniqid">
 	<input type="hidden" name="confirm_uniqid" value="{{ @uniqid }}">
 	<button>Install</button>

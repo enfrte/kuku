@@ -14,7 +14,7 @@ class Install extends BaseController
 			die('Requires admin');
 		}
 
-		$f3->set('SCHEMA_FILE', $f3->ABSOLUTE_PRIVATE_APP_PATH . DIRECTORY_SEPARATOR . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
+		$f3->set('SCHEMA_FILE', $f3->ABSOLUTE_PRIVATE_APP_PATH . 'data'. DIRECTORY_SEPARATOR . 'table-schema.sql');
 
 		$result = "Success!";
 
@@ -26,7 +26,7 @@ class Install extends BaseController
 		
 		try {
 			$schema = file_get_contents($f3->SCHEMA_FILE); 
-			
+
 			if ( empty($schema) ) {
 				throw new \Exception("Could not get contents of schema file");
 			}
