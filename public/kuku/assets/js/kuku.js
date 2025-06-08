@@ -13,6 +13,7 @@ function lessonInstance() {
 		resultMessage: '',
 		exit: false,
 		nextQuestionModal: false,
+		language: 'sv',
 
 		updateProgressBar: function() {
 			this.progressPercent = Math.ceil((this.questionNumber / this.questions.length) * 100);
@@ -76,6 +77,8 @@ function lessonInstance() {
 					choice.hidden = true;
 				}
 			});
+
+			this.playAudio(choice.word);
 		},
 
 		removeFromAnswer: function(index, id) {
@@ -87,6 +90,16 @@ function lessonInstance() {
 				}
 			});
 		}, 
+
+		// Play audio file for the current question
+		playAudio: function(choice) {
+			//debugger;
+			choice = choice.replace(/[.,!?;:()]/g, '').toLowerCase(); // Remove . , ! ? and sanitize choice to prevent issues with file names
+			const file = '/kuku/public/kuku/assets/audio/' + this.language + '/mp3/' + choice + '_' + this.language + '.mp3'
+			console.log('Playing audio file:', file);
+			const audio = new Audio(file);
+			audio.play();
+		},
 
 		populateChoiceAnswerArea: function() {
 			//debugger;
