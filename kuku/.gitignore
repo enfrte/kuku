@@ -7,3 +7,4 @@ ReST.rest
 data/old-json.json
 data/design.sql
 data/kuku_db.sqlite
+composer.phar
