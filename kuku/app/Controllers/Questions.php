@@ -7,6 +7,7 @@ use Base;
 use Template;
 use Exception;
 use Classes\ToastException;
+use Classes\LanguageAudio;
 use Models\Lessons\LessonsData;
 use Models\Questions\QuestionsData;
 
@@ -35,6 +36,8 @@ class Questions extends BaseController
 
 			$questionData = new QuestionsData($f3);
 			$questions = $questionData->getQuestions($f3, $lesson_id);
+			$courseData = $questionData->getCourseByLessonId($f3, $lesson_id);
+			$f3->set('course', $courseData[0]);
 			
 			if ( $this->isAdmin ) {
 				$f3->set('questions', $questions);
@@ -69,6 +72,9 @@ class Questions extends BaseController
 			$questionData = new QuestionsData($f3);
 			$questions = $questionData->getQuestions($f3, $lesson_id);
 			
+			$courseData = $questionData->getCourseByLessonId($f3, $lesson_id);
+			$f3->set('course', $courseData[0]);
+
 			if ( $this->isAdmin ) {
 				$f3->set('questions', $questions);
 				echo Template::instance()->render('views/components/admin/questions/batch-question-creator.php');
@@ -89,6 +95,10 @@ class Questions extends BaseController
 			$questionData->saveBatchQuestion($f3);
 
 			$f3->DB->commit();
+
+			$languageAudio = new LanguageAudio($_POST['language_locale'], $f3->ABSOLUTE_PRIVATE_APP_PATH, $f3->AUDIO_PATH, $f3->APPNAME);
+			$languageAudio->updateAudio();
+
 			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
 		} 
 		catch (Exception $e) {
@@ -135,6 +145,10 @@ class Questions extends BaseController
 			$questionData->saveNewQuestionAndAltPhrases($f3);
 
 			$f3->DB->commit();
+
+			$languageAudio = new LanguageAudio($_POST['language_locale'], $f3->ABSOLUTE_PRIVATE_APP_PATH, $f3->AUDIO_PATH, $f3->APPNAME);
+			$languageAudio->updateAudio();
+
 			$this->index($f3, ['lesson_id' => $_POST['lesson_id']]);
 		} 
 		catch (\Exception $e) {

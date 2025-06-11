@@ -1,5 +1,6 @@
 <form>
 	<input type="hidden" name="lesson_id" value="{{ @@lesson_id }}">
+	<input type="hidden" name="language_locale" value="{{ @@course['language'] }}">
 
 	<div class="mb-3">
 		<label for="batchQuestions" class="form-label">Add batch sentences:</label>

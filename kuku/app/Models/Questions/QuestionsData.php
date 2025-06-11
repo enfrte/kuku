@@ -164,6 +164,21 @@ class QuestionsData extends BaseModel
 
 		return $questions;
 	}
+	
+	public function getCourseByLessonId(Base $f3, int $lesson_id)
+	{
+		$course_query = $f3->DB->exec(
+			'SELECT c.*
+			FROM lessons l 
+			JOIN courses c ON c.id = l.course_id 
+			WHERE l.id = :lesson_id
+			LIMIT 1', 
+			[':lesson_id' => $lesson_id]
+		);
+
+		return $course_query;
+	}
+
 
 	private function processQuestionDataForAdmin($questions_query)
 	{
@@ -175,6 +190,7 @@ class QuestionsData extends BaseModel
 					'id' => $question['id'],
 					'native_phrase' => $question['native_phrase'],
 					'foreign_phrase' => $question['foreign_phrase'],
+					'language_locale' => $question['language'],
 				];
 			}
 
@@ -267,7 +283,7 @@ class QuestionsData extends BaseModel
 	{
 		try {
 			$validate = new FormValidation();
-			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']); 
+			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase', 'language_locale']); 
 			$validate->setRequired(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase']);
 			$validate->setIsText(['native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']);
 			$validate->setIsNumeric(['lesson_id', 'question_id']);

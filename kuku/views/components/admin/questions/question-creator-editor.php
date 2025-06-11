@@ -38,6 +38,7 @@
 				<true>style="display:none;" id="question_container{{ @question['id'] }}"</true>
 			</check>
 			>
+			<input type="hidden" name="language_locale" value="{{ @@course['language'] }}">
 			<input type="hidden" name="lesson_id" value="{{ @lesson_id }}">
 			<input type="hidden" name="question_id" value="{{ @@question['id'] }}">
 			<div class="col-md-12 mb-3">
