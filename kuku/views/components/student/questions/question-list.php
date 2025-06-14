@@ -54,7 +54,7 @@
 						class="btn btn-sm btn-outline-secondary rounded-4 border-2 text-dark bg-light pt-2 pb-2" 
 						x-text="choice.word" 
 						x-bind:class="{'hidden': choice.hidden}"
-						x-on:click="addToAnswer(choice, choice.id)">
+						x-on:click="addToAnswer(choice, choice.id, '{{ @BASE }}')">
 					</button>
 				</div>
 			</template>

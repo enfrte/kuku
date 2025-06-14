@@ -76,7 +76,7 @@ class LanguageAudio
             $audioData = curl_exec($ch);
             curl_close($ch);
 
-            $filename = $language . "/mp3/" . urldecode($word) . "_$language" . ".mp3";
+            $filename = $this->audioPath . $language . "/mp3/" . urldecode($word) . "_$language" . ".mp3";
             file_put_contents($filename, $audioData);
             echo "Saved $filename\n";
         }

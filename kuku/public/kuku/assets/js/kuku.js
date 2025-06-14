@@ -70,7 +70,9 @@ function lessonInstance() {
 		},
 
 		addToAnswer: function(choice, id, base_path) {
-			//debugger;			
+			//debugger;
+			console.log(base_path);
+			
 			this.answerArray.push(choice);
 			this.choiceArray.forEach((choice) => {
 				if (choice.id === id) {

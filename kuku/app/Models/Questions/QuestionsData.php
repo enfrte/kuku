@@ -145,11 +145,14 @@ class QuestionsData extends BaseModel
 			'SELECT q.*
 			, anp.id AS alternative_native_phrase_id, anp.phrase AS alternative_native_phrase
 			, afp.id AS alternative_foreign_phrase_id, afp.phrase AS alternative_foreign_phrase
+			, c.language
 			FROM questions q 
 			LEFT JOIN alternative_native_phrase anp 
 			ON q.id = anp.question_id 
 			LEFT JOIN alternative_foreign_phrase afp 
 			ON q.id = afp.question_id 
+			JOIN lessons l ON l.id = q.lesson_id 
+			JOIN courses c ON c.id = l.course_id 
 			WHERE q.lesson_id = :lesson_id
 			ORDER BY q.id DESC', 
 			[':lesson_id' => $lesson_id]
@@ -262,7 +265,7 @@ class QuestionsData extends BaseModel
 	{
 		try {
 			$validate = new FormValidation();
-			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']); 
+			$validate->setFieldsToProcess(['lesson_id', 'question_id', 'native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase', 'language_locale']); 
 			$validate->setRequired(['lesson_id', 'native_phrase', 'foreign_phrase']);
 			$validate->setIsText(['native_phrase', 'foreign_phrase', 'alternative_native_phrase', 'alternative_foreign_phrase']);
 			$validate->setIsNumeric(['lesson_id']);
@@ -305,7 +308,7 @@ class QuestionsData extends BaseModel
 	{
 		try {
 			$validate = new FormValidation();
-			$validate->setFieldsToProcess(['lesson_id', 'batchQuestions']); 
+			$validate->setFieldsToProcess(['lesson_id', 'batchQuestions', 'language_locale']); 
 			$validate->setRequired(['lesson_id', 'batchQuestions']);
 			$validate->setIsText(['batchQuestions']);
 			$validate->setIsNumeric(['lesson_id']);
