@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 require '../../kuku/vendor/autoload.php';
 
+$dev = false; // Set to false in production
 
 $f3 = \Base::instance();
 $f3->mset([
@@ -20,8 +21,8 @@ $f3->mset([
 	'ABSOLUTE_PRIVATE_APP_PATH' => dirname(__DIR__, 2) . '/kuku/', // Dev path
 	'UI' => dirname(__DIR__, 2) . '/kuku/',
 	'AUDIO_PATH' => __DIR__ . '/assets/audio/',
-	'VERSION' => '0.4.0', // (major version . feature update . bugfix)
-	'UPDATE_COMMIT_MSG' => 'Add sound files after saving public lesson.',
+	'VERSION' => !empty($dev) ? time() : '0.4.1', // (major version . feature update . bugfix)
+	'UPDATE_COMMIT_MSG' => 'Alternative phrase bugfix.',
 ]);
 
 $f3->set('DB', new DB\SQL('sqlite:'.$f3->ABSOLUTE_PRIVATE_APP_PATH.'data/'.$f3->APPNAME.'_db.sqlite'));

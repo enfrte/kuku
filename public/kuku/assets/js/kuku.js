@@ -30,7 +30,7 @@ function lessonInstance() {
 			}
 			else {
 				for (let i = 0; i < qst.length; i++) {
-					if (qst[i] !== ans[i].word) {
+					if (this.stripExtraCharacters(qst[i]) !== this.stripExtraCharacters(ans[i].word)) {
 						this.result = 'Incorrect';
 					}
 				}
@@ -44,12 +44,22 @@ function lessonInstance() {
 			this.nextQuestionModal = true;
 		},
 
-		checkAlternativeAnswers: function() {
+		stripExtraCharacters: function(word) {
 			//debugger;
-			const ans = this.answerArray;
-			const alt_arr = this.questions[this.questionNumber]['alternative_foreign_phrase'] || [];
+			return word.replace(/[.,!?;:()]/g, '').toLowerCase(); // Remove . , ! ? and sanitize choice to prevent issues with file names
+		}, 
 
+		checkAlternativeAnswers: function() {
+			const ans = this.answerArray;
+			let alt_arr = this.questions[this.questionNumber]['alternative_foreign_phrase'] || [];
+			
+			if (!Array.isArray(alt_arr)) {
+				alt_arr = Object.values(alt_arr);
+			}
+
+			// Process each alternative answer
 			alt_arr.forEach(alt_arr_item => {
+				//debugger;
 				this.result = 'Correct';
 
 				if (alt_arr_item.length !== ans.length) {
@@ -57,20 +67,22 @@ function lessonInstance() {
 				}
 				else {
 					for (let i = 0; i < alt_arr_item.length; i++) {
-						if (alt_arr_item[i] !== ans[i].word) {
+						if (this.stripExtraCharacters(alt_arr_item[i]) !== this.stripExtraCharacters(ans[i].word)) {
 							this.result = 'Incorrect';
 						}
 					}
 				}
 
 				if (this.result === 'Correct') {
-					return; // break out of forEach()
+					return; // Exit the loop early if a correct alternative answer is found
 				}
 			});
 		},
 
 		addToAnswer: function(choice, id, base_path) {
-			//debugger;			
+			//debugger;
+			//console.log(base_path);
+			
 			this.answerArray.push(choice);
 			this.choiceArray.forEach((choice) => {
 				if (choice.id === id) {
@@ -94,9 +106,9 @@ function lessonInstance() {
 		// Play audio file for the current question
 		playAudio: function(choice, base_path) {
 			//debugger;
-			choice = choice.replace(/[.,!?;:()]/g, '').toLowerCase(); // Remove . , ! ? and sanitize choice to prevent issues with file names
+			choice = this.stripExtraCharacters(choice); // Remove . , ! ? and sanitize choice to prevent issues matching file names
 			const file = base_path + '/assets/audio/' + this.language + '/mp3/' + choice + '_' + this.language + '.mp3'
-			console.log('Playing audio file:', file);
+			//console.log('Playing audio file:', file);
 			const audio = new Audio(file);
 			audio.play();
 		},
@@ -156,17 +168,12 @@ function lessonInstance() {
 			return uniqueWords[Math.floor(Math.random() * uniqueWords.length)];
 		},
 
-		updateOffsets() {
-			//debugger;
-			const choiceButton = this.$refs.choiceButton;
-			this.widthOffset = choiceButton.offsetWidth;
-			this.heightOffset = choiceButton.offsetHeight;
-		},
-
-		foo: function (event, index, id) {
-			//console.log(event.target.offsetWidth);
-			//console.log('foo:', event, index, id);
-		},
+		// updateOffsets() {
+		// 	//debugger;
+		// 	const choiceButton = this.$refs.choiceButton;
+		// 	this.widthOffset = choiceButton.offsetWidth;
+		// 	this.heightOffset = choiceButton.offsetHeight;
+		// },
 
 		init: function () {
 			this.populateChoiceAnswerArea();
