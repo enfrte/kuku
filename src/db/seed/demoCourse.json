@@ -1,0 +1,1521 @@
+{
+  "course": {
+    "title": "100 Swedish Lessons",
+    "description": "Numbered Swedish lessons. ",
+    "language": "swe",
+    "instructionLanguage": "eng",
+    "slug": "100-swedish-lessons",
+    "version": 1,
+    "inProduction": 1
+  },
+  "lessons": [
+    {
+      "id": 1,
+      "title": "1 People",
+      "description": "",
+      "slug": "1-people",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 2,
+      "title": "2 Family members",
+      "description": "",
+      "slug": "2-family-members",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 3,
+      "title": "3 Getting to know others",
+      "description": "",
+      "slug": "3-getting-to-know-others",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 4,
+      "title": "4 At school",
+      "description": "",
+      "slug": "4-at-school",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 5,
+      "title": "5 Countries and languages",
+      "description": "",
+      "slug": "5-countries-and-languages",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 6,
+      "title": "6 Reading and writing",
+      "description": "",
+      "slug": "6-reading-and-writing",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 7,
+      "title": "7 Numbers",
+      "description": "",
+      "slug": "7-numbers",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 8,
+      "title": "8 The time",
+      "description": "",
+      "slug": "8-the-time",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 9,
+      "title": "9 Days of the week",
+      "description": "",
+      "slug": "9-days-of-the-week",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    },
+    {
+      "id": 10,
+      "title": "10 Yesterday, today, tomorrow",
+      "description": "",
+      "slug": "10-yesterday-today-tomorrow",
+      "tutorial": "",
+      "level": 1,
+      "inProduction": 1
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "lessonId": 1,
+      "nativePhrase": "I",
+      "foreignPhrase": "jag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 2,
+      "lessonId": 1,
+      "nativePhrase": "I and you",
+      "foreignPhrase": "jag och du",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 3,
+      "lessonId": 1,
+      "nativePhrase": "both of us",
+      "foreignPhrase": "vi två",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 4,
+      "lessonId": 1,
+      "nativePhrase": "he",
+      "foreignPhrase": "han",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 5,
+      "lessonId": 1,
+      "nativePhrase": "he and she",
+      "foreignPhrase": "han och hon",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 6,
+      "lessonId": 1,
+      "nativePhrase": "they both",
+      "foreignPhrase": "de båda",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 7,
+      "lessonId": 1,
+      "nativePhrase": "the man",
+      "foreignPhrase": "mannen",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 8,
+      "lessonId": 1,
+      "nativePhrase": "the woman",
+      "foreignPhrase": "kvinnan",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 9,
+      "lessonId": 1,
+      "nativePhrase": "the child",
+      "foreignPhrase": "barnet",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 10,
+      "lessonId": 1,
+      "nativePhrase": "a family",
+      "foreignPhrase": "en familj",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 11,
+      "lessonId": 1,
+      "nativePhrase": "my family",
+      "foreignPhrase": "min familj",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 12,
+      "lessonId": 1,
+      "nativePhrase": "My family is here.",
+      "foreignPhrase": "Min familj är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 13,
+      "lessonId": 1,
+      "nativePhrase": "I am here.",
+      "foreignPhrase": "Jag är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 14,
+      "lessonId": 1,
+      "nativePhrase": "You are here.",
+      "foreignPhrase": "Du är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 15,
+      "lessonId": 1,
+      "nativePhrase": "He is here and she is here.",
+      "foreignPhrase": "Han är här och hon är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 16,
+      "lessonId": 1,
+      "nativePhrase": "We are here.",
+      "foreignPhrase": "Vi är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 17,
+      "lessonId": 1,
+      "nativePhrase": "You are here.",
+      "foreignPhrase": "Ni är här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 18,
+      "lessonId": 1,
+      "nativePhrase": "They are all here.",
+      "foreignPhrase": "De är alla här.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 22,
+      "lessonId": 2,
+      "nativePhrase": "the father",
+      "foreignPhrase": "fadern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 23,
+      "lessonId": 2,
+      "nativePhrase": "the mother",
+      "foreignPhrase": "modern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 25,
+      "lessonId": 2,
+      "nativePhrase": "the son",
+      "foreignPhrase": "sonen",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 26,
+      "lessonId": 2,
+      "nativePhrase": "the daughter",
+      "foreignPhrase": "dottern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 28,
+      "lessonId": 2,
+      "nativePhrase": "the brother",
+      "foreignPhrase": "brodern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 29,
+      "lessonId": 2,
+      "nativePhrase": "the sister",
+      "foreignPhrase": "systern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 33,
+      "lessonId": 2,
+      "nativePhrase": "he and she",
+      "foreignPhrase": "han och hon",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 34,
+      "lessonId": 2,
+      "nativePhrase": "We are a family.",
+      "foreignPhrase": "Vi är en familj.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 35,
+      "lessonId": 2,
+      "nativePhrase": "The family is not small.",
+      "foreignPhrase": "Familjen är inte liten.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 36,
+      "lessonId": 2,
+      "nativePhrase": "The family is big.",
+      "foreignPhrase": "Familjen är stor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 39,
+      "lessonId": 2,
+      "nativePhrase": "the uncle",
+      "foreignPhrase": "farbrodern, morbrodern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "morbrodern, farbrodern"
+      ]
+    },
+    {
+      "id": 40,
+      "lessonId": 2,
+      "nativePhrase": "the aunt",
+      "foreignPhrase": "fastern, mostern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "mostern, fastern"
+      ]
+    },
+    {
+      "id": 41,
+      "lessonId": 2,
+      "nativePhrase": "the grandmother",
+      "foreignPhrase": "mormodern, farmodern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "farmodern, mormodern"
+      ]
+    },
+    {
+      "id": 42,
+      "lessonId": 2,
+      "nativePhrase": "the grandfather",
+      "foreignPhrase": "morfadern, farfadern",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "farfadern, morfadern"
+      ]
+    },
+    {
+      "id": 43,
+      "lessonId": 3,
+      "nativePhrase": "Hi!",
+      "foreignPhrase": "Hej!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 44,
+      "lessonId": 3,
+      "nativePhrase": "Hello!",
+      "foreignPhrase": "God dag!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 45,
+      "lessonId": 3,
+      "nativePhrase": "How are you?",
+      "foreignPhrase": "Hur står det till?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 46,
+      "lessonId": 3,
+      "nativePhrase": "Do you come from Europe?",
+      "foreignPhrase": "Kommer ni från Europa?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 47,
+      "lessonId": 3,
+      "nativePhrase": "Do you come from America?",
+      "foreignPhrase": "Kommer ni från Amerika?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 48,
+      "lessonId": 3,
+      "nativePhrase": "Do you come from Asia?",
+      "foreignPhrase": "Kommer ni från Asien?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 49,
+      "lessonId": 3,
+      "nativePhrase": "In which hotel are you staying?",
+      "foreignPhrase": "På vilket hotell bor ni?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 50,
+      "lessonId": 3,
+      "nativePhrase": "How long have you been here for?",
+      "foreignPhrase": "Hur länge har ni varit här?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 51,
+      "lessonId": 3,
+      "nativePhrase": "How long will you be staying?",
+      "foreignPhrase": "Hur länge stannar ni?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 52,
+      "lessonId": 3,
+      "nativePhrase": "Do you like it here?",
+      "foreignPhrase": "Trivs ni bra här?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 53,
+      "lessonId": 3,
+      "nativePhrase": "Are you here on vacation?",
+      "foreignPhrase": "Är ni semester här?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 54,
+      "lessonId": 3,
+      "nativePhrase": "Please do visit me sometime!",
+      "foreignPhrase": "Kom och hälsa på mig någon gång!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 55,
+      "lessonId": 3,
+      "nativePhrase": "Here is my address.",
+      "foreignPhrase": "Här är min adress.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 56,
+      "lessonId": 3,
+      "nativePhrase": "Shall we see each other tomorrow?",
+      "foreignPhrase": "Ses vi imorgon?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 57,
+      "lessonId": 3,
+      "nativePhrase": "I am sorry, but I already have plans.",
+      "foreignPhrase": "Tyvärr, jag har annat för mig.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 58,
+      "lessonId": 3,
+      "nativePhrase": "Bye!",
+      "foreignPhrase": "Hej då!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 59,
+      "lessonId": 3,
+      "nativePhrase": "Good bye!",
+      "foreignPhrase": "Adjö!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 60,
+      "lessonId": 3,
+      "nativePhrase": "See you soon!",
+      "foreignPhrase": "Vi ses snart!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 61,
+      "lessonId": 4,
+      "nativePhrase": "Where are we?",
+      "foreignPhrase": "Var är vi?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 62,
+      "lessonId": 4,
+      "nativePhrase": "We are at school.",
+      "foreignPhrase": "Vi är i skolan.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 63,
+      "lessonId": 4,
+      "nativePhrase": "We are having class / a lesson.",
+      "foreignPhrase": "Vi har lektion.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 64,
+      "lessonId": 4,
+      "nativePhrase": "Those are the school children.",
+      "foreignPhrase": "Det där är eleverna.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 65,
+      "lessonId": 4,
+      "nativePhrase": "That is the teacher.",
+      "foreignPhrase": "Det där är lärarinnan.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 66,
+      "lessonId": 4,
+      "nativePhrase": "That is the class.",
+      "foreignPhrase": "Det där är klassen.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 67,
+      "lessonId": 4,
+      "nativePhrase": "What are we doing?",
+      "foreignPhrase": "Vad gör vi?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 68,
+      "lessonId": 4,
+      "nativePhrase": "We are learning.",
+      "foreignPhrase": "Vi lär oss.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 69,
+      "lessonId": 4,
+      "nativePhrase": "We are learning a language.",
+      "foreignPhrase": "Vi lär oss ett språk.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 70,
+      "lessonId": 4,
+      "nativePhrase": "I learn English.",
+      "foreignPhrase": "Jag lär mig engelska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 71,
+      "lessonId": 4,
+      "nativePhrase": "You learn Spanish.",
+      "foreignPhrase": "Du lär dig spanska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 72,
+      "lessonId": 4,
+      "nativePhrase": "He learns German.",
+      "foreignPhrase": "Han lär sig tyska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 73,
+      "lessonId": 4,
+      "nativePhrase": "We learn French.",
+      "foreignPhrase": "Vi lär oss franska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 74,
+      "lessonId": 4,
+      "nativePhrase": "You all learn Italian.",
+      "foreignPhrase": "Ni lär er italienska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 75,
+      "lessonId": 4,
+      "nativePhrase": "They learn Russian.",
+      "foreignPhrase": "De lär sig ryska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 76,
+      "lessonId": 4,
+      "nativePhrase": "Learning languages is interesting.",
+      "foreignPhrase": "Att lära sig språk är intressant.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 77,
+      "lessonId": 4,
+      "nativePhrase": "We want to understand people.",
+      "foreignPhrase": "Vi vill förstå människor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 78,
+      "lessonId": 4,
+      "nativePhrase": "We want to speak with people.",
+      "foreignPhrase": "Vi vill tala med människor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 79,
+      "lessonId": 5,
+      "nativePhrase": "John is from London.",
+      "foreignPhrase": "John är från London.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 80,
+      "lessonId": 5,
+      "nativePhrase": "London is in Great Britain.",
+      "foreignPhrase": "London ligger i Storbritannien.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 81,
+      "lessonId": 5,
+      "nativePhrase": "He speaks English.",
+      "foreignPhrase": "Han talar engelska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 82,
+      "lessonId": 5,
+      "nativePhrase": "Maria is from Madrid.",
+      "foreignPhrase": "Maria är från Madrid.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 83,
+      "lessonId": 5,
+      "nativePhrase": "Madrid is in Spain.",
+      "foreignPhrase": "Madrid ligger i Spanien.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 84,
+      "lessonId": 5,
+      "nativePhrase": "She speaks Spanish.",
+      "foreignPhrase": "Hon talar spanska.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 85,
+      "lessonId": 5,
+      "nativePhrase": "Peter and Martha are from Berlin.",
+      "foreignPhrase": "Peter och Martha är från Berlin.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 86,
+      "lessonId": 5,
+      "nativePhrase": "Berlin is in Germany.",
+      "foreignPhrase": "Berlin ligger i Tyskland.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 87,
+      "lessonId": 5,
+      "nativePhrase": "Do both of you speak German?",
+      "foreignPhrase": "Talar ni tyska båda två?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 88,
+      "lessonId": 5,
+      "nativePhrase": "London is a capital city.",
+      "foreignPhrase": "London är en huvudstad.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 89,
+      "lessonId": 5,
+      "nativePhrase": "Madrid and Berlin are also capital cities.",
+      "foreignPhrase": "Madrid och Berlin är också huvudstäder.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 90,
+      "lessonId": 5,
+      "nativePhrase": "Capital cities are big and noisy.",
+      "foreignPhrase": "Huvudstäderna är stora och bullriga.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 91,
+      "lessonId": 5,
+      "nativePhrase": "France is in Europe.",
+      "foreignPhrase": "Frankrike ligger i Europa.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 92,
+      "lessonId": 5,
+      "nativePhrase": "Egypt is in Africa.",
+      "foreignPhrase": "Egypten ligger i Afrika.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 93,
+      "lessonId": 5,
+      "nativePhrase": "Japan is in Asia.",
+      "foreignPhrase": "Japan ligger i Asien.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 94,
+      "lessonId": 5,
+      "nativePhrase": "Canada is in North America.",
+      "foreignPhrase": "Kanada ligger i Nordamerika.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 95,
+      "lessonId": 5,
+      "nativePhrase": "Panama is in Central America.",
+      "foreignPhrase": "Panama ligger i Mellanamerika.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 96,
+      "lessonId": 5,
+      "nativePhrase": "Brazil is in South America.",
+      "foreignPhrase": "Brasilien ligger i Sydamerika.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 97,
+      "lessonId": 6,
+      "nativePhrase": "I read.",
+      "foreignPhrase": "Jag läser.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 98,
+      "lessonId": 6,
+      "nativePhrase": "I read a letter (character).",
+      "foreignPhrase": "Jag läser en bokstav.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 99,
+      "lessonId": 6,
+      "nativePhrase": "I read a word.",
+      "foreignPhrase": "Jag läser ett ord.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 100,
+      "lessonId": 6,
+      "nativePhrase": "I read a sentence.",
+      "foreignPhrase": "Jag läser en mening.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 101,
+      "lessonId": 6,
+      "nativePhrase": "I read a letter.",
+      "foreignPhrase": "Jag läser ett brev.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 102,
+      "lessonId": 6,
+      "nativePhrase": "I read a book.",
+      "foreignPhrase": "Jag läser en bok.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 103,
+      "lessonId": 6,
+      "nativePhrase": "I read.",
+      "foreignPhrase": "Jag läser.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 104,
+      "lessonId": 6,
+      "nativePhrase": "You read.",
+      "foreignPhrase": "Du läser.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 105,
+      "lessonId": 6,
+      "nativePhrase": "He reads.",
+      "foreignPhrase": "Han läser.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 106,
+      "lessonId": 6,
+      "nativePhrase": "I write.",
+      "foreignPhrase": "Jag skriver.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 107,
+      "lessonId": 6,
+      "nativePhrase": "I write a letter (character).",
+      "foreignPhrase": "Jag skriver en bokstav.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 108,
+      "lessonId": 6,
+      "nativePhrase": "I write a word.",
+      "foreignPhrase": "Jag skriver ett ord.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 109,
+      "lessonId": 6,
+      "nativePhrase": "I write a sentence.",
+      "foreignPhrase": "Jag skriver en mening.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 110,
+      "lessonId": 6,
+      "nativePhrase": "I write a letter.",
+      "foreignPhrase": "Jag skriver ett brev.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 111,
+      "lessonId": 6,
+      "nativePhrase": "I write a book.",
+      "foreignPhrase": "Jag skriver en bok.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 112,
+      "lessonId": 6,
+      "nativePhrase": "I write.",
+      "foreignPhrase": "Jag skriver.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 113,
+      "lessonId": 6,
+      "nativePhrase": "You write.",
+      "foreignPhrase": "Du skriver.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 114,
+      "lessonId": 6,
+      "nativePhrase": "He writes.",
+      "foreignPhrase": "Han skriver.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 115,
+      "lessonId": 7,
+      "nativePhrase": "I count:",
+      "foreignPhrase": "Jag räknar:",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 116,
+      "lessonId": 7,
+      "nativePhrase": "one, two, three",
+      "foreignPhrase": "ett, två, tre",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 117,
+      "lessonId": 7,
+      "nativePhrase": "I count to three.",
+      "foreignPhrase": "Jag räknar till tre.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 118,
+      "lessonId": 7,
+      "nativePhrase": "I count further:",
+      "foreignPhrase": "Jag räknar vidare:",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 119,
+      "lessonId": 7,
+      "nativePhrase": "four, five, six,",
+      "foreignPhrase": "fyra, fem, sex,",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 120,
+      "lessonId": 7,
+      "nativePhrase": "seven, eight, nine",
+      "foreignPhrase": "sju, åtta, nio",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 121,
+      "lessonId": 7,
+      "nativePhrase": "I count.",
+      "foreignPhrase": "Jag räknar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 122,
+      "lessonId": 7,
+      "nativePhrase": "You count.",
+      "foreignPhrase": "Du räknar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 123,
+      "lessonId": 7,
+      "nativePhrase": "He counts.",
+      "foreignPhrase": "Han räknar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 124,
+      "lessonId": 7,
+      "nativePhrase": "One. The first.",
+      "foreignPhrase": "Ett. Den första.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 125,
+      "lessonId": 7,
+      "nativePhrase": "Two. The second.",
+      "foreignPhrase": "Två. Den andra.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 126,
+      "lessonId": 7,
+      "nativePhrase": "Three. The third.",
+      "foreignPhrase": "Tre. Den tredje.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 127,
+      "lessonId": 7,
+      "nativePhrase": "Four. The fourth.",
+      "foreignPhrase": "Fyra. Den fjärde.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 128,
+      "lessonId": 7,
+      "nativePhrase": "Five. The fifth.",
+      "foreignPhrase": "Fem. Den femte.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 129,
+      "lessonId": 7,
+      "nativePhrase": "Six. The sixth.",
+      "foreignPhrase": "Sex. Den sjätte.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 130,
+      "lessonId": 7,
+      "nativePhrase": "Seven. The seventh.",
+      "foreignPhrase": "Sju. Den sjunde.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 131,
+      "lessonId": 7,
+      "nativePhrase": "Eight. The eighth.",
+      "foreignPhrase": "Åtta. Den åttonde.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 132,
+      "lessonId": 7,
+      "nativePhrase": "Nine. The ninth.",
+      "foreignPhrase": "Nio. Den nionde.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 133,
+      "lessonId": 8,
+      "nativePhrase": "Excuse me!",
+      "foreignPhrase": "Ursäkta!",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 134,
+      "lessonId": 8,
+      "nativePhrase": "What time is it, please?",
+      "foreignPhrase": "Hur mycket är klockan?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 135,
+      "lessonId": 8,
+      "nativePhrase": "Thank you very much.",
+      "foreignPhrase": "Tack så mycket.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 136,
+      "lessonId": 8,
+      "nativePhrase": "It is one o'clock.",
+      "foreignPhrase": "Klockan är ett.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 137,
+      "lessonId": 8,
+      "nativePhrase": "It is two o'clock.",
+      "foreignPhrase": "Klockan är två.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 138,
+      "lessonId": 8,
+      "nativePhrase": "It is three o'clock.",
+      "foreignPhrase": "Klockan är tre.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 139,
+      "lessonId": 8,
+      "nativePhrase": "It is four o'clock.",
+      "foreignPhrase": "Klockan är fyra.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 140,
+      "lessonId": 8,
+      "nativePhrase": "It is five o'clock.",
+      "foreignPhrase": "Klockan är fem.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 141,
+      "lessonId": 8,
+      "nativePhrase": "It is six o'clock.",
+      "foreignPhrase": "Klockan är sex.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 142,
+      "lessonId": 8,
+      "nativePhrase": "It is seven o'clock.",
+      "foreignPhrase": "Klockan är sju.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 143,
+      "lessonId": 8,
+      "nativePhrase": "It is eight o'clock.",
+      "foreignPhrase": "Klockan är åtta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 144,
+      "lessonId": 8,
+      "nativePhrase": "It is nine o'clock.",
+      "foreignPhrase": "Klockan är nio.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 145,
+      "lessonId": 8,
+      "nativePhrase": "It is ten o'clock.",
+      "foreignPhrase": "Klockan är tio.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 146,
+      "lessonId": 8,
+      "nativePhrase": "It is eleven o'clock.",
+      "foreignPhrase": "Klockan är elva.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 147,
+      "lessonId": 8,
+      "nativePhrase": "It is twelve o'clock.",
+      "foreignPhrase": "Klockan är tolv.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 148,
+      "lessonId": 8,
+      "nativePhrase": "A minute has sixty seconds.",
+      "foreignPhrase": "En minut har sextio sekunder.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 149,
+      "lessonId": 8,
+      "nativePhrase": "An hour has sixty minutes.",
+      "foreignPhrase": "En timme har sextio minuter.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 150,
+      "lessonId": 8,
+      "nativePhrase": "A day has twenty-four hours.",
+      "foreignPhrase": "En dag har tjugofyra timmar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 151,
+      "lessonId": 9,
+      "nativePhrase": "Monday",
+      "foreignPhrase": "måndag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 152,
+      "lessonId": 9,
+      "nativePhrase": "Tuesday",
+      "foreignPhrase": "tisdag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 153,
+      "lessonId": 9,
+      "nativePhrase": "Wednesday",
+      "foreignPhrase": "onsdag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 154,
+      "lessonId": 9,
+      "nativePhrase": "Thursday",
+      "foreignPhrase": "torsdag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 155,
+      "lessonId": 9,
+      "nativePhrase": "Friday",
+      "foreignPhrase": "fredag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 156,
+      "lessonId": 9,
+      "nativePhrase": "Saturday",
+      "foreignPhrase": "lördag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 157,
+      "lessonId": 9,
+      "nativePhrase": "Sunday",
+      "foreignPhrase": "söndag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 158,
+      "lessonId": 9,
+      "nativePhrase": "the week",
+      "foreignPhrase": "veckan",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 159,
+      "lessonId": 9,
+      "nativePhrase": "from Monday to Sunday",
+      "foreignPhrase": "från måndag till söndag",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 160,
+      "lessonId": 9,
+      "nativePhrase": "The first day is Monday.",
+      "foreignPhrase": "Den första dagen är måndag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 161,
+      "lessonId": 9,
+      "nativePhrase": "The second day is Tuesday.",
+      "foreignPhrase": "Den andra dagen är tisdag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 162,
+      "lessonId": 9,
+      "nativePhrase": "The third day is Wednesday.",
+      "foreignPhrase": "Den tredje dagen är onsdag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 163,
+      "lessonId": 9,
+      "nativePhrase": "The fourth day is Thursday.",
+      "foreignPhrase": "Den fjärde dagen är torsdag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 164,
+      "lessonId": 9,
+      "nativePhrase": "The fifth day is Friday.",
+      "foreignPhrase": "Den femte dagen är fredag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 165,
+      "lessonId": 9,
+      "nativePhrase": "The sixth day is Saturday.",
+      "foreignPhrase": "Den sjätte dagen är lördag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 166,
+      "lessonId": 9,
+      "nativePhrase": "The seventh day is Sunday.",
+      "foreignPhrase": "Den sjunde dagen är söndag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 167,
+      "lessonId": 9,
+      "nativePhrase": "The week has seven days.",
+      "foreignPhrase": "Veckan har sju dagar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 168,
+      "lessonId": 9,
+      "nativePhrase": "We only work for five days.",
+      "foreignPhrase": "Vi arbetar bara fem dagar.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 169,
+      "lessonId": 10,
+      "nativePhrase": "Yesterday was Saturday.",
+      "foreignPhrase": "Igår var det lördag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 170,
+      "lessonId": 10,
+      "nativePhrase": "I was at the cinema yesterday.",
+      "foreignPhrase": "Igår var jag på bio.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 171,
+      "lessonId": 10,
+      "nativePhrase": "The film was interesting.",
+      "foreignPhrase": "Filmen var intressant.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 172,
+      "lessonId": 10,
+      "nativePhrase": "Today is Sunday.",
+      "foreignPhrase": "Idag är det söndag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 173,
+      "lessonId": 10,
+      "nativePhrase": "I'm not working today.",
+      "foreignPhrase": "Idag arbetar jag inte.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 174,
+      "lessonId": 10,
+      "nativePhrase": "I'm staying at home.",
+      "foreignPhrase": "Jag stannar hemma.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 175,
+      "lessonId": 10,
+      "nativePhrase": "Tomorrow is Monday.",
+      "foreignPhrase": "Imorgon är det måndag.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 176,
+      "lessonId": 10,
+      "nativePhrase": "Tomorrow I will work again.",
+      "foreignPhrase": "Imorgon fortsätter jag att arbeta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 177,
+      "lessonId": 10,
+      "nativePhrase": "I work at an office.",
+      "foreignPhrase": "Jag arbetar på kontor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 178,
+      "lessonId": 10,
+      "nativePhrase": "Who is that?",
+      "foreignPhrase": "Vem är det?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 179,
+      "lessonId": 10,
+      "nativePhrase": "That is Peter.",
+      "foreignPhrase": "Det är Peter.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 180,
+      "lessonId": 10,
+      "nativePhrase": "Peter is a student.",
+      "foreignPhrase": "Peter är student.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 181,
+      "lessonId": 10,
+      "nativePhrase": "Who is that?",
+      "foreignPhrase": "Vem är det?",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 182,
+      "lessonId": 10,
+      "nativePhrase": "That is Martha.",
+      "foreignPhrase": "Det är Martha.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 183,
+      "lessonId": 10,
+      "nativePhrase": "Martha is a secretary.",
+      "foreignPhrase": "Martha är sekreterare.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 184,
+      "lessonId": 10,
+      "nativePhrase": "Peter and Martha are friends.",
+      "foreignPhrase": "Peter och Martha är vänner.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 185,
+      "lessonId": 10,
+      "nativePhrase": "Peter is Martha's friend.",
+      "foreignPhrase": "Peter är Marthas vän.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    },
+    {
+      "id": 186,
+      "lessonId": 10,
+      "nativePhrase": "Martha is Peter's friend.",
+      "foreignPhrase": "Martha är Peters väninna.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": []
+    }
+  ]
+}
