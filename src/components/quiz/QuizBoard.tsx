@@ -10,7 +10,7 @@ import {
 import { playWordAudio } from '../../quiz/audio'
 import { ProgressBar } from './ProgressBar'
 import { ResultSheet } from './ResultSheet'
-import { WordTile } from './WordTile'
+import { WordTile, WordTilePlaceholder } from './WordTile'
 
 type Phase = 'answering' | 'result' | 'complete'
 
@@ -51,8 +51,6 @@ export function QuizBoard({
   const chosenTiles = chosenIds
     .map((id) => tiles.find((tile) => tile.id === id))
     .filter((tile): tile is QuizTile => tile !== undefined)
-
-  const availableTiles = tiles.filter((tile) => !chosenIds.includes(tile.id))
 
   const percent =
     phase === 'complete'
@@ -173,14 +171,18 @@ export function QuizBoard({
       </div>
 
       <div className="d-flex flex-wrap justify-content-center mb-4" aria-label="Word choices">
-        {availableTiles.map((tile) => (
-          <WordTile
-            key={tile.id}
-            word={tile.word}
-            onClick={() => chooseTile(tile)}
-            title={`Play ${tile.word}`}
-          />
-        ))}
+        {tiles.map((tile) =>
+          chosenIds.includes(tile.id) ? (
+            <WordTilePlaceholder key={tile.id} word={tile.word} />
+          ) : (
+            <WordTile
+              key={tile.id}
+              word={tile.word}
+              onClick={() => chooseTile(tile)}
+              title={`Play ${tile.word}`}
+            />
+          ),
+        )}
       </div>
 
       <div className="d-grid">

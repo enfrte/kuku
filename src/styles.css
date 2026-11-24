@@ -68,6 +68,14 @@ body {
   transform: translateY(1px);
 }
 
+.word-tile-placeholder {
+  pointer-events: none;
+  color: transparent !important;
+  background-color: transparent !important;
+  border-style: dashed !important;
+  border-color: #ced4da !important;
+}
+
 .answer-tray {
   min-height: 64px;
   padding: 0.35rem 0.25rem;

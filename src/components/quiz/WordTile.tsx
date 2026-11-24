@@ -1,3 +1,5 @@
+const tileClasses = 'btn btn-sm rounded-4 border-2 m-1 py-2 px-3 word-tile'
+
 export function WordTile({
   word,
   onClick,
@@ -12,7 +14,7 @@ export function WordTile({
   return (
     <button
       type="button"
-      className={`btn btn-sm rounded-4 border-2 m-1 py-2 px-3 word-tile ${
+      className={`${tileClasses} ${
         tone === 'chosen'
           ? 'btn-light border-secondary text-dark'
           : 'btn-outline-dark bg-white text-dark'
@@ -22,5 +24,13 @@ export function WordTile({
     >
       {word}
     </button>
+  )
+}
+
+export function WordTilePlaceholder({ word }: { word: string }) {
+  return (
+    <span className={`${tileClasses} word-tile-placeholder`} aria-hidden="true">
+      {word}
+    </span>
   )
 }
