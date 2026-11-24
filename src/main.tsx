@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import './styles.css'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
-import { ensureSeeded } from './db/seedRepo'
+import { initializeContent } from './db/deployedContentRepo'
 
 registerSW({ immediate: true })
 
@@ -17,10 +17,13 @@ const root = createRoot(container)
 
 async function bootstrap() {
   try {
-    await ensureSeeded()
+    const { pendingUpdate, localVersion } = await initializeContent()
     root.render(
       <StrictMode>
-        <App />
+        <App
+          initialContentUpdate={pendingUpdate}
+          localContentVersion={localVersion}
+        />
       </StrictMode>,
     )
   } catch (error) {

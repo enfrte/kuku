@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ContentUpdateDialog } from './components/content/ContentUpdateDialog'
 import { AppLayout } from './components/layout/AppLayout'
 import { AdminLayout } from './components/layout/AdminLayout'
 import { ScrollToTop } from './components/layout/ScrollToTop'
+import type { DeployedContentFile } from './db/deployedContentRepo'
 import { CoursesPage } from './pages/student/CoursesPage'
 import { LessonsPage } from './pages/student/LessonsPage'
 import { QuizPage } from './pages/student/QuizPage'
@@ -13,7 +16,15 @@ import { AdminQuestionsPage } from './pages/admin/AdminQuestionsPage'
 import { DataPage } from './pages/admin/DataPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
-export default function App() {
+export default function App({
+  initialContentUpdate = null,
+  localContentVersion = 0,
+}: {
+  initialContentUpdate?: DeployedContentFile | null
+  localContentVersion?: number
+}) {
+  const [contentUpdate, setContentUpdate] = useState(initialContentUpdate)
+
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -35,6 +46,11 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <ContentUpdateDialog
+        update={contentUpdate}
+        localVersion={localContentVersion}
+        onClose={() => setContentUpdate(null)}
+      />
     </BrowserRouter>
   )
 }

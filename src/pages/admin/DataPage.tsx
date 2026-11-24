@@ -2,8 +2,14 @@ import { useState, type ChangeEvent } from 'react'
 import { ConfirmDialog } from '../../components/common/ConfirmDialog'
 import { ErrorAlert } from '../../components/common/ErrorAlert'
 import { Loading } from '../../components/common/Feedback'
+import {
+  applyDeployedContent,
+  readDeployedContent,
+} from '../../db/deployedContentRepo'
 import { useBackup } from '../../hooks/useBackup'
+import { useDeployContent } from '../../hooks/useDeployContent'
 import { useStats } from '../../hooks/useStats'
+import { downloadJson } from '../../utils/downloadJson'
 
 interface PendingAction {
   title: string
@@ -16,9 +22,11 @@ interface PendingAction {
 export function DataPage() {
   const { stats, isLoading } = useStats()
   const backup = useBackup()
+  const deploy = useDeployContent()
   const [error, setError] = useState<unknown>(null)
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
+  const [publishing, setPublishing] = useState(false)
   const [pending, setPending] = useState<PendingAction | null>(null)
 
   async function handleExport() {
@@ -26,19 +34,46 @@ export function DataPage() {
     setMessage('')
     try {
       const data = await backup.exportAll()
-      const blob = new Blob([JSON.stringify(data, null, 2)], {
-        type: 'application/json',
-      })
-      const url = URL.createObjectURL(blob)
-      const anchor = document.createElement('a')
-      anchor.href = url
-      anchor.download = `kuku-backup-${new Date().toISOString().slice(0, 10)}.json`
-      anchor.click()
-      URL.revokeObjectURL(url)
+      downloadJson(
+        `kuku-backup-${new Date().toISOString().slice(0, 10)}.json`,
+        data,
+      )
       setMessage('Backup downloaded.')
     } catch (caught) {
       setError(caught)
     }
+  }
+
+  async function handleDownloadDeployFile() {
+    setError(null)
+    setMessage('')
+    setPublishing(true)
+    try {
+      const file = await deploy.downloadDeployFile()
+      setMessage(
+        `Deploy file downloaded (version ${file.contentVersion}). Save it as src/db/seed/deployedContent.json, then commit and deploy.`,
+      )
+    } catch (caught) {
+      setError(caught)
+    } finally {
+      setPublishing(false)
+    }
+  }
+
+  function offerDeployedUpdate() {
+    const deployed = readDeployedContent()
+    setPending({
+      title: 'Update local content?',
+      body: `Replace all courses, lessons, and questions in this browser with deployed version ${deployed.contentVersion}? Lesson progress is kept where the lesson still exists. Export a backup first if you want to restore the current content.`,
+      confirmLabel: 'Update content',
+      variant: 'warning',
+      run: async () => {
+        await applyDeployedContent(deployed)
+        setMessage(
+          `Local content updated to deployed version ${deployed.contentVersion}.`,
+        )
+      },
+    })
   }
 
   async function handleFile(event: ChangeEvent<HTMLInputElement>) {
@@ -109,9 +144,8 @@ export function DataPage() {
       </div>
 
       <div className="alert alert-info" role="note">
-        <strong>Local-only storage.</strong> All content lives in this browser’s
-        IndexedDB. Clearing site data, using a different browser, or switching devices
-        means starting from a different database. Export a backup regularly.
+        <strong>Author and publish from here.</strong> Course edits are saved to this browser’s IndexedDB immediately. Download the deploy file after editing, save it as <code>src/db/seed/deployedContent.json</code>, then commit and deploy. Backups
+        include progress; deploy files include only course content.
       </div>
 
       <ErrorAlert error={error} />
@@ -122,6 +156,100 @@ export function DataPage() {
       ) : null}
 
       <div className="row g-4">
+        <div className="col-12">
+          <div className="card border-0 shadow-sm h-100">
+            <div className="card-body p-4">
+              <div className="d-flex flex-wrap align-items-start justify-content-between gap-2">
+                <div>
+                  <h2 className="h5">Publish content</h2>
+                  <p className="text-secondary mb-0">
+                    Download a deployable copy of every course, lesson, and question.
+                  </p>
+                </div>
+                <span className="badge text-bg-light border">deployedContent.json</span>
+              </div>
+
+              {deploy.isLoading || !deploy.status ? (
+                <Loading label="Checking published content…" />
+              ) : (
+                <>
+                  <div className="d-flex flex-wrap gap-2 my-3">
+                    <span className="badge text-bg-light border">
+                      This build: v{deploy.status.deployedVersion}
+                    </span>
+                    <span className="badge text-bg-light border">
+                      Local: v{deploy.status.localVersion}
+                    </span>
+                    <span
+                      className={`badge ${
+                        deploy.status.hasUnpublishedChanges
+                          ? 'text-bg-warning'
+                          : 'text-bg-success'
+                      }`}
+                    >
+                      {deploy.status.hasUnpublishedChanges
+                        ? 'Unpublished local changes'
+                        : 'No unpublished changes'}
+                    </span>
+                  </div>
+                  <p className="text-secondary small mb-3">
+                    Current local content: {deploy.status.current.courses} courses,{' '}
+                    {deploy.status.current.lessons} lessons,{' '}
+                    {deploy.status.current.questions} questions. Deployed build:{' '}
+                    {deploy.status.deployed.courses} courses,{' '}
+                    {deploy.status.deployed.lessons} lessons,{' '}
+                    {deploy.status.deployed.questions} questions.
+                  </p>
+
+                  {deploy.status.hasNewerDeployedContent ? (
+                    <div className="alert alert-warning d-flex flex-wrap align-items-center justify-content-between gap-2">
+                      <span>
+                        A newer deployed content version is available (v
+                        {deploy.status.deployedVersion}).
+                      </span>
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-dark"
+                        onClick={offerDeployedUpdate}
+                      >
+                        Update local content
+                      </button>
+                    </div>
+                  ) : null}
+
+                  <div className="d-flex flex-wrap align-items-center gap-2">
+                    <button
+                      type="button"
+                      className="btn btn-kuku"
+                      disabled={publishing || deploy.status.current.courses === 0}
+                      onClick={handleDownloadDeployFile}
+                    >
+                      {publishing ? (
+                        <span
+                          className="spinner-border spinner-border-sm me-2"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <i className="bi bi-download me-1" aria-hidden="true" />
+                      )}
+                      Download deploy file
+                    </button>
+                    <span className="small text-secondary">
+                      Save it as <code>src/db/seed/deployedContent.json</code>, then
+                      commit and deploy.
+                    </span>
+                  </div>
+                  {deploy.status.current.courses === 0 ? (
+                    <div className="form-text">
+                      Add a course before publishing content.
+                    </div>
+                  ) : null}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+
         <div className="col-lg-6">
           <div className="card border-0 shadow-sm h-100">
             <div className="card-body p-4">

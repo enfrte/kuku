@@ -11,7 +11,7 @@ export function AppLayout() {
       <footer className="border-top bg-white py-3">
         <div className="container app-container small text-secondary d-flex flex-wrap gap-2 justify-content-between">
           <span>kuku — local-first language practice</span>
-          <span>Your data stays in this browser.</span>
+          <span>Your progress stays in this browser.</span>
         </div>
       </footer>
     </div>

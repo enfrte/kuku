@@ -12,7 +12,7 @@ export function CoursesPage() {
         <h1 className="display-6 fw-bold">Learn a language with kuku</h1>
         <p className="lead text-secondary mx-auto" style={{ maxWidth: 620 }}>
           Pick a course, build sentences from word tiles, and practice a little every
-          day. Everything is stored locally in your browser.
+          day. Your progress is stored locally in your browser.
         </p>
       </div>
 

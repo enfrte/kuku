@@ -7,7 +7,7 @@ export function AdminLayout() {
         <div>
           <h1 className="h3 mb-1">Admin</h1>
           <p className="text-secondary mb-0">
-            Create and edit the content stored in this browser.
+            Create and edit content in this browser, then publish a deployable copy.
           </p>
         </div>
         <div className="btn-group" role="group" aria-label="Admin sections">
@@ -26,7 +26,7 @@ export function AdminLayout() {
               `btn ${isActive ? 'btn-dark' : 'btn-outline-dark'}`
             }
           >
-            Data &amp; backup
+            Publish &amp; backup
           </NavLink>
         </div>
       </div>

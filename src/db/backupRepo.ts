@@ -6,6 +6,11 @@ import {
   type Question,
   db,
 } from './db'
+import {
+  CONTENT_UPDATE_DISMISSED_KEY,
+  DEPLOYED_CONTENT_HASH_KEY,
+  DEPLOYED_CONTENT_VERSION_KEY,
+} from './deployedContentRepo'
 import { ValidationError } from './errors'
 import { SEED_MARKER_KEY, SEED_VERSION } from './seedRepo'
 
@@ -170,13 +175,18 @@ export async function importAll(value: unknown): Promise<void> {
 export async function resetAll(): Promise<void> {
   await db.transaction(
     'rw',
-    [db.courses, db.lessons, db.questions, db.progress],
+    [db.courses, db.lessons, db.questions, db.progress, db.meta],
     async () => {
       await Promise.all([
         db.courses.clear(),
         db.lessons.clear(),
         db.questions.clear(),
         db.progress.clear(),
+      ])
+      await db.meta.bulkDelete([
+        DEPLOYED_CONTENT_VERSION_KEY,
+        DEPLOYED_CONTENT_HASH_KEY,
+        CONTENT_UPDATE_DISMISSED_KEY,
       ])
     },
   )

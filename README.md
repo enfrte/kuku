@@ -4,8 +4,9 @@ kuku is a local-first language-learning app. Students practise sentences by buil
 them from word tiles, while an unprotected admin area lets you create and edit courses,
 lessons, and questions.
 
-Everything is stored in the browser's IndexedDB. There is no backend and no account
-system in this version.
+Authoring data and progress are stored in the browser's IndexedDB. Deployed course
+content is bundled with the app from the repository. There is no backend and no
+account system in this version.
 
 ## Stack
 
@@ -56,20 +57,38 @@ npm run preview    # serve the production build locally
 | `/admin/courses/:courseId/edit` | Edit a course |
 | `/admin/courses/:courseId/lessons` | Manage a course's lessons |
 | `/admin/lessons/:lessonId/questions` | Manage a lesson's questions |
-| `/admin/data` | Export, import, reset, and reload the demo |
+| `/admin/data` | Publish content, export/import backups, reset, and reload the demo |
 
 Draft courses and lessons can be previewed by appending `?preview=1` to their student
 URL. The admin area has no login; treat it as a local authoring tool.
 
 ## Data and backups
 
-All data lives in this browser profile. Clearing site data, using another browser, or
-switching devices gives you a different database. Export a JSON backup from
-**Admin → Data & backup** before making large changes.
+Authoring data lives in this browser profile. Clearing site data, using another browser,
+or switching devices gives you a different database. Export a JSON backup from
+**Admin → Publish & backup** before making large changes.
 
 The import operation **replaces everything** currently stored in the browser. Backup
 files are validated before any data is changed. The same page can reset the database or
-add another copy of the demo course.
+add another copy of the demo course. Backups include courses, lessons, questions,
+progress, and metadata, so they can restore the whole browser database.
+
+## Publishing content
+
+The deployed app ships with a content file at
+`src/db/seed/deployedContent.json`. It contains only courses, lessons, and questions,
+plus a `contentVersion` used to offer updates to existing users.
+
+To publish edits made in the admin area:
+
+1. Open **Admin → Publish & backup**.
+2. Download the deploy file.
+3. Save it over `src/db/seed/deployedContent.json` in the repository.
+4. Commit the file and deploy.
+
+Publishing is deliberately manual: the admin area cannot write to the repository from
+a deployed Vercel site. The publish card shows whether the browser has unpublished
+changes and which content version this build contains.
 
 ### Audio
 
@@ -119,8 +138,13 @@ The app is a static SPA and can be deployed to the Vercel free tier.
 3. `vercel.json` rewrites unknown paths to `index.html` so deep links such as
    `/admin` work.
 
-Because data is local to each browser, deploying does not share course content with
-other users. To share content, export a backup and import it in the target browser.
+Students keep their progress in their own browser, but course content is shared
+through the repository. When a deployed `contentVersion` is newer than the version a
+browser already has, the app offers to update the local courses. Progress is kept for
+lessons that still exist, and a full backup can be downloaded before updating.
+
+New browsers import the deployed content automatically. If both local and deployed
+content are empty, the bundled Swedish demo course is seeded as a starting point.
 
 ## Future: server sync
 
