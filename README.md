@@ -99,7 +99,8 @@ still works without audio. Only Swedish audio is currently included.
 ### Language codes
 
 Course and instruction languages are stored as ISO 639-3 codes (`swe`, `eng`, `fin`,
-and so on). The picker is generated from the ISO 639-1 subset. Regenerate it with:
+and so on). The picker is generated from the ISO 639-1 subset, plus selected
+languages without an ISO 639-1 code (currently `lfn`). Regenerate it with:
 
 ```bash
 npm run gen:languages

@@ -3,6 +3,7 @@ import { languageLabel } from '../../data/languages'
 const FLAGS: Record<string, string> = {
   fin: '/flags/flag_fin.svg',
   ile: '/flags/flag_ile.svg',
+  lfn: '/flags/flag_lfn.svg',
   swe: '/flags/flag_swe.svg',
 }
 

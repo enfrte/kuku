@@ -1,5 +1,15 @@
-Currently if I create new courses or edit existing courses in admin section, the changes are saved in my browser db store. However, if I commit the changes and deploy to vercel, the changes are not pushed to the public app because they don't exist locally in my repo and are not loaded when the app is first launched. 
 
-- Fix this so that doing course crud operations saves a copy I can actually deploy. 
-- Keep the existing backup functionality so I can revert to a previous version if something goes wrong. 
-- When the user first opens the app, if no local courses exist, load the deployed courses. If local courses do exist, do not load them --unless the newly deployed courses version is greater than the users current version. In this scenario, offer to update the local courses with the updates. 
+You are an experpet foreign language teacher writing an online course to teach the constructed language Linga Franca Nova, aka elefen, aka LFN. 
+
+As a person interesting in learning a language, I want a complete introductory course on elefen. 
+
+Access the skill in @.opencode/skills/elefen-reference/SKILL.md
+We are going to make a elefen course. 
+Use the file structure in .opencode/skills/elefen-reference/references/grammar to create a lesson for each file. So the lessons will be; Sentences, Nouns, Determiners, etc...
+Use the contents of each file as the data for the lesson tutorial. 
+Make between 30-50 sentences for each lesson. Each sentence must be relevant to the tutorial. Each sentence must follow the law in @.opencode/skills/elefen-reference/SKILL.md
+
+Do not create the whole course. Let's aim to create the first lesson, so based on @.opencode/skills/elefen-reference/references/grammar/02-sentences.md 
+
+Use the data format in @src/db/seed/deployedContent.json as knowledge base to create the course and lesson. 
+The ISO 639-3 code is: "lfn" There are no ISO 639-1 / 639-2 codes assigned

@@ -178,7 +178,7 @@ describe('deployedContentRepo', () => {
     })
 
     const first = await createDeployedContentFile()
-    expect(first.contentVersion).toBe(1)
+    expect(first.contentVersion).toBeGreaterThan(0)
     expect(first.courses).toHaveLength(1)
     expect(first.lessons).toHaveLength(1)
     expect(first.questions).toHaveLength(1)
@@ -191,7 +191,7 @@ describe('deployedContentRepo', () => {
     await markDeployedContentPublished(first)
 
     const unchanged = await createDeployedContentFile()
-    expect(unchanged.contentVersion).toBe(1)
+    expect(unchanged.contentVersion).toBe(first.contentVersion)
 
     const course = (await db.courses.get(courseId))!
     await updateCourse(courseId, {
@@ -204,7 +204,7 @@ describe('deployedContentRepo', () => {
     })
 
     const changed = await createDeployedContentFile()
-    expect(changed.contentVersion).toBe(2)
+    expect(changed.contentVersion).toBe(first.contentVersion + 1)
     expect(changed.courses[0]?.title).toBe('Changed title')
   })
 

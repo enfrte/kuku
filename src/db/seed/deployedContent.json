@@ -2,9 +2,9 @@
   "app": "kuku",
   "kind": "deployed-content",
   "schemaVersion": 1,
-  "contentVersion": 2,
-  "updatedAt": "2026-11-26T18:45:38.361Z",
-  "contentHash": "dd271d53",
+  "contentVersion": 4,
+  "updatedAt": "2026-11-27T06:23:33.855Z",
+  "contentHash": "0669fbb2",
   "courses": [
     {
       "title": "Finnish",
@@ -17,6 +17,18 @@
       "createdAt": 1795474269295,
       "updatedAt": 1795553200082,
       "id": 2
+    },
+    {
+      "title": "Lingua Franca Nova",
+      "description": "An introductory course in Elefen (Lingua Franca Nova), a simple and regular constructed language.",
+      "language": "lfn",
+      "instructionLanguage": "eng",
+      "version": 1,
+      "inProduction": 1,
+      "slug": "lingua-franca-nova",
+      "createdAt": 1795759194554,
+      "updatedAt": 1795759194554,
+      "id": 3
     }
   ],
   "lessons": [
@@ -79,6 +91,18 @@
       "createdAt": 1795718526095,
       "updatedAt": 1795718526095,
       "id": 15
+    },
+    {
+      "title": "Sentences",
+      "description": "Learn how Elefen sentences are built: subject, verb, object, complements, prepositional phrases, and clauses. Includes 40 practice sentences.",
+      "tutorial": "# Elefen grammar, ch. 2: Sentences\n\nMost **sentences** in Elefen contain a verb phrase, typically denoting the occurrence of an action. A verb phrase consists of a verb plus any modifiers such as adverbs or prepositional phrases.\n\nMost sentences also contain at least one noun phrase, typically denoting a person or thing. A noun phrase consists of a noun plus any modifiers such as determiners, adjectives, and prepositional phrases.\n\n## Subject and object\n\nThe two most important noun phrases are the **subject** and the **object**. Their exact meaning depends on the choice of verb, but loosely speaking, the subject is the person or thing that carries out the action, and the object is the person or thing that is directly affected by the action.\n\nIn Elefen, the subject always precedes the verb, and the object usually follows:\n\n*   **La gato** xasa **la scural**. – The cat _(subject)_ … chases _(verb)_ … the squirrel _(object)_.\n*   **La xica** gusta **la musica**. – The girl _(subject)_ … likes _(verb)_ … the music _(object)_.\n*   **La can** dormi. – The dog _(subject)_ … sleeps _(verb)_.\n\nIn some cases, for reasons of style or clarity, you may want to place the object of the verb at the beginning of the sentence:\n\n*   **La gatos** me no gusta. – Cats I don’t like. (As for cats, I don’t like them.)\n\nMost verbs require a subject, but [many do not require an object](08-verbs.md).\n\n## Complements\n\nAnother common sentence component is the **complement**. This is an extra description of the subject that can follow verbs like **es** (be), **deveni** (become), **pare** (seem), and **resta** (remain):\n\n*   Computadores es **macinas**. – Computers _(subject)_ … are _(verb)_ … machines _(complement)_.\n*   La aira pare **umida**. – The air _(subject)_ … seems _(verb)_ … damp _(complement)_.\n*   La comeda deveni **fria**. – The food _(subject)_ … becomes _(verb)_ … cold _(complement)_.\n*   La patatas ia resta **calda**. – The potatoes _(subject)_ … stayed _(verb)_ … hot _(complement)_.\n*   Nosa taxe es **reconstrui la mur**. – Our task _(subject)_ … is _(verb)_ … to rebuild the wall _(complement: a nested sentence)_.\n*   La idea es **ce tu canta**. – The idea _(subject)_ … is _(verb)_ … that you sing _(complement: a nested sentence)_.\n\nSome languages also allow the object to have a complement, as in “I find this cheese _disgusting_” or “They elected him _president_”. This type of complement does not occur in Elefen.\n\n## Prepositions\n\nOne other major sentence component is the prepositional phrase, which adds detail to a preceding noun or verb, or to the sentence as a whole:\n\n*   La om ia cade **tra sua seja**. – The man _(subject)_ … fell _(verb)_ … through his chair _(prepositional phrase)_.\n*   **En la note**, la stelas apare. – In the night _(prepositional phrase)_ … the stars _(subject)_ … appear _(verb)_.\n*   Me dona esta poma **a tu**. – I _(subject)_ … give _(verb)_ … this apple _(object)_ … to you _(prepositional phrase)_.\n*   Tu no aspeta **como tua foto**. – You _(subject)_ … don’t look _(verb)_ … like your photo _(prepositional phrase)_.\n\n## Clauses\n\nIn addition to phrases, some sentences contain clauses, which resemble smaller sentences nested within the larger sentence. They can modify noun phrases, verb phrases, or the whole of the larger sentence:\n\n*   La om **ci ia abita asi** ia vade a Paris. – The man who lived here went to Paris.\n*   El va visita en julio, **cuando la clima es bon**. – He will visit in July, when the weather is good.\n*   On no ia permete me a fa la cosas **como me ia desira**. – I wasn’t allowed to do things as I wanted.\n*   Me pensa **ce el es bela**. – I think that she is beautiful.",
+      "level": 1,
+      "inProduction": 1,
+      "courseId": 3,
+      "slug": "sentences",
+      "createdAt": 1795759194554,
+      "updatedAt": 1795760597625,
+      "id": 16
     }
   ],
   "questions": [
@@ -1641,6 +1665,412 @@
       "createdAt": 1795718647013,
       "updatedAt": 1795718647013,
       "id": 332
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The cat chases the squirrel.",
+      "foreignPhrase": "La gato xasa la scural.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194554,
+      "updatedAt": 1795759194554,
+      "id": 333
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The girl likes the music.",
+      "foreignPhrase": "La xica gusta la musica.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194555,
+      "updatedAt": 1795759194555,
+      "id": 334
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The man reads the book.",
+      "foreignPhrase": "La om leje la libro.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194556,
+      "updatedAt": 1795759194556,
+      "id": 335
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The girl eats the apple.",
+      "foreignPhrase": "La xica come la poma.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194557,
+      "updatedAt": 1795759194557,
+      "id": 336
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The boy drinks the water.",
+      "foreignPhrase": "La xico bevi la acua.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194558,
+      "updatedAt": 1795759194558,
+      "id": 337
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "We see the stars.",
+      "foreignPhrase": "Nos vide la stelas.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194559,
+      "updatedAt": 1795759194559,
+      "id": 338
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I read the newspaper.",
+      "foreignPhrase": "Me leje la jornal.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194560,
+      "updatedAt": 1795759194560,
+      "id": 339
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "He/she writes a letter.",
+      "foreignPhrase": "El scrive un carta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194561,
+      "updatedAt": 1795759194561,
+      "id": 340
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The dog sleeps.",
+      "foreignPhrase": "La can dormi.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194562,
+      "updatedAt": 1795759194562,
+      "id": 341
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The bird flies.",
+      "foreignPhrase": "La avia vola.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194563,
+      "updatedAt": 1795759194563,
+      "id": 342
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The moon appears.",
+      "foreignPhrase": "La luna apare.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194564,
+      "updatedAt": 1795759194564,
+      "id": 343
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The children dance.",
+      "foreignPhrase": "La enfantes dansa.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194565,
+      "updatedAt": 1795759194565,
+      "id": 344
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The sun shines.",
+      "foreignPhrase": "La sol brilia.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194566,
+      "updatedAt": 1795759194566,
+      "id": 345
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I don't like cats.",
+      "foreignPhrase": "La gatos me no gusta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "Me no gusta la gatos."
+      ],
+      "createdAt": 1795759194567,
+      "updatedAt": 1795759194567,
+      "id": 346
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I like the music.",
+      "foreignPhrase": "La musica me gusta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "Me gusta la musica."
+      ],
+      "createdAt": 1795759194568,
+      "updatedAt": 1795759194568,
+      "id": 347
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I want this apple.",
+      "foreignPhrase": "Esta poma me vole.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [
+        "Me vole esta poma."
+      ],
+      "createdAt": 1795759194569,
+      "updatedAt": 1795759194569,
+      "id": 348
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "Computers are machines.",
+      "foreignPhrase": "Computadores es macinas.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194570,
+      "updatedAt": 1795759194570,
+      "id": 349
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The air seems damp.",
+      "foreignPhrase": "La aira pare umida.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194571,
+      "updatedAt": 1795759194571,
+      "id": 350
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The food becomes cold.",
+      "foreignPhrase": "La comeda deveni fria.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194572,
+      "updatedAt": 1795759194572,
+      "id": 351
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The potatoes stayed hot.",
+      "foreignPhrase": "La patatas ia resta calda.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194573,
+      "updatedAt": 1795759194573,
+      "id": 352
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The girl is beautiful.",
+      "foreignPhrase": "La xica es bela.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194574,
+      "updatedAt": 1795759194574,
+      "id": 353
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "He/she becomes a doctor.",
+      "foreignPhrase": "El deveni un dotor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194575,
+      "updatedAt": 1795759194575,
+      "id": 354
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The books are interesting.",
+      "foreignPhrase": "La libros es interesante.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194576,
+      "updatedAt": 1795759194576,
+      "id": 355
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The sky is blue.",
+      "foreignPhrase": "La sielo es blu.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194577,
+      "updatedAt": 1795759194577,
+      "id": 356
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "Our task is to rebuild the wall.",
+      "foreignPhrase": "Nosa taxe es reconstrui la mur.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194578,
+      "updatedAt": 1795759194578,
+      "id": 357
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The idea is that you sing.",
+      "foreignPhrase": "La idea es ce tu canta.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194579,
+      "updatedAt": 1795759194579,
+      "id": 358
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I think that she is beautiful.",
+      "foreignPhrase": "Me pensa ce el es bela.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194580,
+      "updatedAt": 1795759194580,
+      "id": 359
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "He/she says that the weather is good.",
+      "foreignPhrase": "El dise ce la clima es bon.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194581,
+      "updatedAt": 1795759194581,
+      "id": 360
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The man fell through his chair.",
+      "foreignPhrase": "La om ia cade tra sua seja.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194582,
+      "updatedAt": 1795759194582,
+      "id": 361
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "In the night, the stars appear.",
+      "foreignPhrase": "En la note, la stelas apare.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194583,
+      "updatedAt": 1795759194583,
+      "id": 362
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I give this apple to you.",
+      "foreignPhrase": "Me dona esta poma a tu.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194584,
+      "updatedAt": 1795759194584,
+      "id": 363
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "You don't look like your photo.",
+      "foreignPhrase": "Tu no aspeta como tua foto.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194585,
+      "updatedAt": 1795759194585,
+      "id": 364
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The cat is on the table.",
+      "foreignPhrase": "La gato es sur la table.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194586,
+      "updatedAt": 1795759194586,
+      "id": 365
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "We go to the beach.",
+      "foreignPhrase": "Nos vade a la plaia.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194587,
+      "updatedAt": 1795759194587,
+      "id": 366
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "He/she works in the city.",
+      "foreignPhrase": "El labora en la site.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194588,
+      "updatedAt": 1795759194588,
+      "id": 367
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The bird flies above the tree.",
+      "foreignPhrase": "La avia vola supra la arbor.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194589,
+      "updatedAt": 1795759194589,
+      "id": 368
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The man who lived here went to Paris.",
+      "foreignPhrase": "La om ci ia abita asi ia vade a Paris.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194590,
+      "updatedAt": 1795759194590,
+      "id": 369
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "He/she will visit in July, when the weather is good.",
+      "foreignPhrase": "El va visita en julio, cuando la clima es bon.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194591,
+      "updatedAt": 1795759194591,
+      "id": 370
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "The girl who sings is my sister.",
+      "foreignPhrase": "La xica ci canta es mea sore.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194592,
+      "updatedAt": 1795759194592,
+      "id": 371
+    },
+    {
+      "lessonId": 16,
+      "nativePhrase": "I wasn't allowed to do things as I wanted.",
+      "foreignPhrase": "On no ia permete me a fa la cosas como me ia desira.",
+      "alternativeNativePhrases": [],
+      "alternativeForeignPhrases": [],
+      "createdAt": 1795759194593,
+      "updatedAt": 1795759194593,
+      "id": 372
     }
   ]
 }
