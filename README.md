@@ -1,5 +1,7 @@
 # kuku
 
+Demo: https://enfrte-kuku.vercel.app/
+
 kuku is a local-first language-learning app. Students practise sentences by building
 them from word tiles, while an unprotected admin area lets you create and edit courses,
 lessons, and questions.
